@@ -1,0 +1,8 @@
+#include "common.h"
+
+Texture2D rt_tempzb;
+
+void main(float4 hpos : SV_Position, out float depth : SV_Depth)
+{
+    depth = rt_tempzb[hpos.xy].x;
+}
