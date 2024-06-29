@@ -1,0 +1,266 @@
+; Fields:
+; 3ds_reticle_size - reticle size multiplier
+; 3ds_shadow_project - distance from scope lens to projected shadow, in other words, eye relief
+; 3ds_ffp_min_zoom - for FFP scopes, minimal magnification FOV
+; 3ds_type - custom type, see description
+; ms_count - number of different marks (should be supported by custom type)
+; ms_colors - list of colors for illumination
+;
+; Custom types:
+; 3ds_type = 1 - NV scope (nightvision shader is applied to main image)
+; 3ds_type = 2 - 1P59 Giperon scope (red channel at first focal plane, green channel at second focal plane, blue channel rotated by zoom), has LED illumination
+; 3ds_type = 3 - ACOG, sun illuminated scope (red channel is regular black reticle, green channel is illuminated area, blue channel is gray text)
+; 3ds_type = 4 - LED illuminated scope
+; 3ds_type = 5 - Masked LED illuminated scope (red channel is regular black reticle, green channel is illuminated area)
+; 3ds_type = 6 - PKA ssetting to get rid of awful pip. The scope is too narrow to turn it into a proper red dot
+;
+; Use this ltx to modify scope parameters and universal magnification. Magnification can also be set in weapon section for guns with integrated scopes.
+
+;----------------------------------DOVETAIL/EAST SCOPES---------------------------------
+![pka]
+	3ds_reticle_size = 2
+	3ds_shadow_project = 4.9
+	3ds_type = 6
+	ms_count = 2
+	ms_colors = scope_red, scope_green	
+	magnification = 1
+	
+![pgo7gs]
+	3ds_reticle_size = 10
+	3ds_shadow_project = 2.5
+	magnification = 4
+	
+![1p78gs] 
+	3ds_reticle_size = 4.7
+	3ds_shadow_project = 3.75
+	magnification = 2.8	
+	
+![kashtan_rmr]	
+	3ds_reticle_size = 4.7
+	3ds_shadow_project = 4
+	magnification = 2.8	
+	
+![1pn93n2_1gs] --Dynamic
+	3ds_reticle_size = 5.2	
+	3ds_shadow_project = 3.6
+	3ds_type = 1
+	ms_count = 2
+	magnification = 3.7	
+
+![1p29]
+	3ds_reticle_size = 4.6
+	3ds_shadow_project = 3
+	magnification = 4	
+	
+![usp1]
+	3ds_reticle_size = 4.6
+	3ds_shadow_project = 3
+	magnification = 4		
+	
+![ps01]
+	3ds_reticle_size = 4.7
+	3ds_shadow_project = 4.1
+	3ds_type = 4
+	ms_count = 2
+	ms_colors = scope_black, scope_red
+	magnification = 4	
+	
+![pso1m21] --PS02
+	3ds_reticle_size = 4
+	3ds_shadow_project = 4.2
+	3ds_type = 4
+	ms_count = 2
+	ms_colors = scope_black, scope_red
+	magnification = 4	
+	
+![pso2]
+	3ds_reticle_size = 4
+	3ds_shadow_project = 4.2
+	3ds_type = 4
+	ms_count = 2
+	ms_colors = scope_black, scope_red
+	magnification = 4	
+	
+![pritseldob] --PS02 RMR
+	3ds_reticle_size = 4
+	3ds_shadow_project = 4.2
+	3ds_type = 4
+	ms_count = 2
+	ms_colors = scope_black, scope_red
+	magnification = 4		
+	
+![1pn93] --Dynamic
+ 	3ds_reticle_size = 5.2	
+	3ds_shadow_project = 3.6
+	3ds_type = 1
+	ms_count = 2
+	magnification = 4	
+	
+![1p59] --Dynamic
+	3ds_reticle_size = 5.4
+	3ds_shadow_project = 2.8
+	3ds_ffp_min_zoom = 32
+	3ds_type = 2
+	ms_count = 2
+	ms_colors = scope_black, scope_red
+	magnification = 10
+		
+![wpn_addon_scope_pu]
+	3ds_reticle_size = 2.5
+	3ds_shadow_project = 3.85
+	magnification = 3.5
+	
+![wpn_addon_scope_zf4]
+	3ds_reticle_size = 10
+	3ds_shadow_project = 5.65
+	magnification = 4	
+
+![wpn_addon_scope_g43]	
+	3ds_reticle_size = 3
+	3ds_shadow_project = 3.7
+	magnification = 4
+	
+![wpn_addon_scope_po4x34]
+	3ds_reticle_size = 7
+	3ds_shadow_project = 3.7
+	magnification = 4		
+;----------------------------------PICATINNY/WEST SCOPES---------------------------------
+
+![acog]
+	3ds_reticle_size = 8
+	3ds_shadow_project = 4
+	3ds_type = 3
+	magnification = 2.8	
+	
+![triji]
+	3ds_reticle_size = 8
+	3ds_shadow_project = 4
+	3ds_type = 3
+	magnification = 2.8	
+
+![side]
+	3ds_reticle_size = 2.5
+	3ds_shadow_project = 3.85	
+	magnification = 3.5
+	
+![pn23] --Dynamic   
+	3ds_reticle_size = 9	
+	3ds_shadow_project = 3.7
+	3ds_ffp_min_zoom = 42	
+	3ds_type = 1
+	ms_count = 2
+	magnification = 3.8	
+	
+![susat]
+	3ds_reticle_size = 3.4
+	3ds_shadow_project = 4.5
+	magnification = 4	
+
+![susatov]
+	3ds_reticle_size = 3.4
+	3ds_shadow_project = 4.5
+	magnification = 4	
+	
+![bravo4]
+	3ds_reticle_size = 16
+	3ds_shadow_project = 3.9
+	magnification = 4	
+
+![hamr]
+	3ds_reticle_size = 12
+	3ds_shadow_project = 3.8
+	magnification = 4
+	
+![specter] --Dynamic
+	3ds_reticle_size = 7.3
+	3ds_shadow_project = 3.2
+	3ds_ffp_min_zoom = 46	
+	3ds_type = 5
+	ms_count = 2
+	ms_colors = scope_black, scope_red	
+	magnification = 4	
+	
+![spec_alt] --Dynamic
+	3ds_reticle_size = 7.3
+	3ds_shadow_project = 3.2
+	3ds_ffp_min_zoom = 46		
+	3ds_type = 5
+	ms_count = 2
+	ms_colors = scope_black, scope_red	
+	magnification = 4	
+
+![uh1_magd]
+	3ds_reticle_size = 6.5
+	3ds_shadow_project = 4.05
+	magnification = 6
+
+![e0t2_magd]	
+	3ds_reticle_size = 6.5
+	3ds_shadow_project = 4.05
+	magnification = 6
+
+![devo]
+	3ds_reticle_size = 4.2
+	3ds_shadow_project = 2.5
+	3ds_type = 4
+	ms_count = 2
+	ms_colors = scope_black, scope_red	
+	magnification = 6
+	
+![razorhd] --Dynamic
+	3ds_reticle_size = 9
+	3ds_shadow_project = 3.9
+	3ds_ffp_min_zoom = 32	
+	magnification = 6
+	
+![leupold] --Dynamic
+	3ds_reticle_size = 4.5
+	3ds_shadow_project = 3.6
+	3ds_ffp_min_zoom = 32
+	magnification = 8
+	
+![mark8_rmr] --Dynamic
+	3ds_reticle_size = 4.5
+	3ds_shadow_project = 3.6
+	3ds_ffp_min_zoom = 32
+	magnification = 8	
+	
+![march_f_shorty] --Dynamic
+	3ds_reticle_size = 10
+	3ds_shadow_project = 4.1
+	3ds_ffp_min_zoom = 21
+	magnification = 8
+
+![march_f_shorty_alt] --Dynamic
+	3ds_reticle_size = 10
+	3ds_shadow_project = 4.1
+	3ds_ffp_min_zoom = 21
+	magnification = 8
+	
+![cortex] --Dynamic
+	3ds_reticle_size = 6.8
+	3ds_shadow_project = 2.9
+	3ds_ffp_min_zoom = 25	
+	magnification = 10	
+		
+![gauss_sight] --Dynamic
+	3ds_reticle_size = 3.5
+	3ds_shadow_project = 6.2
+	3ds_ffp_min_zoom = 18	
+	magnification = 10
+		
+![marchf] --Dynamic
+	3ds_reticle_size = 8
+	3ds_shadow_project = 3.1
+	3ds_ffp_min_zoom = 8
+	3ds_type = 5
+	ms_count = 2
+	ms_colors = scope_black, scope_red	
+	magnification = 24
+	
+![sup]
+inv_name			                                = st_addon_scope_sup_new
+inv_name_short			                            = st_addon_scope_sup_new
+description			                                = st_addon_scope_sup_new_descr	
+;=======================Integrated======================================
+--MOVED TO WEAPON SECTIONS

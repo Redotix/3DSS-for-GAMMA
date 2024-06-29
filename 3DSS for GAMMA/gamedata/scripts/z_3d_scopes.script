@@ -1,0 +1,46 @@
+local last_weapon_id
+
+function get(wpn_section, key)
+	local parent = ini_sys:r_string_ex(wpn_section, "parent_section") or wpn_section
+	local scope_section = parent ~= wpn_section and wpn_section:sub(#parent + 2)
+
+	local value = wpn_section and ini_sys:r_float_ex(wpn_section, key)
+	if value then
+		return tostring(value)
+	end
+	value = scope_section and ini_sys:r_float_ex(scope_section, key)
+	if value then
+		return tostring(value)
+	end
+
+	return "0"
+end
+
+function update_shader(section)
+	get_console():execute(
+		"shader_param_6 " .. 
+		get(section, "3ds_type") .. ", " ..
+		get(section, "3ds_ffp_min_zoom") .. ", " ..
+		get(section, "3ds_reticle_size") .. ", " ..
+		get(section, "3ds_shadow_project"))
+end
+
+function actor_on_update()
+	if not (db.actor and db.actor:alive()) then
+		return
+	end
+	
+	local wpn = db.actor:active_item()
+	if not wpn then
+		return
+	end
+	
+	if not last_weapon_id or last_weapon_id ~= wpn:id() then
+		last_weapon_id = wpn:id()
+		update_shader(wpn:section())
+	end
+end
+
+function on_game_start()
+	RegisterScriptCallback("actor_on_update", actor_on_update)
+end

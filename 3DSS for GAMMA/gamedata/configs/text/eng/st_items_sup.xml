@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="windows-1251"?>
+
+<!--
+	Weapons Attachments
+-->
+
+<string_table>
+	<string id="st_addon_scope_sup_new">
+		<text>S.U.P. Special Upgrade Pack</text>
+	</string>
+	<string id="st_addon_scope_sup_new_descr">
+		<text>%c[0,255,255,255]KIT INCLUDES:\n
+		%c[d_cyan] • Various tools, parts, and scopes for upgrading a wide array of guns.\n
+		</text>
+	</string>
+</string_table>

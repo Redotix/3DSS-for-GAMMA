@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="windows-1251"?>
+
+<!--
+	Weapons Attachments
+-->
+
+<string_table>
+
+
+	<string id="st_addon_scope_devo">
+		<text>Leupold D-EVO Offset Optic w/ LCO Red Dot</text>
+	</string>
+	<string id="st_addon_scope_devo_descr">
+		<text>\n \n%c[ui_gray_1]A unique, innovative design allows the 6x20mm D-EVO to be paired perfectly with the Leupold Carbine Optic (LCO), or virtually any red dot sight, to deliver a bold aiming point for reflexive shots and a magnified image for long-range precision with the mere movement of your eye.\n \n
+		%c[d_purple] • %c[ui_gray_2] Magnification: %c[ui_gray_1]6x</text>
+	</string>	
+
+	<string id="st_addon_scope_side">
+		<text>19th Century Side Mount Scope</text>
+	</string>
+	<string id="st_addon_scope_side_descr">
+		<text>\n \n%c[ui_gray_1]A telescopic sight developed in the 1800s, designed to be mounted onto Winchester style rifles. Finding these scopes in usable condition is a rare thing in the modern world. This is only a replica, but it still works.\n \n
+		%c[d_purple] • %c[ui_gray_2] Magnification: %c[ui_gray_1]3.5x</text>
+	</string>
+
+	<string id="st_addon_scope_romeo">
+		<text>Sig Sauer ROMEO 4 Red Dot Sight</text>
+	</string>
+	<string id="st_addon_scope_romeo_descr">
+		<text>\n \n%c[ui_gray_1]The ROMEO4 is the ultimate family of red-dot sights when fast, accurate target acquisition is a must. Whether it’s a moving target, dangerous game at full charge or a fast-breaking tactical situation, the ROMEO4 is always ready.\n \n
+		%c[d_purple] • %c[ui_gray_2] Magnification: %c[ui_gray_1]None</text>
+	</string>	
+</string_table>

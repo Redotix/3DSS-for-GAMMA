@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<!--
+	Weapons Attachments
+-->
+<string_table>
+  <string id="st_addon_scope_exps3">
+    <text>Eotech EXPS3</text>
+  </string>
+  <string id="st_addon_scope_exps3_descr">
+    <text>An operator-grade Holographic Weapon Sight built for close-quarter engagements with fast-moving targets.</text>
+  </string>
+  <string id="st_addon_scope_he510">
+    <text>Holosun HE510C</text>
+  </string>
+  <string id="st_addon_scope_he510_descr">
+    <text>The HE510C is a versatile open reflex optic designed for long gun applications. HE510C is at home on carbines, PCCs, and shotguns due its durable design. HE510C and aluminum housing with titanium hood for added shock resilience and includes a QD absolute co-witness mount (1.41” dot height).
+		</text>
+  </string>
+  <string id="st_addon_scope_bravo4">
+    <text>SIG Sauer BRAVO4</text>
+  </string>
+  <string id="st_addon_scope_bravo4_descr">
+    <text>World’s first wide field battle sight. Radically new design for professional and civilian MSR/AR-shooters, The BRAVO4 delivers an industry leading 42% wider field of view than current battle sights.</text>
+  </string>
+  <string id="st_addon_scope_hamr">
+    <text>Leupold Mark 4 HAMR</text>
+  </string>
+  <string id="st_addon_scope_hamr_descr">
+    <text>The new Mark 4 High Accuracy Multi-Range Riflescope (HAMR), a scope that is as devastatingly effective as ruggedly constructed. Compact and combat-ready, the HAMR is designed for precise mid-range distance marksmanship and fast target acquisition in bright daylight, low light, and at night.</text>
+  </string>
+  <string id="st_addon_scope_razorhd">
+    <text>Vortex Optics Razor HD Gen II</text>
+  </string>
+  <string id="st_addon_scope_razorhd_descr">
+    <text>The Gen II-E 1-6 is a top-tier optical solution for short to medium-range applications. Optically, it delivers the high level of clarity, resolution, color accuracy, light transmission and edge-to-edge sharpness. The ultra-forgiving eyebox with generous eye relief generates a heads-up-display-like sight picture for fast transitions and optimal monitoring of the surrounding environment. A true, daylight-bright illuminated center dot gives users ultimate close-quarters versatility. </text>
+  </string>
+</string_table>
