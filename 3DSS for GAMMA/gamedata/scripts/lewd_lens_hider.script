@@ -237,6 +237,11 @@ end
 --- @return nil
 function set_bone_visibility(obj, bone_name, visibility)
     obj:set_bone_visible(bone_name, visibility, true, true)
+    exec_console_cmd("r__3Dfakescope " .. bool_to_number(visibility))
+end
+
+function bool_to_number(value)
+    return value and 0 or 1
 end
 
 --- Function used to print information to the log if DEBUG_MODE is set to true.
