@@ -170,6 +170,7 @@ lewd_lens_hide_aim_mode      = true, false, false
         aim_hud_offset_rot_16x9          = 0.044212, 0.004007, -0.060687
 ;==============================================================================		
 ![wpn_ace52]
+>scopes						 = gee36
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = lens
 lewd_lens_hide_delays        = 0.1,0
@@ -267,6 +268,35 @@ lewd_lens_hide_aim_mode      = true, false, false
         aim_hud_offset_pos_16x9          = -0.065538, -0.010019, -0.089824
         aim_hud_offset_rot               = 0.002898, -0.003613, 0
         aim_hud_offset_rot_16x9          = 0.002898, -0.003613, 0	
+;----------------------------------------------------------------------------------
+[wpn_ace52_gee36]:wpn_ace52
+
+1icon_layer				= gee36
+1icon_layer_x			= 74
+1icon_layer_y			= 1
+
+inv_weight                                         = 4.56
+scope_status                                       = 1
+scope_zoom_factor                                  = 40
+zoom_rotate_time                                   = 0.25
+scope_dynamic_zoom                                 = off
+
+scope_zoom_factor_alt             = 0
+
+use_alt_aim_hud                   = true
+
+hud                                      = wpn_ace52_gee36_hud
+
+[wpn_ace52_gee36_hud]:wpn_ace52_longscope_hud
+item_visual                              = anomaly_weapons\wpn_ace52\wpn_ace52_gee36_hud.ogf	
+        aim_hud_offset_alt_pos           = -0.066191, -0.01714, 0
+        aim_hud_offset_alt_pos_16x9      = -0.066191, -0.01714, 0
+        aim_hud_offset_alt_rot           = 0.002201, 0.000967, 0
+        aim_hud_offset_alt_rot_16x9      = 0.002201, 0.000967, 0
+        aim_hud_offset_pos               = -0.065425, -0.001703, -0.086788
+        aim_hud_offset_pos_16x9          = -0.065425, -0.001703, -0.086788
+        aim_hud_offset_rot               = 0.003448, -0.003486, 0
+        aim_hud_offset_rot_16x9          = 0.003448, -0.003486, 0	
 ;==============================================================================		
 ![wpn_ak5c_bas]
 lewd_lens_hide_enabled       = true
@@ -463,6 +493,7 @@ lewd_lens_hide_aim_mode      = true, false, false
         aim_hud_offset_rot_16x9          = 0.015429, 0.005722, 0
 ;==============================================================================
 ![wpn_amb17]
+>scopes				= gee36
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = lens
 lewd_lens_hide_delays        = 0.1,0
@@ -531,15 +562,38 @@ lewd_lens_hide_aim_mode      = true, false, false
         aim_hud_offset_pos_16x9          = -0.055575, 0.007026, -0.060374
         aim_hud_offset_rot               = 0.00969, 0.004867, 0
         aim_hud_offset_rot_16x9          = 0.00969, 0.004867, 0	
+
+[wpn_amb17_gee36]:wpn_amb17
+
+        hud                         = wpn_amb17_gee36_hud
+
+        1icon_layer                  = gee36
+        1icon_layer_x                = 65
+        1icon_layer_y                = -21
+
+        scope_status                = 1
+        scope_dynamic_zoom          = off
+        scope_zoom_factor                = 40
+        scope_texture                    =	
+		
+[wpn_amb17_gee36_hud]:wpn_amb17_hud
+item_visual                              = dynamics\weapons\wpn_amb17\wpn_amb17_gee36_hud.ogf
+        aim_hud_offset_alt_pos           = -0.078, -0.051202, -0.03
+        aim_hud_offset_alt_pos_16x9      = -0.078, -0.051202, -0.03
+        aim_hud_offset_pos               = -0.055791, 0.005689, -0.099274
+        aim_hud_offset_pos_16x9          = -0.055791, 0.005689, -0.099274
+        aim_hud_offset_rot               = 0.00871, 0.005087, 0.0188
+        aim_hud_offset_rot_16x9          = 0.00871, 0.005087, 0.0188		
 ;==============================================================================
 ![wpn_ash12]
->scopes                                   = cortex
+>scopes                                   = cortex, gee36
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = zatvor2
 lewd_lens_hide_delays        = 0.1,0
 lewd_lens_hide_aim_mode      = true, false, false
 
 ![wpn_ash12_sup]
+scopes 							= none 
 parent_section = wpn_ash12_sup
 	3ds_reticle_size = 7.3
 	3ds_shadow_project = 3.08
@@ -578,6 +632,30 @@ item_visual                              = dynamics\weapons\wpn_ash12\wpn_ash12_
         aim_hud_offset_pos_16x9          = -0.106292, -0.002756, -0.061096
         aim_hud_offset_rot               = 0.003081, 0.005502, 0.0188
         aim_hud_offset_rot_16x9          = 0.003081, 0.005502, 0.0188
+		
+[wpn_ash12_gee36]:wpn_ash12
+visual                                   = dynamics\weapons\wpn_ash12\wpn_ash12.ogf
+        hud                         = wpn_ash12_gee36_hud
+
+        1icon_layer                  = gee36
+        1icon_layer_x                = 52
+        1icon_layer_y                = -10
+
+        scope_status                = 1
+        scope_dynamic_zoom          = off
+        scope_zoom_factor                = 40
+        scope_texture                    =	
+		
+[wpn_ash12_gee36_hud]:wpn_ash12_hud
+item_visual                              = dynamics\weapons\wpn_ash12\wpn_ash12_gee36_hud.ogf
+        aim_hud_offset_alt_pos           = -0.106568, -0.012307, -0.155502
+        aim_hud_offset_alt_pos_16x9      = -0.106568, -0.012307, -0.155502
+        aim_hud_offset_alt_rot           = -0.001068, 0.009111, 0
+        aim_hud_offset_alt_rot_16x9      = -0.001068, 0.009111, 0
+        aim_hud_offset_pos               = -0.105949, 0.005617, -0.155502
+        aim_hud_offset_pos_16x9          = -0.105949, 0.005617, -0.155502
+        aim_hud_offset_rot               = 0.003387, 0.005528, 0.0188
+        aim_hud_offset_rot_16x9          = 0.003387, 0.005528, 0.0188	
 ;==============================================================================
 ![wpn_aug_a3_custom_bas]
 >scopes                                   = uh2
@@ -618,7 +696,7 @@ item_visual                              = dynamics\weapons\wpn_aug_a3_custom_ba
 ;==============================================================================		
 ![wpn_aug_merc]
 parent_section				 = wpn_aug_merc
->scopes						 = triji, spec_alt, mark8_rmr
+>scopes						 = triji, spec_alt, mark8_rmr, gee36
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = lens
 lewd_lens_hide_delays        = 0.1,0
@@ -816,7 +894,39 @@ item_visual                              = anomaly_weapons\wpn_aug_thales\wpn_au
         aim_hud_offset_pos_16x9          = -0.059565, 0.015787, -0.046001
         aim_hud_offset_rot               = 0.004619, -0.003443, 0.001
         aim_hud_offset_rot_16x9          = 0.004619, -0.003443, 0.001
-;-------------------------------------------------------------------------------------------------------------------------------		
+;-------------------------------------------------------------------------------------------------------------------------------	
+[wpn_aug_merc_gee36]:wpn_aug_merc
+
+	3ds_reticle_size = 4.5
+	3ds_shadow_project = 3.8	
+	magnification = 3
+
+1icon_layer				= gee36
+1icon_layer_x			= 60
+1icon_layer_y			= -14
+
+inv_weight                                         = 4.56
+scope_status                                       = 1
+scope_zoom_factor                                  = 40
+zoom_rotate_time                                   = 0.25
+scope_dynamic_zoom                                 = off
+
+scope_zoom_factor_alt             = 0
+
+use_alt_aim_hud                   = true
+
+hud                                      = wpn_aug_merc_gee36_hud
+
+[wpn_aug_merc_gee36_hud]:wpn_aug_merc_hud
+item_visual                              = anomaly_weapons\wpn_aug_thales\wpn_aug_thales_gee36_hud.ogf	
+        aim_hud_offset_alt_pos           = -0.06032, -0.004112, -0.081189
+        aim_hud_offset_alt_pos_16x9      = -0.06032, -0.004112, -0.081189
+        aim_hud_offset_alt_rot           = 0.00387, 0.001125, -0.010025
+        aim_hud_offset_alt_rot_16x9      = 0.00387, 0.001125, -0.010025
+        aim_hud_offset_pos               = -0.059365, 0.014712, -0.081189
+        aim_hud_offset_pos_16x9          = -0.059365, 0.014712, -0.081189
+        aim_hud_offset_rot               = 0.004269, -0.003344, -0.008708
+        aim_hud_offset_rot_16x9          = 0.004269, -0.003344, -0.008708	
 ;==============================================================================
 ![wpn_fal_aus_kit_aus_tri]
 	3ds_reticle_size = 8
@@ -888,6 +998,7 @@ lewd_lens_hide_aim_mode      = true, false, false
         aim_hud_offset_alt_rot_16x9      = -0.021031, -0.017624, 0.78
 ;==============================================================================
 ![wpn_fal_sa58_osw]
+>scopes					= gee36
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = lens
 lewd_lens_hide_delays        = 0.1,0
@@ -1010,7 +1121,34 @@ lewd_lens_hide_aim_mode      = true, false, false
         aim_hud_offset_alt_pos           = -0.089814, -0.081875, -0.09
         aim_hud_offset_alt_pos_16x9      = -0.089814, -0.081875, -0.09
         aim_hud_offset_alt_rot           = -0.014907, 0.020632, 0.78
-        aim_hud_offset_alt_rot_16x9      = -0.014907, 0.020632, 0.78		
+        aim_hud_offset_alt_rot_16x9      = -0.014907, 0.020632, 0.78	
+
+[wpn_fal_sa58_osw_gee36]:wpn_fal_sa58_osw
+
+1icon_layer				= gee36
+1icon_layer_x			= 87
+1icon_layer_y			= -7
+
+inv_weight                                         = 3.6
+scope_status                                       = 1
+scope_zoom_factor                                  = 40
+zoom_rotate_time                                   = 0.25
+scope_dynamic_zoom                                 = off
+
+use_alt_aim_hud                   = true
+
+hud                                      = wpn_fal_sa58_osw_gee36_hud
+
+[wpn_fal_sa58_osw_gee36_hud]:wpn_fal_sa58_osw_hud
+item_visual                              = dynamics\weapons\wpn_fal_sa58_osw\wpn_fal_sa58_osw_gee36_hud.ogf	
+        aim_hud_offset_alt_pos           = -0.087125, -0.023777, -0.175292
+        aim_hud_offset_alt_pos_16x9      = -0.087125, -0.023777, -0.175292
+        aim_hud_offset_alt_rot           = -0.004891, 0.018321, -0.010025
+        aim_hud_offset_alt_rot_16x9      = -0.004891, 0.018321, -0.010025
+        aim_hud_offset_pos               = -0.085079, -0.007073, -0.175292
+        aim_hud_offset_pos_16x9          = -0.085079, -0.007073, -0.175292
+        aim_hud_offset_rot               = -0.00319, 0.010996, 0
+        aim_hud_offset_rot_16x9          = -0.00319, 0.010996, 0		
 ;==============================================================================
  ![wpn_fn2000_nimble]
 lewd_lens_hide_enabled       = true
@@ -1842,6 +1980,7 @@ lewd_lens_hide_aim_mode      = true, false, false
         aim_hud_offset_rot_16x9          = 0.007765, 0.002727, -0.002611	
 ;==============================================================================	
 ![wpn_scar_siber]
+>scopes					= gee36
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = lens
 lewd_lens_hide_delays        = 0.1,0
@@ -1958,8 +2097,36 @@ lewd_lens_hide_aim_mode      = true, false, false
         aim_hud_offset_pos_16x9          = -0.050819, 0.005534, -0.079724
         aim_hud_offset_rot               = 0.005299, -0.021605, 0
         aim_hud_offset_rot_16x9          = 0.005299, -0.021605, 0
+		
+[wpn_scar_siber_gee36]:wpn_scar_siber
+
+1icon_layer				= gee36
+1icon_layer_x			= 83
+1icon_layer_y			= -8
+
+inv_weight                                         = 4.65
+scope_status                                       = 1
+scope_zoom_factor                                  = 40
+zoom_rotate_time                                   = 0.25
+scope_dynamic_zoom                                 = off
+
+use_alt_aim_hud                   = true
+
+hud                                      = wpn_scar_siber_gee36_hud
+
+[wpn_scar_siber_gee36_hud]:wpn_scar_siber_hud
+item_visual                              = dynamics\weapons\wpn_scar_siber\wpn_scar_siber_gee36_hud.ogf	
+        aim_hud_offset_alt_pos           = -0.051538, -0.009086, -0.113162
+        aim_hud_offset_alt_pos_16x9      = -0.051538, -0.009086, -0.113162
+        aim_hud_offset_alt_rot           = 0.001967, -0.017544, 0
+        aim_hud_offset_alt_rot_16x9      = 0.001967, -0.017544, 0
+        aim_hud_offset_pos               = -0.050811, 0.004935, -0.113162
+        aim_hud_offset_pos_16x9          = -0.050811, 0.004935, -0.113162
+        aim_hud_offset_rot               = 0.004092, -0.021425, 0
+        aim_hud_offset_rot_16x9          = 0.004092, -0.021425, 0			
 ;==============================================================================	
 ![wpn_scar_siber_m1]
+>scopes					= gee36
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = lens
 lewd_lens_hide_delays        = 0.1,0
@@ -2071,8 +2238,36 @@ lewd_lens_hide_aim_mode      = true, false, false
         aim_hud_offset_rot_16x9          = 0.00157, -0.003563, 0
 		aim_hud_offset_alt_pos           = -0.077158, -0.034807, -0.055
         aim_hud_offset_alt_pos_16x9      = -0.077158, -0.034807, -0.055
+		
+[wpn_scar_siber_m1_gee36]:wpn_scar_siber_m1
+
+1icon_layer				= gee36
+1icon_layer_x			= 83
+1icon_layer_y			= -8
+
+inv_weight                                         = 4.65
+scope_status                                       = 1
+scope_zoom_factor                                  = 40
+zoom_rotate_time                                   = 0.25
+scope_dynamic_zoom                                 = off
+
+use_alt_aim_hud                   = true
+
+hud                                      = wpn_scar_siber_m1_gee36_hud
+
+[wpn_scar_siber_m1_gee36_hud]:wpn_scar_siber_m1_hud
+item_visual                              = dynamics\weapons\wpn_scar_siber_m1\wpn_scar_siber_m1_gee36_hud.ogf	
+        aim_hud_offset_alt_pos           = -0.051465, -0.002362, -0.1192
+        aim_hud_offset_alt_pos_16x9      = -0.051465, -0.002362, -0.1192
+        aim_hud_offset_alt_rot           = -0.00011, 0.001558, 0
+        aim_hud_offset_alt_rot_16x9      = -0.00011, 0.001558, 0
+        aim_hud_offset_pos               = -0.050522, 0.01157, -0.1192
+        aim_hud_offset_pos_16x9          = -0.050522, 0.01157, -0.1192
+        aim_hud_offset_rot               = 0.001691, -0.003314, 0
+        aim_hud_offset_rot_16x9          = 0.001691, -0.003314, 0			
 ;==============================================================================	
 ![wpn_scar_siber_m2]
+>scopes					= gee36
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = lens
 lewd_lens_hide_delays        = 0.1,0
@@ -2179,7 +2374,29 @@ use_alt_aim_hud		=	true
         aim_hud_offset_pos_16x9          = -0.051892, 0.007054, -0.086394
         aim_hud_offset_rot               = 0.017341, 0.003622, 0
         aim_hud_offset_rot_16x9          = 0.017341, 0.003622, 0
-		
+
+[wpn_scar_siber_m2_gee36]:wpn_scar_siber_m2
+
+1icon_layer				= gee36
+1icon_layer_x			= 75
+1icon_layer_y			= -9
+
+inv_weight                                         = 4.65
+scope_status                                       = 1
+scope_zoom_factor                                  = 40
+zoom_rotate_time                                   = 0.25
+scope_dynamic_zoom                                 = off
+
+use_alt_aim_hud                   = true
+
+hud                                      = wpn_scar_siber_m2_gee36_hud
+
+[wpn_scar_siber_m2_gee36_hud]:wpn_scar_siber_m2_hud
+item_visual                              = dynamics\weapons\wpn_scar_siber_m2\wpn_scar_siber_m2_gee36_hud.ogf	
+        aim_hud_offset_pos               = -0.052456, 0.009078, -0.112379
+        aim_hud_offset_pos_16x9          = -0.052456, 0.009078, -0.112379
+        aim_hud_offset_rot               = 0.017007, 0.003143, 0
+        aim_hud_offset_rot_16x9          = 0.017007, 0.003143, 0		
 ;==============================================================================	
 ![wpn_sig550]
 >scopes 			                         = leupold, pn23, specter, marchf
@@ -2281,7 +2498,7 @@ item_visual                              = anomaly_weapons\wpn_sig550\wpn_sig550
         aim_hud_offset_rot_16x9          = 0.04025, -3.7e-05, 0.00387
 ;==============================================================================	
 ![wpn_sig550_custom]
->scopes 			                         = leupold, pn23, specter, marchf
+>scopes 			                         = leupold, pn23, specter, marchf, gee36
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = bayonet
 lewd_lens_hide_delays        = 0.1,0
@@ -2379,18 +2596,39 @@ item_visual                              = anomaly_weapons\wpn_sig550\wpn_sig550
         aim_hud_offset_pos_16x9          = 0.024032, -0.027266, 0.006639
         aim_hud_offset_rot               = 0.052795, 0.00238, 0.00387
         aim_hud_offset_rot_16x9          = 0.052795, 0.00238, 0.00387	
+
+[wpn_sig550_custom_gee36]:wpn_sig550_custom
+1icon_layer				= gee36
+1icon_layer_x			= 92
+1icon_layer_y			= -13
+inv_weight                                         = 4.14
+scope_status                                       = 1
+scope_zoom_factor                                  = 40
+zoom_rotate_time                                   = 0.25
+scope_dynamic_zoom                                 = off
+scope_zoom_factor_alt             = 0
+use_alt_aim_hud                   = true
+hud                                      = wpn_sig550_custom_gee36_hud
+
+[wpn_sig550_custom_gee36_hud]:wpn_sig550_custom_hud
+item_visual                              = anomaly_weapons\wpn_sig550\wpn_sig550_sk1_gee36_hud.ogf	
+        aim_hud_offset_pos               = 0.023836, -0.025333, -0.032816
+        aim_hud_offset_pos_16x9          = 0.023836, -0.025333, -0.032816
+        aim_hud_offset_rot               = 0.052879, 0.002296, -0.008708
+        aim_hud_offset_rot_16x9          = 0.052879, 0.002296, -0.008708		
 ;==============================================================================	
 ![wpn_sig550_luckygun]
->scopes 			                         = leupold, pn23, specter, marchf
+>scopes 			                         = leupold, pn23, specter, marchf, gee36
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = bayonet
 lewd_lens_hide_delays        = 0.1,0
 lewd_lens_hide_aim_mode      = true, false, false
+use_alt_aim_hud                   = true
+
 ![wpn_sig550_luckygun_hud]
 !anm_shots
 !anm_shot_l
 !anm_shots_g 
-use_alt_aim_hud                   = true
         aim_hud_offset_alt_pos           = 0.000911, -0.021474, 0
         aim_hud_offset_alt_pos_16x9      = 0.000911, -0.021474, 0
         aim_hud_offset_alt_rot           = 0.012081, 0.011524, 0.75
@@ -2485,6 +2723,26 @@ item_visual                              = anomaly_weapons\wpn_sig550\wpn_sig550
         aim_hud_offset_pos_16x9          = 0.023337, -0.025814, 0.018801
         aim_hud_offset_rot               = 0.040001, -0.000118, 0.00387
         aim_hud_offset_rot_16x9          = 0.040001, -0.000118, 0.00387
+		
+[wpn_sig550_luckygun_gee36]:wpn_sig550_luckygun
+1icon_layer				= gee36
+1icon_layer_x			= 92
+1icon_layer_y			= -13
+inv_weight                                         = 4.26
+scope_status                                       = 1
+scope_zoom_factor                                  = 40
+zoom_rotate_time                                   = 0.25
+scope_dynamic_zoom                                 = off
+scope_zoom_factor_alt             = 0
+use_alt_aim_hud                   = true
+hud                                      = wpn_sig550_luckygun_gee36_hud
+
+[wpn_sig550_luckygun_gee36_hud]:wpn_sig550_luckygun_hud
+item_visual                              = anomaly_weapons\wpn_sig550\wpn_sig550_luckygun_gee36_hud.ogf	
+        aim_hud_offset_pos               = 0.023185, -0.023933, -0.021021
+        aim_hud_offset_pos_16x9          = 0.023185, -0.023933, -0.021021
+        aim_hud_offset_rot               = 0.040428, -0.000102, -0.008708
+        aim_hud_offset_rot_16x9          = 0.040428, -0.000102, -0.008708		
 ;==============================================================================	
 ![wpn_sig552]
 >scopes 			                         = leupold, marchf, pn23, specter
@@ -3190,6 +3448,7 @@ lewd_lens_hide_aim_mode      = true, false, false
 1icon_layer			    = pso1m21		
 ;==============================================================================
 ![wpn_ak12_custom]
+>scopes					= gee36
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = lens
 lewd_lens_hide_delays        = 0.1,0
@@ -3324,8 +3583,28 @@ lewd_lens_hide_aim_mode      = true, false, false
         aim_hud_offset_pos_16x9          = -0.06909, 0.009064, -0.079662
         aim_hud_offset_rot               = 0.020081, 0.006608, 0
         aim_hud_offset_rot_16x9          = 0.020081, 0.006608, 0
+		
+[wpn_ak12_custom_gee36]:wpn_ak12_custom
+        hud                         = wpn_ak12_custom_gee36_hud
+
+        1icon_layer                  = gee36
+        1icon_layer_x                = 73
+        1icon_layer_y                = -14
+
+        scope_status                = 1
+        scope_dynamic_zoom          = off
+        scope_zoom_factor                = 40
+        scope_texture                    =	
+		
+[wpn_ak12_custom_gee36_hud]:wpn_ak12_custom_hud
+item_visual                              = dynamics\weapons\wpn_ak12_custom\wpn_ak12_custom_gee36_hud.ogf
+        aim_hud_offset_pos               = -0.057046, -0.003864, -0.145588
+        aim_hud_offset_pos_16x9          = -0.057046, -0.003864, -0.145588
+        aim_hud_offset_rot               = -0.007274, -0.031, 0
+        aim_hud_offset_rot_16x9          = -0.007274, -0.031, 0		
 ;==============================================================================
 ![wpn_ak12_m1]
+>scopes				= gee36
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = lens
 lewd_lens_hide_delays        = 0.1,0
@@ -3433,6 +3712,29 @@ lewd_lens_hide_aim_mode      = true, false, false
         aim_hud_offset_pos_16x9          = -0.059389, 0.007464, -0.049469
         aim_hud_offset_rot               = 0.033069, 0.006185, 0.008665
         aim_hud_offset_rot_16x9          = 0.033069, 0.006185, 0.008665
+		
+[wpn_ak12_m1_gee36]:wpn_ak12_m1
+        hud                         = wpn_ak12_m1_gee36_hud
+
+        1icon_layer                  = gee36
+        1icon_layer_x                = 65
+        1icon_layer_y                = -7
+
+        scope_status                = 1
+        scope_dynamic_zoom          = off
+        scope_zoom_factor                = 40
+        scope_texture                    =	
+		
+[wpn_ak12_m1_gee36_hud]:wpn_ak12_m1_hud
+item_visual                              = dynamics\weapons\wpn_ak12_m1\wpn_ak12_m1_gee36_hud.ogf
+        aim_hud_offset_alt_pos           = -0.058216, -0.023091, -0.066203
+        aim_hud_offset_alt_pos_16x9      = -0.058216, -0.023091, -0.066203
+        aim_hud_offset_alt_rot           = 0.007, 0.001343, 0
+        aim_hud_offset_alt_rot_16x9      = 0.007, 0.001343, 0
+        aim_hud_offset_pos               = -0.057535, -0.007231, -0.066203
+        aim_hud_offset_pos_16x9          = -0.057535, -0.007231, -0.066203
+        aim_hud_offset_rot               = 0.00991, -0.002904, 0
+        aim_hud_offset_rot_16x9          = 0.00991, -0.002904, 0			
 ;==============================================================================
 ![wpn_ak74_isg]
 lewd_lens_hide_enabled       = true
@@ -4451,6 +4753,7 @@ lewd_lens_hide_aim_mode      = true, false, false
 1icon_layer			    = pso1m21			
 ;==============================================================================
 ![wpn_akm_alfa]
+>scopes				= gee36
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = lens
 lewd_lens_hide_delays        = 0.1,0
@@ -4571,6 +4874,29 @@ lewd_lens_hide_aim_mode      = true, false, false
         aim_hud_offset_pos_16x9          = -0.073348, 0.021054, -0.112505
         aim_hud_offset_rot               = -0.004548, -0.011942, 0
         aim_hud_offset_rot_16x9          = -0.004548, -0.011942, 0
+		
+[wpn_akm_alfa_gee36]:wpn_akm_alfa
+        hud                         = wpn_akm_alfa_gee36_hud
+
+        1icon_layer                  = gee36
+        1icon_layer_x                = 65
+        1icon_layer_y                = -8
+
+        scope_status                = 1
+        scope_dynamic_zoom          = off
+        scope_zoom_factor                = 40
+        scope_texture                    =	
+		
+[wpn_akm_alfa_gee36_hud]:wpn_akm_alfa_hud
+item_visual                              = dynamics\weapons\wpn_akm_alfa\wpn_akm_alfa_gee36_hud.ogf
+        aim_hud_offset_alt_pos           = -0.074968, -0.000439, -0.140646
+        aim_hud_offset_alt_pos_16x9      = -0.074968, -0.000439, -0.140646
+        aim_hud_offset_alt_rot           = -0.005957, -0.007322, 0
+        aim_hud_offset_alt_rot_16x9      = -0.005957, -0.007322, 0
+        aim_hud_offset_pos               = -0.073821, 0.016729, -0.140646
+        aim_hud_offset_pos_16x9          = -0.073821, 0.016729, -0.140646
+        aim_hud_offset_rot               = -0.004171, -0.012042, 0
+        aim_hud_offset_rot_16x9          = -0.004171, -0.012042, 0		
 ;==============================================================================
 ![wpn_akm_isg]
 lewd_lens_hide_enabled       = true
@@ -4715,11 +5041,12 @@ item_visual                              = anomaly_weapons\wpn_akm\wpn_akms_sk1_
         aim_hud_offset_rot_16x9          = -0.00304, -0.015948, -0.01
 ;==============================================================================
 ![wpn_rpk74_16]
+>scopes					= gee36
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = lens
 lewd_lens_hide_delays        = 0.1,0
 lewd_lens_hide_aim_mode      = true, false, false
-![wpn_rpk74_16_hud]\
+![wpn_rpk74_16_hud]
 !anm_shots
 !anm_shot_l
 
@@ -4835,6 +5162,33 @@ lewd_lens_hide_aim_mode      = true, false, false
         aim_hud_offset_pos_16x9          = -0.080078, 0.006177, -0.098885
         aim_hud_offset_rot               = -0.004604, -0.003282, -0.005
         aim_hud_offset_rot_16x9          = -0.004604, -0.003282, -0.005
+		
+[wpn_rpk74_16_gee36]:wpn_rpk74_16
+
+1icon_layer				= gee36
+1icon_layer_x			= 93
+1icon_layer_y			= -9
+
+inv_weight                                         = 4.65
+scope_status                                       = 1
+scope_zoom_factor                                  = 40
+zoom_rotate_time                                   = 0.25
+scope_dynamic_zoom                                 = off
+
+use_alt_aim_hud                   = true
+
+hud                                      = wpn_rpk74_16_gee36_hud
+
+[wpn_rpk74_16_gee36_hud]:wpn_rpk74_16_hud
+item_visual                              = dynamics\weapons\wpn_rpk74_16\wpn_rpk74_16_gee36_hud.ogf	
+        aim_hud_offset_alt_pos           = -0.08069, -0.016578, -0.118563
+        aim_hud_offset_alt_pos_16x9      = -0.08069, -0.016578, -0.118563
+        aim_hud_offset_alt_rot           = -0.006194, 0.000505, 0
+        aim_hud_offset_alt_rot_16x9      = -0.006194, 0.000505, 0
+        aim_hud_offset_pos               = -0.079947, 0.001099, -0.118563
+        aim_hud_offset_pos_16x9          = -0.079947, 0.001099, -0.118563
+        aim_hud_offset_rot               = -0.004025, -0.00357, 0
+        aim_hud_offset_rot_16x9          = -0.004025, -0.00357, 0			
 ;==============================================================================		
 ![wpn_val]
 lewd_lens_hide_enabled       = true
@@ -5046,6 +5400,7 @@ lewd_lens_hide_aim_mode      = true, false, false
         aim_hud_offset_rot_16x9          = 0.015508, 0.007396, 0
 ;==============================================================================
 ![wpn_vintorez_isg]
+>scopes					= gee36
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = lens
 lewd_lens_hide_delays        = 0.1,0
@@ -5195,6 +5550,29 @@ lewd_lens_hide_aim_mode      = true, false, false
         aim_hud_offset_pos_16x9          = -0.075293, 0.023577, -0.108404
         aim_hud_offset_rot               = 0.019768, 0.009144, 0
         aim_hud_offset_rot_16x9          = 0.019768, 0.009144, 0
+		
+[wpn_vintorez_isg_gee36]:wpn_vintorez_isg
+
+1icon_layer				= gee36
+1icon_layer_x			= 90
+1icon_layer_y			= -26
+
+inv_weight                                         = 4.65
+scope_status                                       = 1
+scope_zoom_factor                                  = 40
+zoom_rotate_time                                   = 0.25
+scope_dynamic_zoom                                 = off
+
+use_alt_aim_hud                   = true
+
+hud                                      = wpn_vintorez_isg_gee36_hud
+
+[wpn_vintorez_isg_gee36_hud]:wpn_vintorez_isg_hud
+item_visual                              = dynamics\weapons\wpn_vintorez_isg\wpn_vintorez_isg_gee36_hud.ogf	
+        aim_hud_offset_pos               = -0.087194, 0.019948, -0.135997
+        aim_hud_offset_pos_16x9          = -0.087194, 0.019948, -0.135997
+        aim_hud_offset_rot               = 0.020188, 0.009163, 0
+        aim_hud_offset_rot_16x9          = 0.020188, 0.009163, 0		
 ;==============================================================================	
 ![wpn_xm4]
 lewd_lens_hide_enabled       = true
@@ -5295,6 +5673,7 @@ lewd_lens_hide_aim_mode      = true, false, false
         aim_hud_offset_rot_16x9          = 0.014397, 0.005589, 0
 ;==============================================================================
 ![wpn_m4_butcher]
+>scopes					= gee36
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = lens
 lewd_lens_hide_delays        = 0.1,0
@@ -5378,8 +5757,32 @@ lewd_lens_hide_aim_mode      = true, false, false
         aim_hud_offset_pos_16x9          = -0.066956, -0.001954, -0.044971
         aim_hud_offset_rot               = 0.018582, 0.006578, 0
         aim_hud_offset_rot_16x9          = 0.018582, 0.006578, 0
+		
+[wpn_m4_butcher_gee36]:wpn_m4_butcher
+
+1icon_layer				= gee36
+1icon_layer_x			= 76
+1icon_layer_y			= -9
+
+inv_weight                                         = 3.6
+scope_status                                       = 1
+scope_zoom_factor                                  = 40
+zoom_rotate_time                                   = 0.25
+scope_dynamic_zoom                                 = off
+
+use_alt_aim_hud                   = true
+
+hud                                      = wpn_m4_butcher_gee36_hud
+
+[wpn_m4_butcher_gee36_hud]:wpn_m4_butcher_hud
+item_visual                              = dynamics\weapons\wpn_m4_butcher\wpn_m4_butcher_gee36_hud.ogf	
+        aim_hud_offset_pos               = -0.066961, 0.009485, -0.099061
+        aim_hud_offset_pos_16x9          = -0.066961, 0.009485, -0.099061
+        aim_hud_offset_rot               = 0.019112, 0.006682, 0
+        aim_hud_offset_rot_16x9          = 0.019112, 0.006682, 0			
 ;==============================================================================
 ![wpn_m4_ru556]
+>scopes					= gee36
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = lens
 lewd_lens_hide_delays        = 0.1,0
@@ -5484,9 +5887,33 @@ lewd_lens_hide_aim_mode      = true, false, false
         aim_hud_offset_alt_pos           = -0.080841, -0.032204, -0.02
         aim_hud_offset_alt_pos_16x9      = -0.080841, -0.032204, -0.02
         aim_hud_offset_alt_rot           = 0.027954, -0.024, 0.78
-        aim_hud_offset_alt_rot_16x9      = 0.027954, -0.024, 0.78		
+        aim_hud_offset_alt_rot_16x9      = 0.027954, -0.024, 0.78
+
+[wpn_m4_ru556_gee36]:wpn_m4_ru556
+
+1icon_layer				= gee36
+1icon_layer_x			= 89
+1icon_layer_y			= -7
+
+inv_weight                                         = 4.65
+scope_status                                       = 1
+scope_zoom_factor                                  = 40
+zoom_rotate_time                                   = 0.25
+scope_dynamic_zoom                                 = off
+
+use_alt_aim_hud                   = true
+
+hud                                      = wpn_m4_ru556_gee36_hud
+
+[wpn_m4_ru556_gee36_hud]:wpn_m4_ru556_hud
+item_visual                              = dynamics\weapons\wpn_ru556\wpn_ru556_gee36_hud.ogf	
+        aim_hud_offset_pos               = -0.057858, 0.009987, -0.100002
+        aim_hud_offset_pos_16x9          = -0.057858, 0.009987, -0.100002
+        aim_hud_offset_rot               = 0.007605, 0.001482, 0
+        aim_hud_offset_rot_16x9          = 0.007605, 0.001482, 0			
 ;==============================================================================
 ![wpn_m4_tac]
+>scopes					= gee36
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = muzzle_gl
 lewd_lens_hide_delays        = 0.1,0
@@ -5604,6 +6031,33 @@ lewd_lens_hide_aim_mode      = true, false, false
         aim_hud_offset_pos_16x9          = -0.049162, -0.003219, -0.028127
         aim_hud_offset_rot               = 0.00162, -0.012042, 0
         aim_hud_offset_rot_16x9          = 0.00162, -0.012042, 0
+		
+[wpn_m4_tac_gee36]:wpn_m4_tac
+
+1icon_layer				= gee36
+1icon_layer_x			= 79
+1icon_layer_y			= -12
+
+inv_weight                                         = 3.6
+scope_status                                       = 1
+scope_zoom_factor                                  = 40
+zoom_rotate_time                                   = 0.25
+scope_dynamic_zoom                                 = off
+
+use_alt_aim_hud                   = true
+
+hud                                      = wpn_m4_tac_gee36_hud
+
+[wpn_m4_tac_gee36_hud]:wpn_m4_tac_hud
+item_visual                              = dynamics\weapons\wpn_m4_tac\wpn_m4_tac_gee36_hud.ogf	
+        aim_hud_offset_alt_pos           = -0.050732, -0.018971, -0.079372
+        aim_hud_offset_alt_pos_16x9      = -0.050732, -0.018971, -0.079372
+        aim_hud_offset_alt_rot           = 0.000141, -0.007708, 0
+        aim_hud_offset_alt_rot_16x9      = 0.000141, -0.007708, 0
+        aim_hud_offset_pos               = -0.050004, -0.003507, -0.079372
+        aim_hud_offset_pos_16x9          = -0.050004, -0.003507, -0.079372
+        aim_hud_offset_rot               = 0.001785, -0.011952, 0
+        aim_hud_offset_rot_16x9          = 0.001785, -0.011952, 0		
 ;==============================================================================
 ![wpn_m4a1_siber]
 lewd_lens_hide_enabled       = true
@@ -5727,6 +6181,7 @@ lewd_lens_hide_aim_mode      = true, false, false
 ;==============================================================================
 ![wpn_brn180]
 !hud_fov
+>scopes			= gee36
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = muzzle_gl
 lewd_lens_hide_delays        = 0.1,0
@@ -5837,9 +6292,37 @@ lewd_lens_hide_aim_mode      = true, false, false
         aim_hud_offset_pos_16x9          = -0.053181, 0.002826, -0.034332
         aim_hud_offset_rot               = 0.011753, 0.020689, 0
         aim_hud_offset_rot_16x9          = 0.011753, 0.020689, 0
+;-------------------------------------------------------------------------------------------------------------------------------	
+[wpn_brn180_gee36]:wpn_brn180
+1icon_layer				= gee36
+1icon_layer_x			= 103
+1icon_layer_y			= -8
+
+inv_weight                                         = 4.56
+scope_status                                       = 1
+scope_zoom_factor                                  = 40
+zoom_rotate_time                                   = 0.25
+scope_dynamic_zoom                                 = off
+
+scope_zoom_factor_alt             = 0
+
+use_alt_aim_hud                   = true
+
+hud                                      = wpn_brn180_gee36_hud
+
+[wpn_brn180_gee36_hud]:wpn_brn180_hud
+item_visual                              = anomaly_weapons\wpn_brn180\wpn_brn180_gee36_hud.ogf	
+        aim_hud_offset_alt_pos           = -0.053154, -0.012468, -0.059031
+        aim_hud_offset_alt_pos_16x9      = -0.053154, -0.012468, -0.059031
+        aim_hud_offset_alt_rot           = 0.009451, 0.024739, -0.010025
+        aim_hud_offset_alt_rot_16x9      = 0.009451, 0.024739, -0.010025
+        aim_hud_offset_pos               = -0.05251, 0.002716, -0.059031
+        aim_hud_offset_pos_16x9          = -0.05251, 0.002716, -0.059031
+        aim_hud_offset_rot               = 0.011904, 0.0205, 0
+        aim_hud_offset_rot_16x9          = 0.011904, 0.0205, 0
 ;==============================================================================	
 ![wpn_dtmdr_black]
->scopes                   	 = pn23
+>scopes                   	 = pn23, gee36
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = lens
 lewd_lens_hide_delays        = 0.1,0
@@ -5939,9 +6422,36 @@ item_visual				= dynamics\weapons\wpn_dtmdr_black\wpn_dtmdr_pn23_hud.ogf
         aim_hud_offset_pos_16x9          = -0.085359, 0.002011, -0.094581
         aim_hud_offset_rot               = 0.014245, 0.05695, -0.015
         aim_hud_offset_rot_16x9          = 0.014245, 0.05695, -0.015
+		
+[wpn_dtmdr_black_gee36]:wpn_dtmdr_black
+
+1icon_layer				= gee36
+1icon_layer_x			= 87
+1icon_layer_y			= -7
+
+inv_weight                                         = 3.6
+scope_status                                       = 1
+scope_zoom_factor                                  = 40
+zoom_rotate_time                                   = 0.25
+scope_dynamic_zoom                                 = off
+
+use_alt_aim_hud                   = true
+
+hud                                      = wpn_dtmdr_black_gee36_hud
+
+[wpn_dtmdr_black_gee36_hud]:wpn_dtmdr_black_hud
+item_visual                              = dynamics\weapons\wpn_dtmdr_black\wpn_dtmdr_gee36_hud.ogf	
+        aim_hud_offset_alt_pos           = -0.086317, -0.004019, -0.113012
+        aim_hud_offset_alt_pos_16x9      = -0.086317, -0.004019, -0.113012
+        aim_hud_offset_alt_rot           = 0.011936, 0.062, -0.010025
+        aim_hud_offset_alt_rot_16x9      = 0.011936, 0.062, -0.010025
+        aim_hud_offset_pos               = -0.085484, 0.011873, -0.113012
+        aim_hud_offset_pos_16x9          = -0.085484, 0.011873, -0.113012
+        aim_hud_offset_rot               = 0.014514, 0.057139, -0.015
+        aim_hud_offset_rot_16x9          = 0.014514, 0.057139, -0.015	
 ;==============================================================================	
 ![wpn_dtmdr]
->scopes                   	 = pn23
+>scopes                   	 = pn23, gee36
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = lens
 lewd_lens_hide_delays        = 0.1,0
@@ -6041,6 +6551,33 @@ item_visual				= dynamics\weapons\wpn_dtmdr\wpn_dtmdr_pn23_hud.ogf
         aim_hud_offset_pos_16x9          = -0.085359, 0.002011, -0.094581
         aim_hud_offset_rot               = 0.014245, 0.05695, -0.015
         aim_hud_offset_rot_16x9          = 0.014245, 0.05695, -0.015
+		
+[wpn_dtmdr_gee36]:wpn_dtmdr
+
+1icon_layer				= gee36
+1icon_layer_x			= 87
+1icon_layer_y			= -7
+
+inv_weight                                         = 3.6
+scope_status                                       = 1
+scope_zoom_factor                                  = 40
+zoom_rotate_time                                   = 0.25
+scope_dynamic_zoom                                 = off
+
+use_alt_aim_hud                   = true
+
+hud                                      = wpn_dtmdr_gee36_hud
+
+[wpn_dtmdr_gee36_hud]:wpn_dtmdr_hud
+item_visual                              = dynamics\weapons\wpn_dtmdr\wpn_dtmdr_gee36_hud.ogf	
+        aim_hud_offset_alt_pos           = -0.086317, -0.004019, -0.113012
+        aim_hud_offset_alt_pos_16x9      = -0.086317, -0.004019, -0.113012
+        aim_hud_offset_alt_rot           = 0.011936, 0.062, -0.010025
+        aim_hud_offset_alt_rot_16x9      = 0.011936, 0.062, -0.010025
+        aim_hud_offset_pos               = -0.085484, 0.011873, -0.113012
+        aim_hud_offset_pos_16x9          = -0.085484, 0.011873, -0.113012
+        aim_hud_offset_rot               = 0.014514, 0.057139, -0.015
+        aim_hud_offset_rot_16x9          = 0.014514, 0.057139, -0.015			
 ;==============================================================================		
 ![wpn_lewd_fad]
 lewd_lens_hide_enabled       = true

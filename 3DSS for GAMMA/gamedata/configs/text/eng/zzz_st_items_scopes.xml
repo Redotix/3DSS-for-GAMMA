@@ -454,5 +454,16 @@
 		%c[d_cyan] • %c[ui_gray_2] SR-2M Veresk\n
 		</text>
 	</string>
+
+	<string id="st_addon_scope_gee36">
+		<text>G36 Integrated Scope</text>
+	</string>
+	<string id="st_addon_scope_gee36_descr">
+		<text>%c[0,255,255,255]PROPERTIES:\n
+		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]Germany\n\n
+		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]H&K\n
+		%c[d_cyan] • %c[0,255,255,255] magnification: %c[ui_gray_2]3.0x\n \n
+		</text>
+	</string>
 	
 </string_table>
