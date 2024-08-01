@@ -13,7 +13,7 @@
 		<text>%c[0,255,255,255]PROPERTIES:\n
 		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]Russia\n
 		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]NPZ Optics State Plant\n
-		%c[d_cyan] • %c[0,255,255,255] magnification: %c[ui_gray_2]1.0x\n \n			
+		%c[d_cyan] • %c[0,255,255,255] Magnification: %c[ui_gray_2]1.0x\n \n			
 		</text>
 	</string>	
 
@@ -24,7 +24,7 @@
 		<text>%c[0,255,255,255]PROPERTIES:\n
 		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]Russia\n
 		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]BelOMO\n
-		%c[d_cyan] • %c[0,255,255,255] magnification: %c[ui_gray_2]1x\n \n			
+		%c[d_cyan] • %c[0,255,255,255] Magnification: %c[ui_gray_2]1x\n \n			
 		</text>
 	</string>
 
@@ -35,7 +35,7 @@
 		<text>%c[0,255,255,255]PROPERTIES:\n
 		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]Russia\n
 		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]VOMZ\n
-		%c[d_cyan] • %c[0,255,255,255] magnification: %c[ui_gray_2]4.0x\n \n			
+		%c[d_cyan] • %c[0,255,255,255] Magnification: %c[ui_gray_2]4.0x\n \n			
 		</text>	
 	</string>
 
@@ -46,7 +46,7 @@
 		<text>%c[0,255,255,255]PROPERTIES:\n
 		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]Russia\n
 		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]Valday\n
-		%c[d_cyan] • %c[0,255,255,255] magnification: %c[ui_gray_2]1.0x\n \n			
+		%c[d_cyan] • %c[0,255,255,255] Magnification: %c[ui_gray_2]1.0x\n \n			
 		</text>
 	</string>
 
@@ -57,7 +57,7 @@
 		<text>%c[0,255,255,255]PROPERTIES:\n
 		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]Russia\n
 		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]VOMZ\n
-		%c[d_cyan] • %c[0,255,255,255] magnification: %c[ui_gray_2]4.0x\n \n			
+		%c[d_cyan] • %c[0,255,255,255] Magnification: %c[ui_gray_2]4.0x\n \n			
 		</text>
 	</string>
 
@@ -68,7 +68,7 @@
 		<text>%c[0,255,255,255]PROPERTIES:\n
 		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]Russia\n
 		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]TsKIB SOO\n
-		%c[d_cyan] • %c[0,255,255,255] magnification: %c[ui_gray_2]4.0x\n \n
+		%c[d_cyan] • %c[0,255,255,255] Magnification: %c[ui_gray_2]4.0x\n \n
 		</text>		
 	</string>
 
@@ -79,7 +79,7 @@
 		<text>%c[0,255,255,255]PROPERTIES:\n
 		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]Russia\n
 		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]Valday\n
-		%c[d_cyan] • %c[0,255,255,255] magnification: %c[ui_gray_2]1.0x - 6.0x\n \n			
+		%c[d_cyan] • %c[0,255,255,255] Magnification: %c[ui_gray_2]1.0x - 6.0x\n \n			
 		</text>
 	</string>
 
@@ -90,8 +90,85 @@
 		<text>%c[0,255,255,255]PROPERTIES:\n
 		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]United States\n
 		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]Burris\n
-		%c[d_cyan] • %c[0,255,255,255] magnification: %c[ui_gray_2]1.0x - 4.0x\n \n			
+		%c[d_cyan] • %c[0,255,255,255] Magnification: %c[ui_gray_2]1.0x - 4.0x\n \n			
 		</text>
 	</string>		
+
+	<string id="st_addon_scope_romeo4">
+		<text>SIG Sauer ROMEO4 reflex sight</text>
+	</string>
+	<string id="st_addon_scope_romeo4_descr">
+		<text>%c[0,255,255,255]PROPERTIES:\n
+		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]United States\n
+		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]SIG Sauer\n
+		%c[d_cyan] • %c[0,255,255,255] Magnification: %c[ui_gray_2]1.0x\n \n			
+		</text>
+	</string>
+	
+	<string id="st_addon_scope_romeo8">
+		<text>SIG Sauer ROMEO8T reflex sight</text>
+	</string>
+	<string id="st_addon_scope_romeo8_descr">
+		<text>%c[0,255,255,255]PROPERTIES:\n
+		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]United States\n
+		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]SIG Sauer\n
+		%c[d_cyan] • %c[0,255,255,255] Magnification: %c[ui_gray_2]1.0x\n \n			
+		</text>
+	</string>
+
+	<string id="st_addon_scope_acro">
+		<text>Aimpoint ACRO P-1 reflex sight</text>
+	</string>
+	<string id="st_addon_scope_acro_descr">
+		<text>%c[0,255,255,255]PROPERTIES:\n
+		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]Sweden\n
+		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]Aimpoint\n
+		%c[d_cyan] • %c[0,255,255,255] Magnification: %c[ui_gray_2]1.0x\n \n			
+		</text>
+	</string>	
+
+	<string id="st_addon_scope_specter_hco">
+		<text>ELCAN Specter HCO holo sight</text>
+	</string>
+	<string id="st_addon_scope_specter_hco_descr">
+		<text>%c[0,255,255,255]PROPERTIES:\n
+		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]United States\n
+		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]Raytheon ELCAN Optical Technologies\n
+		%c[d_cyan] • %c[0,255,255,255] Magnification: %c[ui_gray_2]1.0x\n \n			
+		</text>
+	</string>
+
+	<string id="st_addon_scope_monstrum_2x32">
+		<text>Monstrum Tactical Scope 2x32</text>
+	</string>
+	<string id="st_addon_scope_monstrum_2x32_descr">
+		<text>%c[0,255,255,255]PROPERTIES:\n
+		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]United States\n
+		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]Monstrum Tactical\n
+		%c[d_cyan] • %c[0,255,255,255] Magnification: %c[ui_gray_2]2.0x\n \n			
+		</text>
+	</string>
+
+	<string id="st_addon_scope_trihawk_3x30">
+		<text>SwampFox Trihawk Prism Scope 3x30</text>
+	</string>
+	<string id="st_addon_scope_trihawk_3x30_descr">
+		<text>%c[0,255,255,255]PROPERTIES:\n
+		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]United States/China\n
+		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]SwampFox Optics\n
+		%c[d_cyan] • %c[0,255,255,255] Magnification: %c[ui_gray_2]3.0x\n \n			
+		</text>
+	</string>
+
+	<string id="st_addon_scope_ncstar_ado">
+		<text>NcSTAR ADO P4 Sniper Optic 3-9x42</text>
+	</string>
+	<string id="st_addon_scope_ncstar_ado_descr">
+		<text>%c[0,255,255,255]PROPERTIES:\n
+		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]United States/China\n
+		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]NcSTAR\n
+		%c[d_cyan] • %c[0,255,255,255] Magnification: %c[ui_gray_2]3.0-9.0x\n \n			
+		</text>
+	</string>	
 
 </string_table>
