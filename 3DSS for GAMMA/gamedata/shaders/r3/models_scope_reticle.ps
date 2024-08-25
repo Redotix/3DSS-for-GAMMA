@@ -72,7 +72,7 @@ float3 chroma_sample(float2 lens_tc, float2 back_tc, float power)
 float3 apply_nvg(float2 tc, float3 img)
 {
 	img = BlackandWhite(img);
-	img = Brightness(img, 0.3.5, 5);
+	img = Brightness(img, 0.35, 5);
 	img = clamp(img, 0, 1);
 	img = LevelsPass(img);
 	img = Grain2(img, tc);
