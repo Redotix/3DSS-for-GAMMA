@@ -280,7 +280,7 @@ float3 Grain2(float3 color, float2 texcoord)
 
 float3 Grain1(float3 color, float2 texcoord)
 {
-	float grainSize = 1.0;
+	float grainSize=1.0;
 	float grainAmount=0.500000;
 	float grainIntensity=0.300000;
 	float grainColor=0.000000;

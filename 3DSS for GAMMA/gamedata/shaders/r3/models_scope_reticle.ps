@@ -4,20 +4,40 @@
 	Link       : https://www.moddb.com/mods/stalker-anomaly/addons/shader-3d-scopes
 	Authors    : LVutner, party_50
 	Date       : 01.03.2024
-	Last Edit  : 12.03.2024
+	Last Edit  : 09.09.2024
 	=====================================================================
 */
 
 #include "common.h"
 #include "nv_utils.h"
+#include "thermal_utils.h"
+
+#define PI 3.1415926f
+
+#define RT_NONE 0
+#define RT_LED 1
+#define RT_LED_MASKED 2
+#define RT_ACOG 3
+#define RT_SPECTRE 4
+#define RT_GIPERON 5
+#define RT_SCREEN 6
+#define RT_ADDITIVE 7
+
+#define IT_NONE 0
+#define IT_NV 1
+#define IT_THERMAL 2
 
 Texture2D s_prev_frame;
-Texture2D s_prev_frame_pos;
+Texture2D s_inside;
+Texture2D s_dirt;
 
 float4 m_hud_params;
 float4 ogse_c_screen;
+uniform float4 s3ds_param_1;
+uniform float4 s3ds_param_2;
+uniform float4 s3ds_param_3;
+uniform float4 s3ds_param_4;
 uniform float4 shader_param_6;
-uniform float4 shader_param_8;
 uniform float4 markswitch_current;
 uniform float4 markswitch_color;
 
@@ -51,6 +71,14 @@ float4 sample_shadow(float2 tc, float shadow_width)
 	return float4(0, 0, 0, a);
 }
 
+float4 sample_zoom_switch_shadow(float2 tc, float min_zoom, float max_zoom)
+{
+	float shift = smoothstep(min_zoom, max_zoom, ogse_c_screen.x);
+	float a = smoothstep(1 - 0.1, 1, distance(tc, float2(0.5 + shift * 3, 0.5)));
+	float b = smoothstep(1 - 0.4, 1, distance(tc, float2(-2.5 + shift * 3, 0.5)));
+	return float4(0, 0, 0, a * b);
+}
+
 float2 project(float2 tc, float2 tangent, float distance, float size)
 {
     float2 parallax_tc = tc - tangent * distance;
@@ -59,65 +87,47 @@ float2 project(float2 tc, float2 tangent, float distance, float size)
     return parallax_tc;
 }
 
-float4 BlurSample(Texture2D tex, SamplerState samp, float2 uv)
-{
-    if (shader_param_8.x != 0.0)
-    {
-        float4 color = float4(0, 0, 0, 0);
-		float blur_amount = 0.005;
-		float dither_amount = 0.005;
-
-		float2 offsets[9] = {
-			float2(-1, -1), float2(0, -1), float2(1, -1),
-			float2(-1,  0), float2(0,  0), float2(1,  0),
-			float2(-1,  1), float2(0,  1), float2(1,  1)
-		};
-		float weights[9] = {
-			1.0 / 16.0, 2.0 / 16.0, 1.0 / 16.0,
-			2.0 / 16.0, 4.0 / 16.0, 2.0 / 16.0,
-			1.0 / 16.0, 2.0 / 16.0, 1.0 / 16.0
-		};
-
-		// Generate a small random offset for dithering
-		float2 dither = float2(
-			(frac(sin(dot(uv, float2(12.9898, 78.233))) * 43758.5453) - 0.5) * dither_amount,
-			(frac(sin(dot(uv, float2(93.9898, 67.345))) * 43758.5453) - 0.5) * dither_amount
-		);
-
-		for (int i = 0; i < 9; i++)
-		{
-			color += tex.Sample(samp, uv + offsets[i] * blur_amount + dither) * weights[i];
-		}
-
-		return color;
-    }
-    else
-    {
-        return tex.Sample(samp, uv);
-    }
-}
-
 float3 chroma_sample(float2 lens_tc, float2 back_tc, float power)
 {
 	float2 d = lens_tc - 0.5;
 	d = sign(d) * pow(abs(d), 4.0) * power;
-    
+		
 	return float3(
-        BlurSample(s_prev_frame, smp_rtlinear, back_tc - d).x,
-        BlurSample(s_prev_frame, smp_rtlinear, back_tc).y,
-        BlurSample(s_prev_frame, smp_rtlinear, back_tc + d).z
+		s_prev_frame.Sample(smp_rtlinear, back_tc + d).x,
+		s_prev_frame.Sample(smp_rtlinear, back_tc).y,
+		s_prev_frame.Sample(smp_rtlinear, back_tc - d).z
     );
 }
 
 float3 apply_nvg(float2 tc, float3 img)
 {
 	img = BlackandWhite(img);
-	img = Brightness(img, 0.35, 5);
+	img = Brightness(img, 0.5, 5);
 	img = clamp(img, 0, 1);
 	img = LevelsPass(img);
 	img = Grain2(img, tc);
 	img = Grain1(img, tc);
 	return img;
+}
+
+float3 lcd_effect(int2 hpos)
+{
+	float pb = 0.4;
+    float3 lcdColor = float3(pb, pb, pb);
+	
+    int px = int(fmod(hpos.x, 3));
+	if (px == 1)
+		lcdColor.r = 1;
+    else if (px == 2)
+		lcdColor.g = 1;
+    else
+		lcdColor.b = 1;
+    
+    float sclV = 0.25;
+    if (int(fmod(hpos.y, 3)) == 0)
+		lcdColor.rgb = float3(sclV, sclV, sclV);
+	
+	return lcdColor;
 }
 
 float2 fisheye_shift(float2 uv, float progress, float2 center)
@@ -141,7 +151,7 @@ float2 fisheye(float2 tc, float2 tangent)
 	float FISHEYE_STRENGTH = -0.3;
 	float FISHEYE_PROJECT = 2;
 
-	float fish_power = 0.8 + FISHEYE_STRENGTH * length(tangent);
+	float fish_power = 1 + FISHEYE_STRENGTH * length(tangent);
 	float2 fished = fisheye_shift(tc, fish_power, project(float2(0.5, 0.5), tangent, FISHEYE_PROJECT, 1.0));
 	return fished - tc;
 }
@@ -161,57 +171,66 @@ float4 rgba_blend(float4 b, float4 a)
 	return float4(nc, na);
 }
 
-struct PSOutput
+float4 main(vf I) : SV_Target
 {
-    float4 color : SV_Target0;
-	float4 position : SV_Target1;
-};
-
-PSOutput main(vf I)
-{
-	PSOutput output;
-	int TYPE = shader_param_6.x;
-	float IMAGE_PROJECT = 0.2;
-	float IMAGE_SIZE = 1.2;
-	float RETICLE_PROJECT = 10;
-	float RETICLE_SIZE = shader_param_6.z;
-	float SHADOW_PROJECT = shader_param_6.w;
-	float SHADOW_SIZE = 0.42;
-	float SHADOW_WIDTH = 0.2;
-	float FFP_MIN_ZOOM = shader_param_6.y;
-	float CHROMA_POWER = 0.02;
+	float RETICLE_SIZE = s3ds_param_1.x;
+	float EYE_RELIEF = s3ds_param_1.y;
+	float EXIT_PUPIL = s3ds_param_1.z;
+	int FFP = s3ds_param_1.w;
 	
-	if (TYPE == 6)
-	{
-		IMAGE_SIZE = 1;
-		IMAGE_PROJECT = 0;	
-	}
+	float MIN_ZOOM_FOV = s3ds_param_2.x;
+	float MAX_ZOOM_FOV = s3ds_param_2.y;
+	int MIN_ZOOM_1X = s3ds_param_2.z;
+	
+	int IMAGE_TYPE = s3ds_param_3.x;
+	int RETICLE_TYPE = s3ds_param_3.y;
+	float DIRT_INTENSITY = s3ds_param_3.z;
+	float CHROMA_POWER = s3ds_param_3.w;
+	
+	float3 LENS_COLOR = s3ds_param_4.xyz;
+
+	float IMAGE_PROJECT = 0.4; // 0.4
+	float IMAGE_SIZE = 1.1;    // 1.1
+	float RETICLE_PROJECT = 10;
+	float SHADOW_WIDTH = 0.15;
 	
     float3 V = -I.v_pos;
     float3x3 TBN = cotangent_frame(I.v_nrm, I.v_pos, I.tc0.xy);
     float3 V_tangent = normalize(float3(dot(V, TBN[0]), dot(V, TBN[1]), dot(V, TBN[2])));
 	
-	// Sight reticle
-	float reticle_zoom = FFP_MIN_ZOOM > 0 ? max(FFP_MIN_ZOOM / ogse_c_screen.x, 1) : 1;
-    //float4 mark_texture = s_base.Sample(smp_rtlinear, project(I.tc0, V_tangent.xy, RETICLE_PROJECT, RETICLE_SIZE * reticle_zoom) + fisheye(I.tc0, V_tangent.xy) / reticle_zoom);
-	float4 mark_texture = BlurSample(s_base, smp_rtlinear, project(I.tc0, V_tangent.xy, RETICLE_PROJECT, RETICLE_SIZE * reticle_zoom) + fisheye(I.tc0, V_tangent.xy) / reticle_zoom);
-
-	
-	// 1P59 Giperon reticle
-	if (TYPE == 2)
+	float current_zoom = max(MIN_ZOOM_FOV / ogse_c_screen.x, 1);
+	float zoom_part = max(0, (ogse_c_screen.x - MIN_ZOOM_FOV) / (MAX_ZOOM_FOV - MIN_ZOOM_FOV));
+	if (MAX_ZOOM_FOV == MIN_ZOOM_FOV)
 	{
-		float finder = s_base.Sample(smp_rtlinear, project(I.tc0, V_tangent.xy, RETICLE_PROJECT, RETICLE_SIZE) + fisheye(I.tc0, V_tangent.xy)).g;
+		zoom_part = 0;
+	}
+	
+	if (MIN_ZOOM_1X)
+	{
+		IMAGE_PROJECT *= zoom_part;
+		IMAGE_SIZE = 1 + (IMAGE_SIZE - 1) * zoom_part;
+	}
+	
+	// Sight reticle
+	float2 reticle_lens_tc = project(I.tc0, V_tangent.xy, RETICLE_PROJECT, RETICLE_SIZE) + fisheye(I.tc0, V_tangent.xy) / current_zoom;
+	float2 reticle_tc = project(I.tc0, V_tangent.xy, RETICLE_PROJECT, RETICLE_SIZE * (FFP || RETICLE_TYPE == RT_GIPERON ? current_zoom : 1)) + fisheye(I.tc0, V_tangent.xy) / current_zoom;
+    float4 mark_texture = float4(0, 0, 0, 0);
+	if (reticle_tc.x >= 0 && reticle_tc.x <= 1 && reticle_tc.y >= 0 && reticle_tc.y <= 1)
+		mark_texture = s_base.Sample(smp_rtlinear, reticle_tc);
+	
+	if (RETICLE_TYPE == RT_GIPERON)
+	{
+		float finder = s_base.Sample(smp_rtlinear, reticle_lens_tc).g;
 		float reticle = mark_texture.r;
-		float angle = -3.14159265359 * (reticle_zoom - 1 + 0.135) / 2.69;
-		float2 tc = project(I.tc0, V_tangent.xy, RETICLE_PROJECT, RETICLE_SIZE) - 0.5;
+		float angle = -PI * zoom_part;
+		float2 tc = reticle_lens_tc - 0.5;
 		tc = float2(tc.x * cos(angle) - tc.y * sin(angle), tc.x * sin(angle) + tc.y * cos(angle));
 		tc += 0.5;
 		float numbers = s_base.Sample(smp_rtlinear, tc + fisheye(I.tc0, V_tangent.xy)).b;
 		mark_texture = float4(0, 0, 0, max(numbers, max(finder, reticle)));
 	}
 
-	// Sun illuminated ACOG reticle
-	if (TYPE == 3)
+	if (RETICLE_TYPE == RT_ACOG)
 	{
 		float3 black = float3(0, 0, 0);
 		float3 color = float3(1, 0.2, 0.2);
@@ -221,24 +240,62 @@ PSOutput main(vf I)
 		mark_texture = rgba_blend(rgba_blend(float4(black, mark_texture.r), float4(color, mark_texture.g * max(tritium_lum, lum))), float4(text, mark_texture.b * lum));
 	}
 	
-	// LED illuminated reticle
-	if (TYPE == 2 || TYPE == 4 || TYPE == 6)
+	if (RETICLE_TYPE == RT_LED || RETICLE_TYPE == RT_GIPERON)
 	{
 		mark_texture = float4(markswitch_color.rgb, mark_texture.a);
 	}
 	
-	// Masked LED illuminated reticle
-	if (TYPE == 5)
+	if (RETICLE_TYPE == RT_SPECTRE)
+	{
+		float3 black = float3(0, 0, 0);
+		float4 light = float4(0, 0, 0, 0);
+		if (markswitch_current.x == 1)
+			light = float4(markswitch_color.rgb, mark_texture.g);
+		if (markswitch_current.x == 2)
+			light = float4(markswitch_color.rgb, mark_texture.b);
+		
+		mark_texture = rgba_blend(float4(black, mark_texture.r), light);
+	}
+	
+	if (RETICLE_TYPE == RT_LED_MASKED)
 	{
 		float3 black = float3(0, 0, 0);
 		mark_texture = rgba_blend(float4(black, mark_texture.r), float4(markswitch_color.rgb, mark_texture.g));
 	}
+
+	// Spectre switch shadow
+	float4 zoom_switch_shadow = float4(0, 0, 0, 0);
+	if (RETICLE_TYPE == RT_SPECTRE)
+	{
+		zoom_switch_shadow = sample_zoom_switch_shadow(reticle_lens_tc, MIN_ZOOM_FOV, MAX_ZOOM_FOV);
+	}
 	
 	// Sight bound
-    float4 mark_shadow = sample_shadow(project(I.tc0, V_tangent.xy, RETICLE_PROJECT, RETICLE_SIZE), 0);
+    float4 mark_shadow = sample_shadow(reticle_lens_tc, 0.01);
+    float4 mark_shadow_blue = sample_shadow(reticle_lens_tc, CHROMA_POWER / 2);
+	mark_shadow_blue.rgb = float3(0.1, 0.1, 0.65);
+	if (RETICLE_TYPE == RT_SCREEN)
+	{
+		if (reticle_lens_tc.y < 0 || reticle_lens_tc.y > 1 || reticle_lens_tc.x < 0 || reticle_lens_tc.x > 1)
+			mark_shadow = float4(0, 0, 0, 1);
+		else
+			mark_shadow = float4(0, 0, 0, 0);
+	}
 	
 	// Parallax shadow
-	float4 shadow_texture = sample_shadow(project(I.tc0, V_tangent.xy, -SHADOW_PROJECT, SHADOW_SIZE), SHADOW_WIDTH);
+	float2 exit_pupil_tc = project(I.tc0, V_tangent.xy, -EYE_RELIEF, EXIT_PUPIL);
+	float4 shadow_texture = sample_shadow(exit_pupil_tc, SHADOW_WIDTH);
+	
+	// LED-illuminated inside walls
+	float4 inside = s_inside.Sample(smp_rtlinear, (reticle_lens_tc - 0.5) * 0.62 + 0.5);
+	inside = float4(markswitch_color.rgb * inside.r, inside.a);
+	if (RETICLE_TYPE == RT_SCREEN || RETICLE_TYPE == RT_SPECTRE) {
+		inside = float4(0, 0, 0, 0);
+	}
+	
+	// Dirt texture
+	float4 dirt = s_dirt.Sample(smp_rtlinear, I.tc0);
+	dirt.a *= DIRT_INTENSITY;
 	
 	// Back image
 	float2 screen_tc = I.hpos.xy * screen_res.zw;
@@ -247,20 +304,55 @@ PSOutput main(vf I)
 	float2 scope_tc = (1.0 / zoom) * (screen_tc.xy - 0.5) + 0.5;
 	V_tangent.x = V_tangent.x / screen_res.x * screen_res.y;
 	scope_tc = scope_tc + V_tangent.xy * shift;
-	float3 back = chroma_sample(I.tc0, scope_tc, CHROMA_POWER);
 	
-	// NV
-	if (TYPE == 1 && markswitch_current.x == 1)
+	if (RETICLE_TYPE == RT_SPECTRE) {
+		float smooth_zoom_part = smoothstep(0, 1, zoom_part);
+		if (distance(I.tc0, float2(0.5 + smooth_zoom_part * 3, 0.5)) <= 1)
+			scope_tc.x -= 0.2 * smooth_zoom_part;
+		if (distance(I.tc0, float2(-2.5 + smooth_zoom_part * 3, 0.5)) <= 1)
+			scope_tc.x += 0.2 * (1 - smooth_zoom_part);
+	}
+	
+	float3 back;
+	if (IMAGE_TYPE == IT_THERMAL) {
+		float pixelate = int(current_zoom);
+		scope_tc = (floor(scope_tc * screen_res.xy / (pixelate)) * (pixelate) + 0.5) / screen_res.xy;
+		gbuffer_data gbd = gbuffer_load_data(scope_tc, scope_tc * screen_res.xy, 0);
+		back = infrared(gbd, scope_tc * screen_res.xy, scope_tc);
+		if (markswitch_current.x == 1) {
+			back = 1 - back;
+		}
+		back *= lcd_effect(I.hpos);
+	} else {
+		back = chroma_sample(I.tc0, scope_tc, CHROMA_POWER);
+		back *= LENS_COLOR;
+	}
+	
+	if (IMAGE_TYPE == IT_NV && markswitch_current.x == 0) {
 		back = apply_nvg(scope_tc, back);
+	}
 
 	float3 final_scope = back;
-	final_scope = lerp(final_scope, shadow_texture.xyz, shadow_texture.w);
-	final_scope = lerp(final_scope, mark_texture.xyz, mark_texture.w);
+	if (IMAGE_TYPE != IT_THERMAL)
+	{
+		final_scope = lerp(final_scope, mark_shadow_blue.xyz, mark_shadow_blue.w * BlackandWhite(back));
+	}
 	final_scope = lerp(final_scope, mark_shadow.xyz, mark_shadow.w);
+	final_scope = lerp(final_scope, inside.xyz, inside.w);
+	if (RETICLE_TYPE == RT_ADDITIVE)
+	{
+		final_scope = final_scope + mark_texture.xyz * mark_texture.w;
+	}
+	if (IMAGE_TYPE != IT_THERMAL)
+	{
+		final_scope = lerp(final_scope, shadow_texture.xyz, shadow_texture.w);
+	}
+	if (RETICLE_TYPE != RT_ADDITIVE)
+	{
+		final_scope = lerp(final_scope, mark_texture.xyz, mark_texture.w);
+	}
+	final_scope = lerp(final_scope, zoom_switch_shadow.xyz, zoom_switch_shadow.w);
+	final_scope = lerp(final_scope, dirt.xyz, dirt.w);
 
-	output.color = float4(final_scope, 1.0);
-	output.position = float4(0,0,0,1);
-	output.position = s_prev_frame_pos.Sample(smp_rtlinear, scope_tc);
-	
-	return output;
+	return float4(final_scope, 1.0);
 }
