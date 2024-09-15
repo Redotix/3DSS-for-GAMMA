@@ -92,4 +92,5 @@ end
 
 function on_game_start()
 	RegisterScriptCallback("actor_on_update", actor_on_update)
+	exec_console_cmd("r__3Dfakescope 1")
 end
