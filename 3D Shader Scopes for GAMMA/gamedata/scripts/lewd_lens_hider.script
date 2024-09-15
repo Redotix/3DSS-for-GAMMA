@@ -89,6 +89,11 @@ function actor_on_weapon_zoom_in(obj)
     if not delay_in then
         return
     end
+    local heatVisionEnabled = get_console_cmd(1, "r__heatvision")
+    if heatVisionEnabled then
+        return;
+    end
+
     RemoveTimeEvent("lewd_lens_hider_out", obj:name())
     CreateTimeEvent("lewd_lens_hider_in", obj:name(), delay_in, actor_on_weapon_zoom_set_bone, obj:id(), false)
 end
@@ -139,6 +144,10 @@ function actor_on_weapon_zoom_type_changed(obj, previous, current)
 
     if not axr_main.weapon_is_zoomed then
         return
+    end
+    local heatVisionEnabled = get_console_cmd(1, "r__heatvision")
+    if heatVisionEnabled then
+        return;
     end
 
     local _, bone_name_prev, should_hide_prev = get_information(obj:id(), previous)
@@ -237,10 +246,6 @@ end
 --- @return nil
 function set_bone_visibility(obj, bone_name, visibility)
     obj:set_bone_visible(bone_name, visibility, true, true)
-end
-
-function bool_to_number(value)
-    return value and 0 or 1
 end
 
 --- Function used to print information to the log if DEBUG_MODE is set to true.
