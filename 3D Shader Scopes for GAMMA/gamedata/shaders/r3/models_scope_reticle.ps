@@ -38,6 +38,7 @@ uniform float4 s3ds_param_2;
 uniform float4 s3ds_param_3;
 uniform float4 s3ds_param_4;
 uniform float4 shader_param_6;
+uniform float4 shader_param_8;
 uniform float4 markswitch_current;
 uniform float4 markswitch_color;
 
@@ -87,15 +88,53 @@ float2 project(float2 tc, float2 tangent, float distance, float size)
     return parallax_tc;
 }
 
+float4 BlurSample(Texture2D tex, SamplerState samp, float2 uv)
+{
+    if (floor(shader_param_8.x) != 0)
+    {
+        float4 color = float4(0, 0, 0, 0);
+		float blur_amount = 0.006;
+		float dither_amount = 0.006;
+
+		float2 offsets[9] = {
+			float2(-1, -1), float2(0, -1), float2(1, -1),
+			float2(-1,  0), float2(0,  0), float2(1,  0),
+			float2(-1,  1), float2(0,  1), float2(1,  1)
+		};
+		float weights[9] = {
+			1.0 / 16.0, 2.0 / 16.0, 1.0 / 16.0,
+			2.0 / 16.0, 4.0 / 16.0, 2.0 / 16.0,
+			1.0 / 16.0, 2.0 / 16.0, 1.0 / 16.0
+		};
+
+		// Generate a small random offset for dithering
+		float2 dither = float2(
+			(frac(sin(dot(uv, float2(12.9898, 78.233))) * 43758.5453) - 0.5) * dither_amount,
+			(frac(sin(dot(uv, float2(93.9898, 67.345))) * 43758.5453) - 0.5) * dither_amount
+		);
+
+		for (int i = 0; i < 9; i++)
+		{
+			color += tex.Sample(samp, uv + offsets[i] * blur_amount + dither) * weights[i];
+		}
+
+		return color;
+    }
+    else
+    {
+        return tex.Sample(samp, uv);
+    }
+}
+
 float3 chroma_sample(float2 lens_tc, float2 back_tc, float power)
 {
 	float2 d = lens_tc - 0.5;
 	d = sign(d) * pow(abs(d), 4.0) * power;
 		
 	return float3(
-		s_prev_frame.Sample(smp_rtlinear, back_tc + d).x,
-		s_prev_frame.Sample(smp_rtlinear, back_tc).y,
-		s_prev_frame.Sample(smp_rtlinear, back_tc - d).z
+        BlurSample(s_prev_frame, smp_rtlinear, back_tc + d).x,
+        BlurSample(s_prev_frame, smp_rtlinear, back_tc).y,
+        BlurSample(s_prev_frame, smp_rtlinear, back_tc - d).z
     );
 }
 
@@ -216,7 +255,7 @@ float4 main(vf I) : SV_Target
 	float2 reticle_tc = project(I.tc0, V_tangent.xy, RETICLE_PROJECT, RETICLE_SIZE * (FFP || RETICLE_TYPE == RT_GIPERON ? current_zoom : 1)) + fisheye(I.tc0, V_tangent.xy) / current_zoom;
     float4 mark_texture = float4(0, 0, 0, 0);
 	if (reticle_tc.x >= 0 && reticle_tc.x <= 1 && reticle_tc.y >= 0 && reticle_tc.y <= 1)
-		mark_texture = s_base.Sample(smp_rtlinear, reticle_tc);
+		mark_texture = BlurSample(s_base, smp_rtlinear, reticle_tc);
 	
 	if (RETICLE_TYPE == RT_GIPERON)
 	{
