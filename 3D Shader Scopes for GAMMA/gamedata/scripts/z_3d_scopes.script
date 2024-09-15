@@ -1,0 +1,95 @@
+local last_weapon_id
+
+function get(wpn_section, key, default)
+	local parent = ini_sys:r_string_ex(wpn_section, "parent_section") or wpn_section
+	local scope_section = parent ~= wpn_section and wpn_section:sub(#parent + 2)
+
+	local value = wpn_section and ini_sys:r_float_ex(wpn_section, key)
+	if value then
+		return tostring(value)
+	end
+	value = scope_section and ini_sys:r_float_ex(scope_section, key)
+	if value then
+		return tostring(value)
+	end
+	
+	if default then
+		return default
+	end
+
+	return "0"
+end
+
+function get_color(wpn_section, key, default)
+	local parent = ini_sys:r_string_ex(wpn_section, "parent_section") or wpn_section
+	local scope_section = parent ~= wpn_section and wpn_section:sub(#parent + 2)
+
+	local value = wpn_section and ini_sys:r_string_ex(wpn_section, key)
+	if value then
+		value = ini_sys:r_string_ex("s3ds_colors", tostring(value))
+		if value then
+			return tostring(value)
+		end
+	end
+	value = scope_section and ini_sys:r_string_ex(scope_section, key)
+	if value then
+		value = ini_sys:r_string_ex("s3ds_colors", tostring(value))
+		if value then
+			return tostring(value)
+		end
+	end
+	
+	if default then
+		return default
+	end
+
+	return "0"
+end
+
+function update_shader(section)
+	get_console():execute(
+		"s3ds_param_1 " .. 
+		get(section, "s3ds_reticle_size", "4") .. ", " ..
+		get(section, "s3ds_eye_relief", "4") .. ", " ..
+		get(section, "s3ds_exit_pupil", "0.3") .. ", " ..
+		get(section, "s3ds_ffp"))
+	
+	get_console():execute(
+		"s3ds_param_2 " .. 
+		get(section, "s3ds_min_zoom_fov", "37.5") .. ", " ..
+		get(section, "s3ds_max_zoom_fov", "11.25") .. ", " ..
+		get(section, "s3ds_min_zoom_1x") .. ", " ..
+		"0")
+	
+	get_console():execute(
+		"s3ds_param_3 " .. 
+		get(section, "s3ds_image_type") .. ", " ..
+		get(section, "s3ds_reticle_type") .. ", " ..
+		get(section, "s3ds_dirt_intensity") .. ", " ..
+		get(section, "s3ds_chroma_power", "0.02"))
+	
+	get_console():execute(
+		"s3ds_param_4 " .. 
+		get_color(section, "s3ds_lens_color", "1, 1, 1") .. ", " ..
+		"0")
+end
+
+function actor_on_update()
+	if not (db.actor and db.actor:alive()) then
+		return
+	end
+	
+	local wpn = db.actor:active_item()
+	if not wpn then
+		return
+	end
+	
+	if not last_weapon_id or last_weapon_id ~= wpn:id() then
+		last_weapon_id = wpn:id()
+		update_shader(wpn:section())
+	end
+end
+
+function on_game_start()
+	RegisterScriptCallback("actor_on_update", actor_on_update)
+end
