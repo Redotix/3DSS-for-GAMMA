@@ -3,10 +3,12 @@
 
 struct vf
 {
+    float4 hpos : SV_Position;
     float2 tc0 : TEXCOORD0;
     float3 v_pos : TEXCOORD1;
     float3 v_nrm : TEXCOORD2;
-    float4 hpos : SV_Position;
+	float3 w_pos : TEXCOORD3;
+	float3 w_nrm : TEXCOORD4;
 };
 
 vf     _main (v_model v)
@@ -18,6 +20,9 @@ vf     _main (v_model v)
 
     o.v_pos = mul(m_WV, v.P).xyz;
     o.v_nrm = mul(m_WV, v.N).xyz;
+
+	o.w_pos = mul(m_W, v.P).xyz;
+	o.w_nrm = mul(m_W, v.N).xyz;
 
     return o;
 }
