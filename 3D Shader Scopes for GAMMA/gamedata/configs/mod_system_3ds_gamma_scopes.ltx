@@ -28,13 +28,22 @@
 
 ; ms_colors - list of colors for illumination
 ; ms_count - count of different reticles
-
+;
+; magnification - zoom level. individual weapon section still require scope_zoom_factor to be set to avoid infinite zoom bug.
+;
+;
+;
 ; Ingame testing (console commands, put actual parameters)
 ; s3ds_param_1 s3ds_reticle_size, s3ds_eye_relief, s3ds_exit_pupil, s3ds_ffp
 ; s3ds_param_2 s3ds_min_zoom_fov, s3ds_max_zoom_fov, s3ds_min_zoom_1x, 0
 ; s3ds_param_3 s3ds_image_type, s3ds_reticle_type, s3ds_dirt_intensity, s3ds_chroma_power
 ; s3ds_param_4 s3ds_lens_color, 0
-
+;
+;Guns with integrated scopes need to have the scope paramateres defined under their weapon sections. Look in the rifles ltx for an example of this under [wpn_ak5c_bas_5c_tik];
+;
+;
+;
+;
 ; Sights
 ;----------------------------------DOVETAIL/EAST SCOPES---------------------------------
 ![pka]	--1x, Red dot
