@@ -11,7 +11,7 @@
 ; s3ds_image_type - background image processor (default 0)
 ;   0 - none
 ;   1 - NV scope (with ms_count = 2 becomes switchable)
-;   2 - thermal scope (with ms_count = 2 becomes switchable)
+;   2 - thermal scope (with ms_count = 2 becomes switchable white-hot/black-hot, with ms_count = 3 becomes also switchable on/off)
 ; s3ds_reticle_type - reticle processor (default 0)
 ;   0 - none
 ;   1 - LED illuminated reticle
@@ -21,6 +21,7 @@
 ;         Use with ms_count = 3 and ms_colors = scope_black, scope_red_dim, scope_red
 ;   5 - 1P59 Giperon scope (red channel at first focal plane, green channel at second focal plane, blue channel rotated by zoom), has LED illumination
 ;   6 - Screen (used for classic thermal scopes, disables parallax shadow and circle sight bound)
+;	7 - Projected reticle (additive blend mode, use for NVs and magnifiers of reflex/holographic sights)
 ; s3ds_dirt_intensity - dirtness. 0 is clear vision, 1 is severe contamination (default 0)
 ; s3ds_chroma_power - chromatic abberation intensity. Represents scope overall quality. 0 is no chroma, 0.02 is barely noticeable chroma, 0.05 is trash-tier scope (default 0.02)
 
@@ -73,6 +74,7 @@
 	s3ds_eye_relief 	= 2.6
 	s3ds_exit_pupil		= 0.33	
 	s3ds_image_type 	= 1
+	s3ds_reticle_type	= 7	
 	ms_count 			= 2
 	magnification 		= 3.7	
 
@@ -129,6 +131,7 @@
 	s3ds_eye_relief 	= 3
 	s3ds_exit_pupil		= 0.28
 	s3ds_image_type 	= 1
+	s3ds_reticle_type	= 7	
 	ms_count 			= 2
 	magnification 		= 4	
 
@@ -298,14 +301,15 @@
 ![uh1_magd] --6x
 	s3ds_reticle_size 	= 3.9
 	s3ds_eye_relief 	= 2.4
-	s3ds_chroma_power	= 0		
+	s3ds_chroma_power	= 0	
+	s3ds_reticle_type	= 7		
 	magnification 		= 6
 
 ![e0t2_magd]	--6x	
 	s3ds_reticle_size 	= 3.9
 	s3ds_eye_relief 	= 2.4
 	s3ds_chroma_power	= 0
-	s3ds_reticle_type 	= 1
+	s3ds_reticle_type	= 1	
 	ms_count 			= 2
 	ms_colors 			= scope_red, scope_green		
 	magnification 		= 6
@@ -328,6 +332,7 @@
 	s3ds_max_zoom_fov 	= 28
 	s3ds_chroma_power	= 0.05	
 	s3ds_image_type 	= 1
+	s3ds_reticle_type	= 7
 	ms_count 			= 2
 	magnification 		= 6	
 	
