@@ -42,8 +42,8 @@
 ;
 ;Guns with integrated scopes need to have the scope paramateres defined under their weapon sections. Look in the rifles ltx for an example of this under [wpn_ak5c_bas_5c_tik];
 ;
-;
-;
+;ATHI Note - Shotguns and SMGs should be limited to 4x zoom max scopes for balance purposes. Some of these have the pn23 attached for night time. It's zoom can be limited in the 
+;weapon's scope section by setting magnification = 4. You can do this for any scope you want if you prefer the look of a certain scope but wish to maintain this balance
 ;
 ; Sights
 ;----------------------------------DOVETAIL/EAST SCOPES---------------------------------
@@ -186,7 +186,7 @@
 	s3ds_exit_pupil		= 0.35	
 	magnification 		= 4		
 ;----------------------------------PICATINNY/WEST SCOPES---------------------------------
-![t12]	--Thermal, 1x
+![t12]	--Thermal, 1x, 	s3ds_reticle_size should be set per gun to match red dot sight view
 	s3ds_reticle_size 	= 1.8
 	s3ds_image_type 	= 2
 	s3ds_reticle_type 	= 6
@@ -268,7 +268,7 @@
 	ms_colors			= scope_black, scope_red_dim, scope_red
 	magnification 		= 4	
 	
-![spec_alt] --Dynamic, specter, Rotating Scope, 1x/4x
+![spec_alt] --Dynamic, specter, Rotating Scope, 1x OR 4x
 	s3ds_reticle_size 	= 4.5
 	s3ds_eye_relief 	= 2
 	s3ds_ffp			= 1
@@ -283,6 +283,7 @@
 ![tac30]	--Dynamic, 1x-4x
 	s3ds_reticle_size 	= 4
 	s3ds_eye_relief 	= 2
+	s3ds_exit_pupil		= 0.4
 	s3ds_chroma_power	= 0.04	
 	magnification 		= 4	
 
@@ -342,12 +343,12 @@
 	s3ds_chroma_power	= 0		
 	magnification 		= 6
 	
-![ps320] --Dynamic, Rotating Scope, 1x/6x
+![ps320] --Dynamic, Rotating Scope, 1x OR 6x
 	s3ds_reticle_size 	= 4.1
 	s3ds_eye_relief 	= 2.2
 	s3ds_ffp			= 1	
-	s3ds_min_zoom_fov 	= 50
-	s3ds_max_zoom_fov 	= 22	
+	s3ds_min_zoom_fov 	= 70
+	s3ds_max_zoom_fov 	= 20	
 	s3ds_chroma_power	= 0.045	
 	s3ds_reticle_type 	= 4
 	ms_count 			= 3
@@ -377,7 +378,6 @@
 	magnification 		= 8
 	
 ![march_f_shorty] --Dynamic, 1x-8x
-	s3ds_reticle_size 	= 3.9
 	s3ds_eye_relief 	= 4.5
 	s3ds_exit_pupil		= 0.5	
 	s3ds_chroma_power	= 0		
