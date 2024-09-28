@@ -9,6 +9,8 @@ struct vf
     float3 v_nrm : TEXCOORD2;
 	float3 w_pos : TEXCOORD3;
 	float3 w_nrm : TEXCOORD4;
+	float3 v_dir : TEXCOORD5;
+	float3 v_sun : TEXCOORD6;
 };
 
 vf     _main (v_model v)
@@ -23,6 +25,9 @@ vf     _main (v_model v)
 
 	o.w_pos = mul(m_W, v.P).xyz;
 	o.w_nrm = mul(m_W, v.N).xyz;
+	
+	o.v_dir = mul(m_V, normalize(o.w_pos - eye_position));
+	o.v_sun = mul(m_V, L_sun_dir_w);
 
     return o;
 }
