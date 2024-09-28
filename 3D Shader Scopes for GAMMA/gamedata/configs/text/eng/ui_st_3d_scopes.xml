@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<string_table>
+
+	<string id="ui_mcm_menu_3d_scopes">
+		<text>3D Scopes</text>
+	</string>
+	
+	<string id="ui_mcm_3d_scopes_title">
+		<text>Shader 3D Scopes</text>
+	</string>
+
+	<string id="ui_mcm_3d_scopes_zoom_factor">
+		<text>Zoom factor</text>
+	</string>
+
+	<string id="ui_mcm_3d_scopes_nvg_blur">
+		<text>Blur scope in Beefs NVG</text>
+	</string>
+
+</string_table>

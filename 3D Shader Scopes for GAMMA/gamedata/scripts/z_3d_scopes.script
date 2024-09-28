@@ -4,11 +4,13 @@
 	Link       : https://www.moddb.com/mods/stalker-anomaly/addons/shader-3d-scopes
 	Author     : party_50
 	Date       : 01.03.2024
-	Last Edit  : 16.09.2024
+	Last Edit  : 28.09.2024
 	=====================================================================
 --]]
 
 
+local ZOOM_FACTOR
+local NVG_BLUR
 local ALL_PARAMETERS = {
 	s3ds_reticle_size = "float",
 	s3ds_eye_relief = "float",
@@ -43,6 +45,12 @@ function ui_workshop.UIWorkshopUpgrade:Upgrade()
 	last_weapon_id = nil
 end
 
+
+function on_option_change()
+	ZOOM_FACTOR = z_3d_scopes_mcm.get_config("zoom_factor")
+	NVG_BLUR = z_3d_scopes_mcm.get_config("nvg_blur")
+	last_weapon_id = nil
+end
 
 function get_sight_section(wpn_section)
 	local parent = ini_sys:r_string_ex(wpn_section, "parent_section") or wpn_section
@@ -114,7 +122,7 @@ function update_shader(wpn)
 		get(info, "s3ds_min_zoom_fov", "37.5") .. ", " ..
 		get(info, "s3ds_max_zoom_fov", "11.25") .. ", " ..
 		get(info, "s3ds_min_zoom_1x", "0") .. ", " ..
-		"0")
+		(ZOOM_FACTOR or 1.5))
 	
 	get_console():execute(
 		"s3ds_param_3 " .. 
@@ -126,7 +134,7 @@ function update_shader(wpn)
 	get_console():execute(
 		"s3ds_param_4 " .. 
 		get(info, "s3ds_lens_color", "1, 1, 1") .. ", " ..
-		"0")
+		(NVG_BLUR and 1 or 0))
 end
 
 function actor_on_update()
@@ -147,5 +155,7 @@ function actor_on_update()
 end
 
 function on_game_start()
+	on_option_change()
+	RegisterScriptCallback("on_option_change", on_option_change)
 	RegisterScriptCallback("actor_on_update", actor_on_update)
 end
