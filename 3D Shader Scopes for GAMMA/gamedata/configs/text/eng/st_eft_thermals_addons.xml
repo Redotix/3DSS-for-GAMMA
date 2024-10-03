@@ -11,7 +11,7 @@
 	</string>
 	<string id="st_addon_scope_t12_descr">
 		<text>%c[0,255,255,255]PROPERTIES:\n
-		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]USA\n
+		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]United States\n
 		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]Torrey Pines Logic\n
 		%c[d_cyan] • %c[0,255,255,255] Magnification: %c[ui_gray_2]1.0x\n \n			
 		</text>
