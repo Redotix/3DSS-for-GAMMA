@@ -154,7 +154,7 @@
 	</string>
 	<string id="st_addon_scope_trihawk_3x30_descr">
 		<text>%c[0,255,255,255]PROPERTIES:\n
-		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]United States/China\n
+		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]United States\n
 		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]SwampFox Optics\n
 		%c[d_cyan] • %c[0,255,255,255] Magnification: %c[ui_gray_2]3.0x\n \n			
 		</text>
@@ -165,10 +165,21 @@
 	</string>
 	<string id="st_addon_scope_ncstar_ado_descr">
 		<text>%c[0,255,255,255]PROPERTIES:\n
-		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]United States/China\n
+		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]United States\n
 		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]NcSTAR\n
 		%c[d_cyan] • %c[0,255,255,255] Magnification: %c[ui_gray_2]3.0-9.0x\n \n			
 		</text>
 	</string>	
 
+	<string id="st_addon_scope_vulcan">
+		<text>Armasight Vulcan MG 3.5x Bravo night vision scope</text>
+	</string>
+	<string id="st_addon_scope_vulcan_descr">
+		<text>%c[0,255,255,255]PROPERTIES:\n
+		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]United States\n
+		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]Armasight\n
+		%c[d_cyan] • %c[0,255,255,255] Magnification: %c[ui_gray_2]3.5x\n \n			
+		</text>
+	</string>
+	
 </string_table>
