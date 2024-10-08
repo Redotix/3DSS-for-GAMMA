@@ -4,8 +4,6 @@
 ; s3ds_exit_pupil - exit pupil diameter relative to ocular lens diameter, or parallax shadow diameter (default 0.3)
 ; s3ds_ffp - enable first focal plane feature, reticle sizes up while zooming. Can be 0 or 1 (default 0)
 
-; s3ds_min_zoom_fov - FOV at minimal magnification. Needed for correct work of FFP option, Giperon, Spectre, thermal scopes (default 37.5)
-; s3ds_max_zoom_fov - FOV at maximum magnification. Needed for Giperon and Spectre (default 11.25)
 ; s3ds_min_zoom_1x - at minimal FOV magnification, disable image scale up inside scope. Needed for 1x optic sights and 1-Nx LPVO scopes
 
 ; s3ds_image_type - background image processor (default 0)
@@ -31,8 +29,6 @@
 ; ms_count - count of different reticles
 ;
 ; magnification - zoom level. individual weapon section still require scope_zoom_factor to be set to avoid infinite zoom bug.
-;
-;
 ;
 ; Ingame testing (console commands, put actual parameters)
 ; s3ds_param_1 s3ds_reticle_size, s3ds_eye_relief, s3ds_exit_pupil, s3ds_ffp
@@ -146,8 +142,6 @@
 	s3ds_exit_pupil		= 0.75	
 	s3ds_ffp			= 1
 	s3ds_reticle_type 	= 5
-	s3ds_min_zoom_fov 	= 35.1
-	s3ds_max_zoom_fov 	= 9.05
 	ms_count 			= 2
 	ms_colors 			= scope_black, scope_red
 	magnification 		= 10
@@ -158,8 +152,6 @@
 	s3ds_exit_pupil		= 0.75	
 	s3ds_ffp			= 1
 	s3ds_reticle_type 	= 5
-	s3ds_min_zoom_fov 	= 35.1
-	s3ds_max_zoom_fov 	= 9.05
 	ms_count 			= 2
 	ms_colors 			= scope_black, scope_red
 	magnification 		= 10
@@ -266,12 +258,9 @@
 	s3ds_chroma_power	= 0.035
 	magnification 		= 4
 	
-![specter] --Dynamic, Rotating Scope, 1x/4x
+![specter] --Dynamic, Rotating Scope, 1x or 4x
 	s3ds_reticle_size 	= 4.5
 	s3ds_eye_relief 	= 2
-	s3ds_ffp			= 1
-	s3ds_min_zoom_fov 	= 56
-	s3ds_max_zoom_fov 	= 20
 	s3ds_chroma_power	= 0.04	
 	s3ds_reticle_type 	= 4
 	ms_count 			= 3
@@ -281,9 +270,6 @@
 ![spec_alt] --Dynamic, specter, Rotating Scope, 1x OR 4x
 	s3ds_reticle_size 	= 4.5
 	s3ds_eye_relief 	= 2
-	s3ds_ffp			= 1
-	s3ds_min_zoom_fov 	= 56
-	s3ds_max_zoom_fov 	= 20
 	s3ds_chroma_power	= 0.04	
 	s3ds_reticle_type 	= 4
 	ms_count 			= 3
@@ -338,9 +324,7 @@
 ![pn23] --Dynamic, NVG, 1x-6x
 	s3ds_reticle_size 	= 4.38	
 	s3ds_eye_relief 	= 1.98
-	s3ds_ffp			= 1	
-	s3ds_min_zoom_fov 	= 35
-	s3ds_max_zoom_fov 	= 28
+	;s3ds_ffp			= 1	
 	s3ds_chroma_power	= 0.05	
 	s3ds_image_type 	= 1
 	s3ds_reticle_type	= 7
@@ -356,9 +340,7 @@
 ![ps320] --Dynamic, Rotating Scope, 1x OR 6x
 	s3ds_reticle_size 	= 4.1
 	s3ds_eye_relief 	= 2.2
-	s3ds_ffp			= 1	
-	s3ds_min_zoom_fov 	= 70
-	s3ds_max_zoom_fov 	= 20	
+	s3ds_ffp			= 1		
 	s3ds_chroma_power	= 0.045	
 	s3ds_reticle_type 	= 4
 	ms_count 			= 3
@@ -373,18 +355,14 @@
 	s3ds_reticle_size 	= 4.35
 	s3ds_eye_relief 	= 4
 	s3ds_exit_pupil		= 0.4	
-	s3ds_ffp			= 1	
-	s3ds_min_zoom_fov 	= 35
-	s3ds_max_zoom_fov 	= 28
+	;s3ds_ffp			= 1	
 	magnification 		= 8
 	
 ![mark8_rmr] --Dynamic, leupold, 1x-8x
 	s3ds_reticle_size 	= 4.35
 	s3ds_eye_relief 	= 4
 	s3ds_exit_pupil		= 0.4	
-	s3ds_ffp			= 1	
-	s3ds_min_zoom_fov 	= 35
-	s3ds_max_zoom_fov 	= 28
+	;s3ds_ffp			= 1	
 	magnification 		= 8
 	
 ![march_f_shorty] --Dynamic, 1x-8x
@@ -417,17 +395,13 @@
 	s3ds_reticle_size 	= 4
 	s3ds_eye_relief 	= 6
 	s3ds_exit_pupil		= 0.9	
-	s3ds_ffp			= 1	
-	s3ds_min_zoom_fov 	= 30
-	s3ds_max_zoom_fov 	= 10	
+	s3ds_ffp			= 1		
 	magnification 		= 12
 	
 ![marchf] --Dynamic, 3x-24x
 	s3ds_reticle_size 	= 4.9
 	s3ds_eye_relief 	= 3.1
 	s3ds_ffp			= 1	
-	s3ds_min_zoom_fov 	= 10
-	s3ds_max_zoom_fov 	= 5
 	s3ds_reticle_type 	= 2
 	ms_count 			= 2
 	ms_colors 			= scope_black, scope_red	
