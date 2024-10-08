@@ -4,7 +4,7 @@
 	Link       : https://www.moddb.com/mods/stalker-anomaly/addons/shader-3d-scopes
 	Authors    : LVutner, party_50
 	Date       : 01.03.2024
-	Last Edit  : 28.09.2024
+	Last Edit  : 07.10.2024
 	=====================================================================
 */
 
@@ -34,6 +34,7 @@ TextureCube	s_env0;
 TextureCube	s_env1;
 
 float4 m_hud_params;
+float4 m_hud_fov_params;
 float4 ogse_c_screen;
 uniform float4 s3ds_param_1;
 uniform float4 s3ds_param_2;
@@ -143,7 +144,7 @@ float3 back_image_sample(float2 lens_tc, float2 back_tc, float power, int nvg_bl
 float3 apply_nvg(float2 tc, float3 img)
 {
 	img = BlackandWhite(img);
-	img = Brightness(img, 0.5, 5);
+	img = Brightness(img, 0.45, 6);
 	img = clamp(img, 0, 1);
 	img = LevelsPass(img);
 	img = Grain2(img, tc);
@@ -236,8 +237,8 @@ float4 main(vf I) : SV_Target
 	float EXIT_PUPIL = s3ds_param_1.z;
 	int FFP = s3ds_param_1.w;
 	
-	float MIN_ZOOM_FOV = s3ds_param_2.x;
-	float MAX_ZOOM_FOV = s3ds_param_2.y;
+	float MIN_ZOOM_FOV = m_hud_fov_params.y * 0.75;
+	float MAX_ZOOM_FOV = m_hud_fov_params.x * 0.75;
 	int MIN_ZOOM_1X = s3ds_param_2.z;
 	float ZOOM_FACTOR = s3ds_param_2.w;
 	
