@@ -41,6 +41,9 @@
 ;ATHI Note - Shotguns and SMGs should be limited to 4x zoom max scopes for balance purposes. Some of these have the pn23 attached for night time. It's zoom can be limited in the 
 ;weapon's scope section by setting magnification = 4. You can do this for any scope you want if you prefer the look of a certain scope but wish to maintain this balance
 ;
+;zoom_step_count must be added to individual weapon sections to constrain the amount of steps between min and max zoom. To get a nice feeling zoom, it is recommended that
+; zoom_step_count = (max zoom)-1 or (max zoom/2)-1. for example. for a 4x zoom, zoom_step_count=3 [4-1=3]. or for a 10x zoom, zoom_step_count = 4 [(10/2)-1=4]
+;
 ; Sights
 ;----------------------------------DOVETAIL/EAST SCOPES---------------------------------
 ![pka]	--1x, Red dot
@@ -65,13 +68,12 @@
 	s3ds_exit_pupil		= 0.5	
 	magnification 		= 2.8
 	
-![1pn93n2_1gs] --Dynamic, NVG, 3.7x
+![1pn93n2_1gs] --Thermal, 3.7x
 	s3ds_reticle_size 	= 3.5	
 	s3ds_eye_relief 	= 2.6
 	s3ds_exit_pupil		= 0.33	
-	s3ds_image_type 	= 1
+	s3ds_image_type 	= 2
 	s3ds_reticle_type	= 7	
-	ms_count 			= 2
 	magnification 		= 3.7	
 
 ![1p29]	--4x
@@ -96,7 +98,7 @@
 	magnification 		= 4	
 		
 ![pso2]	--4x
-	s3ds_reticle_size 	= 3.4
+	s3ds_reticle_size 	= 4
 	s3ds_eye_relief 	= 2
 	s3ds_exit_pupil		= 0.5	
 	s3ds_reticle_type 	= 1
@@ -105,7 +107,7 @@
 	magnification 		= 4
 	
 ![pso1m21] --PS02, 4x
-	s3ds_reticle_size 	= 3.4
+	s3ds_reticle_size 	= 4
 	s3ds_eye_relief 	= 2
 	s3ds_exit_pupil		= 0.5	
 	s3ds_reticle_type 	= 1
@@ -114,7 +116,7 @@
 	magnification 		= 4
 	
 ![pritseldob] --PS02, 4x
-	s3ds_reticle_size 	= 3.4
+	s3ds_reticle_size 	= 4
 	s3ds_eye_relief 	= 2
 	s3ds_exit_pupil		= 0.5	
 	s3ds_reticle_type 	= 1
@@ -179,7 +181,7 @@
 	magnification 		= 4		
 ;----------------------------------PICATINNY/WEST SCOPES---------------------------------
 ![t12]	--Thermal, 1x, 	s3ds_reticle_size should be set per gun to match red dot sight view
-	s3ds_reticle_size 	= 1.8
+	s3ds_reticl;e_size 	= 1.8
 	s3ds_image_type 	= 2
 	s3ds_reticle_type 	= 6
 	s3ds_min_zoom_1x	= 1	
@@ -188,10 +190,13 @@
 ![monstrum]	--2x
 	s3ds_reticle_size 	= 3
 	s3ds_eye_relief 	= 2
-	s3ds_exit_pupil		= 0.8	
+	s3ds_exit_pupil		= 0.8
+	s3ds_reticle_type 	= 1
+	ms_count 			= 2
+	ms_colors 			= scope_black, scope_red	
 	magnification 		= 2
 	
-![acog]	--2.8x
+![acog]		--2.8x
 	s3ds_reticle_size 	= 3.9
 	s3ds_eye_relief 	= 1.5
 	s3ds_exit_pupil		= 0.55	
@@ -258,7 +263,7 @@
 	s3ds_chroma_power	= 0.035
 	magnification 		= 4
 	
-![specter] --Dynamic, Rotating Scope, 1x or 4x
+![specter] --Dynamic, Rotating Scope, 1x or 4x, zoom_step_count = 1
 	s3ds_reticle_size 	= 4.5
 	s3ds_eye_relief 	= 2
 	s3ds_chroma_power	= 0.04	
@@ -267,7 +272,7 @@
 	ms_colors			= scope_black, scope_red_dim, scope_red
 	magnification 		= 4	
 	
-![spec_alt] --Dynamic, specter, Rotating Scope, 1x OR 4x
+![spec_alt] --Dynamic, specter, Rotating Scope, 1x OR 4x, zoom_step_count = 1
 	s3ds_reticle_size 	= 4.5
 	s3ds_eye_relief 	= 2
 	s3ds_chroma_power	= 0.04	
@@ -336,7 +341,7 @@
 	s3ds_chroma_power	= 0		
 	magnification 		= 6
 	
-![ps320] --Dynamic, Rotating Scope, 1x OR 6x
+![ps320] --Dynamic, Rotating Scope, 1x OR 6x, zoom_step_count = 1
 	s3ds_reticle_size 	= 4.1
 	s3ds_eye_relief 	= 2.2
 	s3ds_ffp			= 1		
@@ -383,7 +388,7 @@
 	s3ds_exit_pupil		= 0.55		
 	magnification 		= 9
 			
-![gauss_sight] --Dynamic, Thermal, 1x-10x
+![gauss_sight] --Dynamic, Thermal, 1x-10x, zoom_step_count = 4
 	s3ds_reticle_size 	= 5
 	s3ds_image_type 	= 2
 	s3ds_reticle_type 	= 6
@@ -407,8 +412,5 @@
 	magnification 		= 24
 
 ;----------------------------------------------------------------------
-![sup]
-inv_name			                                = st_addon_scope_sup_new
-inv_name_short			                            = st_addon_scope_sup_new
-description			                                = st_addon_scope_sup_new_descr	
+
                             			                                                                                      		                                         		
