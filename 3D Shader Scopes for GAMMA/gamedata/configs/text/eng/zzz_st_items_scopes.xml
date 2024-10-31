@@ -7,7 +7,7 @@
 <string_table>
 
 	<string id="st_addon_scope">
-		<text>PSO-1M</text>
+		<text>PSO-1</text>
 	</string>
 	<string id="st_addon_scope_descr">
 		<text>%c[0,255,255,255]PROPERTIES:\n
@@ -59,7 +59,7 @@
 		<text>%c[0,255,255,255]PROPERTIES:\n
 		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]United States\n
 		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]Raytheon ELCAN\n
-		%c[d_cyan] • %c[0,255,255,255] magnification: %c[ui_gray_2]1.0x - 4.0x\n \n
+		%c[d_cyan] • %c[0,255,255,255] magnification: %c[ui_gray_2]1.0x or 4.0x\n \n
 		%c[d_cyan] • %c[0,255,255,255] %c[ui_gray_2]LED Toggle\n \n		
 		</text>
 	</string>
@@ -95,7 +95,7 @@
 		<text>%c[0,255,255,255]PROPERTIES:\n
 		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]Russia\n
 		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]NPZ Optics\n
-		%c[d_cyan] • %c[0,255,255,255] magnification: %c[ui_gray_2]3.7x\n \n
+		%c[d_cyan] • %c[0,255,255,255] magnification: %c[ui_gray_2]1.0x - 3.7x\n \n
 		%c[d_cyan] • %c[0,255,255,255] %c[ui_gray_2]Night Vision Toggle\n \n				
 		</text>
 	</string>
@@ -157,7 +157,19 @@
 		%c[d_cyan] • %c[0,255,255,255] magnification: %c[ui_gray_2]4.0x\n \n
 		</text>
 	</string>
-
+	
+	<string id="st_addon_scope_gauss_sight">
+		<text>EOTS-62 Thermal Sight</text>
+	</string>
+	<string id="st_addon_scope_gauss_sight_descr">
+		<text>%c[0,255,255,255]PROPERTIES:\n
+		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]Ukraine\n
+		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]REDACTED\n
+		%c[d_cyan] • %c[0,255,255,255] magnification: %c[ui_gray_2]1.0x - 10.0x\n \n
+		%c[d_cyan] • %c[0,255,255,255] %c[ui_gray_2]Thermal Toggle\n \n			
+		</text>
+	</string>
+	
 	<string id="st_addon_scope_1p78gs">
 		<text>1P78 Kashtan</text>
 	</string>
@@ -170,14 +182,13 @@
 	</string>
 
 	<string id="st_addon_scope_1pn93n2_1gs">
-		<text>1PN93-1 Night Sight</text>
+		<text>1PN93-1 Thermal Sight</text>
 	</string>
 	<string id="st_addon_scope_1pn93n2_1gs_descr">
 		<text>%c[0,255,255,255]PROPERTIES:\n
 		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]Russia\n
 		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]Russia\n
-		%c[d_cyan] • %c[0,255,255,255] magnification: %c[ui_gray_2]4.0x\n \n
-		%c[d_cyan] • %c[0,255,255,255] %c[ui_gray_2]Night Vision Toggle\n \n				
+		%c[d_cyan] • %c[0,255,255,255] magnification: %c[ui_gray_2]4.0x\n \n			
 		</text>
 	</string>
 

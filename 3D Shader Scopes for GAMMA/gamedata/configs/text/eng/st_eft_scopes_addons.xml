@@ -79,7 +79,8 @@
 		<text>%c[0,255,255,255]PROPERTIES:\n
 		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]Russia\n
 		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]Valday\n
-		%c[d_cyan] • %c[0,255,255,255] Magnification: %c[ui_gray_2]1.0x - 6.0x\n \n			
+		%c[d_cyan] • %c[0,255,255,255] Magnification: %c[ui_gray_2]1.0x or 6.0x\n \n
+		%c[d_cyan] • %c[0,255,255,255] %c[ui_gray_2]LED Toggle\n \n			
 		</text>
 	</string>
 
@@ -167,7 +168,7 @@
 		<text>%c[0,255,255,255]PROPERTIES:\n
 		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]United States\n
 		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]NcSTAR\n
-		%c[d_cyan] • %c[0,255,255,255] Magnification: %c[ui_gray_2]3.0-9.0x\n \n			
+		%c[d_cyan] • %c[0,255,255,255] Magnification: %c[ui_gray_2]3.0 - 9.0x\n \n			
 		</text>
 	</string>	
 
