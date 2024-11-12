@@ -427,7 +427,7 @@
 		<text>%c[0,255,255,255]PROPERTIES:\n
 		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]Russia\n
 		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]Various\n
-		%c[d_cyan] • %c[0,255,255,255] magnification: %c[ui_gray_2]1.0x - 10.0x\n \n
+		%c[d_cyan] • %c[0,255,255,255] magnification: %c[ui_gray_2]1.0x - 12.0x\n \n
 		</text>
 	</string>
 
