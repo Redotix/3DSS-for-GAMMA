@@ -4028,6 +4028,9 @@ lewd_lens_hide_bone          = lens
 lewd_lens_hide_delays        = 0.1,0
 lewd_lens_hide_aim_mode      = true, false, false
 
+![wpn_ak104_alfa_hud]
+anm_shots               		= wpn_hand_ak_tact_shoot_3dss, wpn_ak_tact_shoot
+
 ![wpn_ak104_alfa_acog]
         scope_zoom_factor                = 42.86
 		scope_texture                    =
@@ -4160,6 +4163,9 @@ lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = lens
 lewd_lens_hide_delays        = 0.1,0
 lewd_lens_hide_aim_mode      = true, false, false
+
+![wpn_ak12_custom_hud]
+anm_shots               		= wpn_hand_ak_tact_shoot_3dss, wpn_ak_tact_shoot
 
 ![wpn_ak12_custom_acog]
         scope_zoom_factor                = 42.86
@@ -5787,6 +5793,10 @@ lewd_lens_hide_bone          = lens
 lewd_lens_hide_delays        = 0.1,0
 lewd_lens_hide_aim_mode      = true, false, false
 
+![wpn_rpk74_16_hud]
+anm_shots               		= ak74_eft_ins_vgrip_shoot, shoot
+anm_shots_aim              		= ak74_eft_ins_vgrip_shoot_aim, shoot
+
 ![wpn_rpk74_16_acog]
         scope_zoom_factor                = 42.86
 		scope_texture                    =
@@ -5844,8 +5854,8 @@ zoom_step_count=1
         scope_zoom_factor                = 15
 		scope_texture                    =
 ![wpn_rpk74_16_leupold_hud]
-        aim_hud_offset_pos               = -0.080683, 0.00248, -0.096272
-        aim_hud_offset_pos_16x9          = -0.080683, 0.00248, -0.096272
+        aim_hud_offset_pos               = -0.080683, 0.00248, -0.091158
+        aim_hud_offset_pos_16x9          = -0.080683, 0.00248, -0.091158
         aim_hud_offset_rot               = -0.004315, -0.003614, -0.005
         aim_hud_offset_rot_16x9          = -0.004315, -0.003614, -0.005
 		
@@ -5853,8 +5863,8 @@ zoom_step_count=1
         scope_zoom_factor                = 15
 		scope_texture                    =
 ![wpn_rpk74_16_mark8_rmr_hud]
-        aim_hud_offset_pos               = -0.080683, 0.00248, -0.090584
-        aim_hud_offset_pos_16x9          = -0.080683, 0.00248, -0.090584
+        aim_hud_offset_pos               = -0.080683, 0.00248, -0.091158
+        aim_hud_offset_pos_16x9          = -0.080683, 0.00248, -0.091158
         aim_hud_offset_rot               = -0.004621, -0.003614, -0.005
         aim_hud_offset_rot_16x9          = -0.004621, -0.003614, -0.005
 		
@@ -6455,6 +6465,9 @@ lewd_lens_hide_delays        = 0.1,0
 lewd_lens_hide_aim_mode      = true, false, false			
 
 ![wpn_m4_butcher_hud]
+anm_shots              		 	= mka_sh_alt_fire_3dss, mka_sh_alt_fire
+!anm_shot_l
+
         aim_hud_offset_alt_pos           = -0.089686, -0.053537, -0.02
         aim_hud_offset_alt_pos_16x9      = -0.089686, -0.053537, -0.02
         aim_hud_offset_alt_rot           = 0.003846, 0.012728, 0.78
@@ -6562,6 +6575,9 @@ lewd_lens_hide_delays        = 0.1,0
 lewd_lens_hide_aim_mode      = true, false, false	
 
 ![wpn_m4_ru556_hud]
+anm_shots              		 	= mka_sh_fire_3dss, mka_sh_fire
+!anm_shot_l
+
         aim_hud_offset_alt_pos           = -0.080841, -0.032204, -0.02
         aim_hud_offset_alt_pos_16x9      = -0.080841, -0.032204, -0.02
         aim_hud_offset_alt_rot           = 0.027954, -0.024, 0.78
@@ -8032,15 +8048,35 @@ item_visual                	= anomaly_weapons\wpn_ak74m\wpn_ak74m_1p63_hud.ogf
         aim_hud_offset_rot               = 0.001706, 0.000806, 0
         aim_hud_offset_rot_16x9          = 0.001706, 0.000806, 0
 ;----------------------------------------------------------------------------------------
-![wpn_ak74m_pka]:wpn_ak74m
+@[wpn_ak74m_pka]:wpn_ak74m
+!parent_section
+
 hud                                      = wpn_ak74m_pka_hud
 1icon_layer                              = pka
 1icon_layer_x                            = 73
 1icon_layer_y                            = -2
 
+!inv_grid_x
+!inv_grid_y
+!inv_name
+!inv_name_short
+!description
+!cost
+!visual
+!scopes
+!bullet_speed
+!rpm
+!fire_dispersion_base
+!misfire_start_condition
+!misfire_start_prob 
+!misfire_end_condition
+!misfire_end_prob 
+!condition_queue_shot_dec
+!condition_shot_dec
+
 inv_weight                               = 3.80
 
-![wpn_ak74m_pka_hud]:wpn_ak74m_hud
+@[wpn_ak74m_pka_hud]:wpn_ak74m_hud
 item_visual                		= anomaly_weapons\wpn_ak74m\wpn_ak74m_pka_hud.ogf
         aim_hud_offset_pos               = -0.057149, 0.012931, -0.019093
         aim_hud_offset_pos_16x9          = -0.057149, 0.012931, -0.019093
