@@ -52,7 +52,6 @@ local scopes_to_check = {
 	"pn23",
 	"1p59",
 	"1pn93",
-	"1pn93n2_1gs",
 	"ps320",
 	"tac30",
 	"razorhd",
@@ -106,7 +105,7 @@ function bind_key(key, func)
         if released_key == key then
             func()
         end
-    end)
+    end
 end
 
 bind_key("DIK_F5", print_current_scope_name) -- DIK_F5 is a DirectInput key code for F5
