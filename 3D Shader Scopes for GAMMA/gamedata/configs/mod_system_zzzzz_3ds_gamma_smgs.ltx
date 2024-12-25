@@ -1,5 +1,6 @@
 ![wpn_aug_freedom]
->scopes						 = specter, monstrum, trihawk, vulcan, tac30
+>scopes						 = specter, monstrum, trihawk, vulcan, tac30, t12
+
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = lens
 lewd_lens_hide_delays        = 0.1,0
@@ -160,10 +161,31 @@ item_visual                              = anomaly_weapons\wpn_aug_9mm\wpn_aug_9
         aim_hud_offset_pos_16x9          = -0.059198, 0.02064, -0.128663
         aim_hud_offset_rot               = 0.004734, -0.003206, 0
         aim_hud_offset_rot_16x9          = 0.004734, -0.003206, 0
+
+;--------------------------------------------------------------------------------
+[wpn_aug_freedom_t12]:wpn_aug_freedom
+hud                                      = wpn_aug_freedom_t12_hud
+
+1icon_layer                              = t12
+1icon_layer_x                            = 102
+1icon_layer_y                            = -18
+
+	s3ds_reticle_size 	= 1.9
+	s3ds_image_type 	= 2
+	s3ds_reticle_type 	= 6
+	s3ds_min_zoom_1x	= 1	
+	magnification 		= 1
+[wpn_aug_freedom_t12_hud]:wpn_aug_freedom_hud
+item_visual                              = anomaly_weapons\wpn_aug_9mm\wpn_aug_9mm_t12_hud.ogf
+        aim_hud_offset_pos               = -0.058404, 0.024586, -0.087737
+        aim_hud_offset_pos_16x9          = -0.058404, 0.024586, -0.087737
+        aim_hud_offset_rot               = 0.008689, -0.004091, 0
+        aim_hud_offset_rot_16x9          = 0.008689, -0.004091, 0	
 		
 ;==============================================================================		
 ![wpn_mp5]
 >scopes						 = specter, monstrum, trihawk, vulcan
+
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = flash
 lewd_lens_hide_delays        = 0.1,0
@@ -277,7 +299,8 @@ lewd_lens_hide_aim_mode      = true, false, false
 
 ;==============================================================================
 ![wpn_mp5_nimble]
->scopes						 = specter, monstrum, trihawk, vulcan
+>scopes						 = specter, monstrum, trihawk, vulcan, t12
+
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = flash
 lewd_lens_hide_delays        = 0.1,0
@@ -380,10 +403,28 @@ item_visual                              = anomaly_weapons\wpn_mp5\wpn_mp5_nimbl
         aim_hud_offset_pos_16x9          = 0.015685, -0.038027, 0.003057
         aim_hud_offset_rot               = 0.060783, 0.053598, 0
         aim_hud_offset_rot_16x9          = 0.060783, 0.053598, 0
+
+;--------------------------------------------------------------------------------
+[wpn_mp5_nimble_t12]:wpn_mp5_nimble
+hud                                      = wpn_mp5_nimble_t12_hud
+
+1icon_layer                              = t12
+1icon_layer_x                            = 85
+1icon_layer_y                            = -20
+
+	s3ds_reticle_size 	= 2
+
+[wpn_mp5_nimble_t12_hud]:wpn_mp5_nimble_hud
+item_visual                              = anomaly_weapons\wpn_mp5\wpn_mp5_nimble_t12_hud.ogf
+        aim_hud_offset_pos               = 0.016328, -0.025398, 0.009155
+        aim_hud_offset_pos_16x9          = 0.016328, -0.025398, 0.009155
+        aim_hud_offset_rot               = 0.063081, 0.053424, 0
+        aim_hud_offset_rot_16x9          = 0.063081, 0.053424, 0
 		
 ;==============================================================================		
 ![wpn_mp5sd]
->scopes						 = specter, monstrum, trihawk, vulcan
+>scopes						 = specter, monstrum, trihawk, vulcan, t12
+
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = flash
 lewd_lens_hide_delays        = 0.1,0
@@ -482,6 +523,23 @@ item_visual                              = anomaly_weapons\wpn_mp5sd\wpn_mp5sd_v
         aim_hud_offset_rot               = 0.052174, 0.04055, 0
         aim_hud_offset_rot_16x9          = 0.052174, 0.04055, 0		
 
+;--------------------------------------------------------------------------------
+[wpn_mp5sd_t12]:wpn_mp5sd
+hud                                      = wpn_mp5sd_t12_hud
+
+1icon_layer                              = t12
+1icon_layer_x                            = 96
+1icon_layer_y                            = -19
+
+	s3ds_reticle_size 	= 2.05
+
+[wpn_mp5sd_t12_hud]:wpn_mp5sd_hud
+item_visual                              = anomaly_weapons\wpn_mp5sd\wpn_mp5sd_t12_hud.ogf
+        aim_hud_offset_pos               = 0.020286, -0.013632, 0.004013
+        aim_hud_offset_pos_16x9          = 0.020286, -0.013632, 0.004013
+        aim_hud_offset_rot               = 0.054147, 0.039946, 0
+        aim_hud_offset_rot_16x9          = 0.054147, 0.039946, 0	
+		
 ;==============================================================================
 ![wpn_mp5sd_custom]
 lewd_lens_hide_enabled       = true
@@ -500,7 +558,8 @@ lewd_lens_hide_aim_mode      = true, false, false
 		
 ;==============================================================================
 ![wpn_mp7]
->scopes						 = specter, monstrum, trihawk, vulcan
+>scopes						 = specter, monstrum, trihawk, vulcan, t12
+
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = joint11
 lewd_lens_hide_delays        = 0.1,0
@@ -601,11 +660,28 @@ item_visual                              = anomaly_weapons\wpn_mp7\wpn_mp7_vulca
         aim_hud_offset_pos_16x9          = 0.008798, -0.016985, -0.075537
         aim_hud_offset_rot               = 0.014283, 0.009715, -0.004273
         aim_hud_offset_rot_16x9          = 0.014283, 0.009715, -0.004273
+
+;--------------------------------------------------------------------------------
+[wpn_mp7_t12]:wpn_mp7
+hud                                      = wpn_mp7_t12_hud
+
+1icon_layer                              = t12
+1icon_layer_x                            = 52
+1icon_layer_y                            = -24
+
+	s3ds_reticle_size 	= 2
 	
+[wpn_mp7_t12_hud]:wpn_mp7_hud
+item_visual                              = anomaly_weapons\wpn_mp7\wpn_mp7_t12_hud.ogf
+        aim_hud_offset_pos               = 0.009445, -0.002386, -0.041469
+        aim_hud_offset_pos_16x9          = 0.009445, -0.002386, -0.041469
+        aim_hud_offset_rot               = 0.016125, 0.009029, -0.004273
+        aim_hud_offset_rot_16x9          = 0.016125, 0.009029, -0.004273
+		
 ;==============================================================================		
 ![wpn_ump45_custom]
 <scopes 					 = leupold, marchf, mark8_rmr, pn23
->scopes						 = monstrum, trihawk, vulcan
+>scopes						 = monstrum, trihawk, vulcan, t12
 
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = lens
@@ -714,10 +790,27 @@ item_visual                              = anomaly_weapons\wpn_ump45\wpn_ump45_s
         aim_hud_offset_pos_16x9          = -0.052447, 0.002788, -0.102631
         aim_hud_offset_rot               = 0.009859, -0.003313, 0
         aim_hud_offset_rot_16x9          = 0.009859, -0.003313, 0
-			
+
+;--------------------------------------------------------------------------------
+[wpn_ump45_custom_t12]:wpn_ump45_custom
+hud                                      = wpn_ump45_custom_t12_hud
+
+1icon_layer                              = t12
+1icon_layer_x                            = 90
+1icon_layer_y                            = -23
+
+	s3ds_reticle_size 	= 2
+	
+[wpn_ump45_custom_t12_hud]:wpn_ump45_sk1_hud
+        item_visual                 = anomaly_weapons\wpn_ump45\wpn_ump45_sk1_t12_hud.ogf
+        aim_hud_offset_pos               = -0.051871, 0.013687, -0.062162
+        aim_hud_offset_pos_16x9          = -0.051871, 0.013687, -0.062162
+        aim_hud_offset_rot               = 0.010017, -0.003499, 0
+        aim_hud_offset_rot_16x9          = 0.010017, -0.003499, 0
+		
 ;==============================================================================	
 ![wpn_p90gamma]
->scopes						 = monstrum, trihawk, vulcan
+>scopes						 = monstrum, trihawk, vulcan, t12
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = line
 lewd_lens_hide_delays        = 0.1,0
@@ -811,10 +904,28 @@ item_visual                              = dynamics\weapons\wpn_p90gamma\wpn_p90
         aim_hud_offset_pos_16x9          = 0.000188, -0.029282, -0.097705
         aim_hud_offset_rot               = 0.013188, 0.003344, 0.004
         aim_hud_offset_rot_16x9          = 0.013188, 0.003344, 0.004
+
+;--------------------------------------------------------------------------------
+[wpn_p90gamma_t12]:wpn_p90gamma
+hud                                      = wpn_p90gamma_t12_hud
+
+1icon_layer                              = t12
+1icon_layer_x                            = 130
+1icon_layer_y                            = -18
+
+s3ds_reticle_size 	= 1.95
+
+[wpn_p90gamma_t12_hud]:wpn_p90gamma_hud
+item_visual                              = dynamics\weapons\wpn_p90gamma\wpn_p90gamma_t12_hud.ogf
+        aim_hud_offset_pos               = 0.00094, -0.015925, -0.074955
+        aim_hud_offset_pos_16x9          = 0.00094, -0.015925, -0.074955
+        aim_hud_offset_rot               = 0.015391, 0.002934, 0.004
+        aim_hud_offset_rot_16x9          = 0.015391, 0.002934, 0.004	
 		
 ;==============================================================================	
 ![wpn_pp2000]
->scopes						 = monstrum, trihawk, vulcan
+>scopes						 = monstrum, trihawk, vulcan, t12
+
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = joint14
 lewd_lens_hide_delays        = 0.1,0
@@ -901,6 +1012,23 @@ item_visual                              = anomaly_weapons\wpn_pp2000\wpn_pp2000
         aim_hud_offset_pos_16x9          = -0.057029, -0.008827, -0.057517
         aim_hud_offset_rot               = 0.030491, 0.022522, -0.010304
         aim_hud_offset_rot_16x9          = 0.030491, 0.022522, -0.010304
+
+;--------------------------------------------------------------------------------
+[wpn_pp2000_t12]:wpn_pp2000
+hud                                      = wpn_pp2000_t12_hud
+
+1icon_layer                              = t12
+1icon_layer_x                            = 65
+1icon_layer_y                            = -7
+
+	s3ds_reticle_size 	= 1.85
+	
+[wpn_pp2000_t12_hud]:wpn_pp2000_hud
+item_visual                              = anomaly_weapons\wpn_pp2000\wpn_pp2000_t12_hud.ogf
+        aim_hud_offset_pos               = -0.056128, 0.005358, -0.016852
+        aim_hud_offset_pos_16x9          = -0.056128, 0.005358, -0.016852
+        aim_hud_offset_rot               = 0.033219, 0.021066, -0.015195
+        aim_hud_offset_rot_16x9          = 0.033219, 0.021066, -0.015195	
 		
 ;==============================================================================	
 ![wpn_sr2_m1]
@@ -1107,7 +1235,7 @@ item_visual                              = anomaly_weapons\wpn_vityaz\wpn_vityaz
 		
 ;==============================================================================	
 ![wpn_kriss_vector]
->scopes						 = gee36, monstrum, trihawk, vulcan, specter
+>scopes						 = gee36, monstrum, trihawk, vulcan, specter, t12
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = sight
 lewd_lens_hide_delays        = 0.1,0
@@ -1229,10 +1357,22 @@ item_visual                              = dynamics\weapons\wpn_kriss_vector\wpn
         aim_hud_offset_pos_16x9          = -0.076783, 0.024459, -0.101068
         aim_hud_offset_rot               = 0.030878, -0.024734, -0.01
         aim_hud_offset_rot_16x9          = 0.030878, -0.024734, -0.01			
+
+;--------------------------------------------------------------------------------
+[wpn_kriss_vector_t12]:wpn_kriss_vector
+hud                                      = wpn_kriss_vector_t12_hud
+
+1icon_layer                              = t12
+1icon_layer_x                            = 35
+1icon_layer_y                            = -28
+
+[wpn_kriss_vector_t12_hud]:wpn_kriss_vector_hud
+item_visual                              = dynamics\weapons\wpn_kriss_vector\wpn_kriss_vector_t12_hud.ogf
+	
 		
 ;==============================================================================	
 ![wpn_udp9]
->scopes		= vulcan, monstrum, tac30, trihawk
+>scopes		= vulcan, monstrum, tac30, trihawk, t12
 <scopes		= march_f_shorty, uh1_magd, e0t2_magd, pn23
 		
 ![wpn_udp9_acog_hud]		
@@ -1248,7 +1388,20 @@ zoom_step_count				= 1
         aim_hud_offset_pos_16x9          = -0.057474, 0.002474, -0.08707
         aim_hud_offset_rot               = 0.005746, -0.003815, 0
         aim_hud_offset_rot_16x9          = 0.005746, -0.003815, 0
-		
+
+![wpn_udp9_t12]:wpn_udp9
+hud                                      = wpn_udp9_t12_hud
+
+1icon_layer                              = t12
+1icon_layer_x                            = 95
+1icon_layer_y                            = -24
+
+![wpn_udp9_t12_hud]:wpn_udp9_hud
+        item_visual                 	 = dynamics\weapons\wpn_udp9\wpn_udp9_t12_hud.ogf
+        aim_hud_offset_pos               = -0.057411, 0.008941, -0.026336
+        aim_hud_offset_pos_16x9          = -0.057411, 0.008941, -0.026336
+        aim_hud_offset_rot               = 0.008606, -0.00352, 0
+        aim_hud_offset_rot_16x9          = 0.008606, -0.00352, 0		
 ;--------------------------------------------------------------------------------------------		
 [wpn_udp9_monstrum]:wpn_udp9
 hud                     = wpn_udp9_monstrum_hud
@@ -1330,3 +1483,8 @@ item_visual                              = dynamics\weapons\wpn_udp9\wpn_udp9_ta
         aim_hud_offset_pos_16x9          = -0.05772, 0.000406, -0.019271
         aim_hud_offset_rot               = 0.005869, -0.003857, 0
         aim_hud_offset_rot_16x9          = 0.005869, -0.003857, 0
+
+;--------------------------------------------------------------------------------
+
+			
+		

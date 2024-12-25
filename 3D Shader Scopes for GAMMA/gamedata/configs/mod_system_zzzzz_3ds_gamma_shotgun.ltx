@@ -1,5 +1,6 @@
 ![wpn_raptr]
->scopes						 = gee36, tac30, vulcan, trihawk, monstrum
+>scopes						 = gee36, tac30, vulcan, trihawk, monstrum, t12
+
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = lens
 lewd_lens_hide_delays        = 0.1,0
@@ -145,10 +146,26 @@ item_visual                              = dynamics\weapons\wpn_raptr\wpn_raptr_
         aim_hud_offset_pos_16x9          = -0.051007, 0.002898, -0.117518
         aim_hud_offset_rot               = 0.010727, 0.002982, 0
         aim_hud_offset_rot_16x9          = 0.010727, 0.002982, 0
+
+;--------------------------------------------------------------------------------
+[wpn_raptr_t12]:wpn_raptr
+hud                                      = wpn_raptr_t12_hud
+
+1icon_layer                              = t12
+1icon_layer_x                            = 112
+1icon_layer_y                            = -6
+
+[wpn_raptr_t12_hud]:wpn_raptr_hud
+item_visual                              = dynamics\weapons\wpn_raptr\wpn_raptr_t12_hud.ogf
+        aim_hud_offset_pos               = -0.050401, 0.007221, -0.048398
+        aim_hud_offset_pos_16x9          = -0.050401, 0.007221, -0.048398
+        aim_hud_offset_rot               = 0.013032, 0.002632, 0
+        aim_hud_offset_rot_16x9          = 0.013032, 0.002632, 0	
 		
 ;==============================================================================	
 ![wpn_saiga12s_m1]
 >scopes                      = 1p63, pso2, pso1m21, 1pn93n2_1gs, 1pn93, usp1, 1p78gs, 1p29, ps01
+
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = launcher_sight
 lewd_lens_hide_delays        = 0.1,0
@@ -251,6 +268,24 @@ item_visual             = dynamics\weapons\wpn_saiga12s_m1\wpn_saiga12s_m1_pso1_
         aim_hud_offset_alt_pos_16x9      = -0.054304, 0.024497, -0.027711
         aim_hud_offset_alt_rot           = 0.033126, 0.024264, 0
         aim_hud_offset_alt_rot_16x9      = 0.033126, 0.024264, 0
+
+![wpn_saiga12s_m1_1p29]
+	scope_texture			=
+	scope_status            = 1
+	scope_zoom_factor       = 30
+	zoom_rotate_time		= 0.25
+	use_alt_aim_hud			= true
+![wpn_saiga12s_m1_1p29_hud]
+item_visual             = dynamics\weapons\wpn_saiga12s_m1\wpn_saiga12s_m1_1p29_hud.ogf
+        aim_hud_offset_pos               = -0.053813, -0.008573, 0.01067
+        aim_hud_offset_pos_16x9          = -0.053813, -0.008573, 0.01067
+        aim_hud_offset_rot               = 0.041743, 0.020562, 0
+        aim_hud_offset_rot_16x9          = 0.041743, 0.020562, 0
+		
+        aim_hud_offset_alt_pos           = -0.054304, 0.024497, -0.027711
+        aim_hud_offset_alt_pos_16x9      = -0.054304, 0.024497, -0.027711
+        aim_hud_offset_alt_rot           = 0.033126, 0.024264, 0
+        aim_hud_offset_alt_rot_16x9      = 0.033126, 0.024264, 0
 		
 ![wpn_saiga12s_m1_pso1m21]:wpn_saiga12s_m1_pso2	
 1icon_layer			    = pso1m21			
@@ -267,14 +302,15 @@ hud				= wpn_saiga12s_m1_1p63_hud
 
 [wpn_saiga12s_m1_1p63_hud]:wpn_saiga12s_m1_hud
 item_visual                	= dynamics\weapons\wpn_saiga12s_m1\wpn_saiga12s_m1_1p63_hud.ogf
-        aim_hud_offset_pos               = -0.042048, -0.012744, 0.036918
-        aim_hud_offset_pos_16x9          = -0.042048, -0.012744, 0.036918
-        aim_hud_offset_rot               = 0.040717, 0.021262, 0
-        aim_hud_offset_rot_16x9          = 0.040717, 0.021262, 0
+        aim_hud_offset_pos               = -0.052299, -0.01234, 0.036918
+        aim_hud_offset_pos_16x9          = -0.052299, -0.01234, 0.036918
+        aim_hud_offset_rot               = 0.042582, 0.022504, 0
+        aim_hud_offset_rot_16x9          = 0.042582, 0.022504, 0
 		
 ;==============================================================================	
 ![wpn_saiga12s_m2]
 >scopes						 = acog, specter, tac30, vulcan, trihawk, monstrum
+
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = launcher_sight
 lewd_lens_hide_delays        = 0.1,0
@@ -369,10 +405,10 @@ hud                     = wpn_saiga12s_m2_trihawk_hud
 
 [wpn_saiga12s_m2_trihawk_hud]:wpn_saiga12s_m2_hud
 item_visual                              = dynamics\weapons\wpn_saiga12s_m2\wpn_saiga12s_m2_trihawk_hud.ogf	
-        aim_hud_offset_pos               = -0.052343, -0.009962, -0.001553
-        aim_hud_offset_pos_16x9          = -0.052343, -0.009962, -0.001553
-        aim_hud_offset_rot               = 0.040846, 0.02109, 0
-        aim_hud_offset_rot_16x9          = 0.040846, 0.02109, 0
+        aim_hud_offset_pos               = -0.051949, -0.015395, 0.005014
+        aim_hud_offset_pos_16x9          = -0.051949, -0.015395, 0.005014
+        aim_hud_offset_rot               = 0.040714, 0.020694, 0
+        aim_hud_offset_rot_16x9          = 0.040714, 0.020694, 0
 ;--------------------------------------------------------------------------------------------
 [wpn_saiga12s_m2_monstrum]:wpn_saiga12s_m2
 hud                     = wpn_saiga12s_m2_monstrum_hud
@@ -395,7 +431,8 @@ item_visual                              = dynamics\weapons\wpn_saiga12s_m2\wpn_
 		
 ;==============================================================================	
 ![wpn_saiga12s_isg]
->scopes						 = acog, specter, tac30, vulcan, trihawk, monstrum
+>scopes						 = acog, specter, tac30, vulcan, trihawk, monstrum, t12
+
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = muzzle_gl
 lewd_lens_hide_delays        = 0.1,0
@@ -503,6 +540,22 @@ item_visual                              = dynamics\weapons\wpn_saiga12s_isg\wpn
         aim_hud_offset_pos_16x9          = -0.059162, 0.009634, -0.027583
         aim_hud_offset_rot               = 0.013381, 0.003562, 0.002187
         aim_hud_offset_rot_16x9          = 0.013381, 0.003562, 0.002187
+
+;--------------------------------------------------------------------------------
+[wpn_saiga12s_isg_t12]:wpn_saiga12s_isg
+hud                                      = wpn_saiga12s_isg_t12_hud
+
+1icon_layer                              = t12
+
+1icon_layer_x                            = 85
+1icon_layer_y                            = -17
+
+[wpn_saiga12s_isg_t12_hud]:wpn_saiga12s_isg_hud
+item_visual                              = dynamics\weapons\wpn_saiga12s_isg\wpn_saiga12s_isg_t12_hud.ogf
+        aim_hud_offset_pos               = -0.058606, 0.003731, 0.007857
+        aim_hud_offset_pos_16x9          = -0.058606, 0.003731, 0.007857
+        aim_hud_offset_rot               = 0.014267, 0.003542, 0.002187
+        aim_hud_offset_rot_16x9          = 0.014267, 0.003542, 0.002187	
 		
 ;==============================================================================
 ![wpn_mossberg590_rail]
@@ -692,7 +745,8 @@ item_visual                              = anomaly_weapons\wpn_mossberg590a1\wpn
 
 ;==============================================================================	
 ![wpn_benelli_m1014]
->scopes						 = acog, specter, tac30, vulcan, trihawk, monstrum
+>scopes						 = acog, specter, tac30, vulcan, trihawk, monstrum, t12
+
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = folding_stock
 lewd_lens_hide_delays        = 0.1,0
@@ -713,10 +767,10 @@ lewd_lens_hide_aim_mode      = true, false, false
 	
 [wpn_benelli_m1014_acog_hud]:wpn_benelli_m1014_hud
 item_visual                              = anomaly_weapons\wpn_benelli_m1014\wpn_benelli_m1014_acog_hud.ogf
-        aim_hud_offset_pos               = -0.054774, 0.013137, -0.11092
-        aim_hud_offset_pos_16x9          = -0.054774, 0.013137, -0.11092
-        aim_hud_offset_rot               = 0.031044, -0.004622, -0.031884
-        aim_hud_offset_rot_16x9          = 0.031044, -0.004622, -0.031884
+        aim_hud_offset_pos               = -0.054551, 0.013975, -0.113227
+        aim_hud_offset_pos_16x9          = -0.054551, 0.013975, -0.113227
+        aim_hud_offset_rot               = 0.031044, -0.004622, -0.046
+        aim_hud_offset_rot_16x9          = 0.031044, -0.004622, -0.046
 		
 ;--------------------------------------------------------------------------------
 [wpn_benelli_m1014_tac30]:wpn_benelli_m1014
@@ -733,10 +787,10 @@ hud                         = wpn_benelli_m1014_tac30_hud
 	
 [wpn_benelli_m1014_tac30_hud]:wpn_benelli_m1014_hud
 item_visual                              = anomaly_weapons\wpn_benelli_m1014\wpn_benelli_m1014_tac30_hud.ogf
-        aim_hud_offset_pos               = -0.054498, 0.007153, -0.056614
-        aim_hud_offset_pos_16x9          = -0.054498, 0.007153, -0.056614
-        aim_hud_offset_rot               = 0.025, -0.0051, -0.031884
-        aim_hud_offset_rot_16x9          = 0.025, -0.0051, -0.031884
+        aim_hud_offset_pos               = -0.054453, 0.007858, -0.056614
+        aim_hud_offset_pos_16x9          = -0.054453, 0.007858, -0.056614
+        aim_hud_offset_rot               = 0.025, -0.0051, -0.046
+        aim_hud_offset_rot_16x9          = 0.025, -0.0051, -0.046
 		
 ;--------------------------------------------------------------------------------		
 [wpn_benelli_m1014_monstrum]:wpn_benelli_m1014
@@ -753,10 +807,10 @@ item_visual                              = anomaly_weapons\wpn_benelli_m1014\wpn
 		
 [wpn_benelli_m1014_monstrum_hud]:wpn_benelli_m1014_hud
 item_visual                              = anomaly_weapons\wpn_benelli_m1014\wpn_benelli_m1014_monstrum_hud.ogf
-        aim_hud_offset_pos               = -0.054581, 0.018868, -0.075822
-        aim_hud_offset_pos_16x9          = -0.054581, 0.018868, -0.075822
-        aim_hud_offset_rot               = 0.024591, -0.005611, -0.031884
-        aim_hud_offset_rot_16x9          = 0.024591, -0.005611, -0.031884
+        aim_hud_offset_pos               = -0.05458, 0.019619, -0.077561
+        aim_hud_offset_pos_16x9          = -0.05458, 0.019619, -0.077561
+        aim_hud_offset_rot               = 0.024502, -0.005382, -0.046
+        aim_hud_offset_rot_16x9          = 0.024502, -0.005382, -0.046
 		
 ;--------------------------------------------------------------------------------
 [wpn_benelli_m1014_trihawk]:wpn_benelli_m1014
@@ -773,10 +827,10 @@ item_visual                              = anomaly_weapons\wpn_benelli_m1014\wpn
 	
 [wpn_benelli_m1014_trihawk_hud]:wpn_benelli_m1014_hud
 item_visual                              = anomaly_weapons\wpn_benelli_m1014\wpn_benelli_m1014_trihawk_hud.ogf
-        aim_hud_offset_pos               = -0.051108, -0.000166, -0.059431
-        aim_hud_offset_pos_16x9          = -0.051108, -0.000166, -0.059431
-        aim_hud_offset_rot               = 0.010465, 0.003201, 0
-        aim_hud_offset_rot_16x9          = 0.010465, 0.003201, 0
+        aim_hud_offset_pos               = -0.054404, 0.008161, -0.074436
+        aim_hud_offset_pos_16x9          = -0.054404, 0.008161, -0.074436
+        aim_hud_offset_rot               = 0.024995, -0.005289, -0.046
+        aim_hud_offset_rot_16x9          = 0.024995, -0.005289, -0.046
 		
 ;--------------------------------------------------------------------------------
 [wpn_benelli_m1014_specter]:wpn_benelli_m1014
@@ -795,15 +849,15 @@ item_visual                              = anomaly_weapons\wpn_benelli_m1014\wpn
 	
 [wpn_benelli_m1014_specter_hud]:wpn_benelli_m1014_hud
 item_visual                              = anomaly_weapons\wpn_benelli_m1014\wpn_benelli_m1014_specter_hud.ogf
-        aim_hud_offset_alt_pos           = -0.054817, -0.012675, -0.082416
-        aim_hud_offset_alt_pos_16x9      = -0.054817, -0.012675, -0.082416
-        aim_hud_offset_alt_rot           = 0.026575, -0.001184, -0.03884
-        aim_hud_offset_alt_rot_16x9      = 0.026575, -0.001184, -0.03884
+        aim_hud_offset_alt_pos           = -0.055081, -0.012587, -0.081263
+        aim_hud_offset_alt_pos_16x9      = -0.055081, -0.012587, -0.081263
+        aim_hud_offset_alt_rot           = 0.025122, -0.001095, -0.046
+        aim_hud_offset_alt_rot_16x9      = 0.025122, -0.001095, -0.046
 		
-        aim_hud_offset_pos               = -0.054483, 0.011613, -0.100264
-        aim_hud_offset_pos_16x9          = -0.054483, 0.011613, -0.100264
-        aim_hud_offset_rot               = 0.025147, -0.00485, -0.031884
-        aim_hud_offset_rot_16x9          = 0.025147, -0.00485, -0.031884
+        aim_hud_offset_pos               = -0.054263, 0.012363, -0.099429
+        aim_hud_offset_pos_16x9          = -0.054263, 0.012363, -0.099429
+        aim_hud_offset_rot               = 0.024971, -0.005201, -0.046
+        aim_hud_offset_rot_16x9          = 0.024971, -0.005201, -0.046
 		
 ;--------------------------------------------------------------------------------
 [wpn_benelli_m1014_vulcan]:wpn_benelli_m1014
@@ -820,10 +874,27 @@ hud = wpn_benelli_m1014_vulcan_hud
 	
 [wpn_benelli_m1014_vulcan_hud]:wpn_benelli_m1014_hud
 item_visual 							= anomaly_weapons\wpn_benelli_m1014\wpn_benelli_m1014_vulcan_hud.ogf
-        aim_hud_offset_pos               = -0.054959, 0.012711, -0.082356
-        aim_hud_offset_pos_16x9          = -0.054959, 0.012711, -0.082356
-        aim_hud_offset_rot               = 0.024706, -0.004806, -0.031884
-        aim_hud_offset_rot_16x9          = 0.024706, -0.004806, -0.031884
+        aim_hud_offset_pos               = -0.054827, 0.013373, -0.082356
+        aim_hud_offset_pos_16x9          = -0.054827, 0.013373, -0.082356
+        aim_hud_offset_rot               = 0.024574, -0.004761, -0.046
+        aim_hud_offset_rot_16x9          = 0.024574, -0.004761, -0.046
+
+;--------------------------------------------------------------------------------
+[wpn_benelli_m1014_t12]:wpn_benelli_m1014
+hud                                      = wpn_benelli_m1014_t12_hud
+
+1icon_layer                              = t12
+1icon_layer_x                            = 120
+1icon_layer_y                            = -2
+
+	s3ds_reticle_size 	= 2
+
+[wpn_benelli_m1014_t12_hud]:wpn_benelli_m1014_hud
+item_visual 							= anomaly_weapons\wpn_benelli_m1014\wpn_benelli_m1014_t12_hud.ogf
+        aim_hud_offset_pos               = -0.054664, 0.024052, -0.04843
+        aim_hud_offset_pos_16x9          = -0.054664, 0.024052, -0.04843
+        aim_hud_offset_rot               = 0.026838, -0.004907, -0.031884
+        aim_hud_offset_rot_16x9          = 0.026838, -0.004907, -0.031884	
 		
 ;==============================================================================		
 ![wpn_toz106]
