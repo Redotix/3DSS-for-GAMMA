@@ -5,12 +5,13 @@ struct vf
 {
     float4 hpos : SV_Position;
     float2 tc0 : TEXCOORD0;
-    float3 v_pos : TEXCOORD1;
-    float3 v_nrm : TEXCOORD2;
-	float3 w_pos : TEXCOORD3;
-	float3 w_nrm : TEXCOORD4;
-	float3 v_dir : TEXCOORD5;
-	float3 v_sun : TEXCOORD6;
+	float3 w_pos : POSITION1;
+	float3 w_nrm : NORMAL1;
+    float3 v_pos : POSITION0;
+    float3 v_nrm : NORMAL0;
+	float3 T : TANGENT0;
+	float3 B : BINORMAL0;
+	float3 N : NORMAL2;
 };
 
 vf     _main (v_model v)
@@ -20,15 +21,16 @@ vf     _main (v_model v)
     o.hpos = mul(m_WVP, v.P);
     o.tc0 = v.tc.xy;
 
+	o.w_pos = mul(m_W, v.P).xyz;
+	o.w_nrm = mul(m_W, v.N).xyz;
+
     o.v_pos = mul(m_WV, v.P).xyz;
     o.v_nrm = mul(m_WV, v.N).xyz;
 
-	o.w_pos = mul(m_W, v.P).xyz;
-	o.w_nrm = mul(m_W, v.N).xyz;
+	o.T = mul(m_W, v.T).xyz;
+	o.B = mul(m_W, v.B).xyz;
+	o.N = mul(m_W, v.N).xyz;
 	
-	o.v_dir = mul(m_V, normalize(o.w_pos - eye_position));
-	o.v_sun = mul(m_V, L_sun_dir_w);
-
     return o;
 }
 
