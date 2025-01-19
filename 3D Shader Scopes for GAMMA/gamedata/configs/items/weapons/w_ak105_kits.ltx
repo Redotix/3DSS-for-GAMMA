@@ -1,12 +1,12 @@
 ;------------------------------------------------------------------------------------------------
-[wpn_ak105_bas]:identity_immunities,weapon_probability,default_weapon_params,wpn_ak105_sounds
+[wpn_ak105_dummy]:identity_immunities,weapon_probability,default_weapon_params,wpn_ak105_sounds
 GroupControlSection                      = spawn_group
 $npc                                     = on
 $prefetch                                = 8
 $spawn                                   = "weapons\ak-74"
 scheduled                                = off
 cform                                    = skeleton
-parent_section                           = wpn_ak105_bas
+parent_section                           = wpn_ak105_dummy
 
 class                                    = WP_AK74
 slot                                     = 2
@@ -20,8 +20,8 @@ default_to_ruck                          = false
 sprint_allowed                           = true
 
 icons_texture                                       = ui\ui_icon_bas
-inv_grid_width     = 4
-inv_grid_height    = 2
+inv_grid_width     = 0
+inv_grid_height    = 0
 inv_grid_x         = 8
 inv_grid_y         = 2
 
@@ -35,7 +35,7 @@ cost                                     = 24480
 repair_type                              = rifle_5
 weapon_class                             = assault_rifle
 
-hud                                      = wpn_ak105_bas_hud
+hud                                      = wpn_ak105_dummy_hud
 visual                                   = dynamics\weapons\wpn_ak105\wpn_ak105_world.ogf
 position                                 = -0.08, 0.127, -0.16		; -0.08, 0.1, -0.19  x,y,z (left/right, up/down, forward/back )
 orientation                              = 2, -6, 0			; 0, 0, 0
@@ -196,7 +196,7 @@ snd_reload_misfire		= weapons\ak74m_beard\ak74_misfire
 ;snd_switch_mode			= weapons\generic\switch_mode
 
 ;---------------------------------------------------------------------HUD-------------------------------------------------------------------------------
-[wpn_ak105_bas_hud]:hud_base
+[wpn_ak105_dummy_hud]:hud_base
 
 item_visual                              = dynamics\weapons\wpn_ak105\wpn_ak105_hud.ogf
 
@@ -321,7 +321,7 @@ use_alt_aim_hud                   = true
 	magnification 		= 4	
     min_magnification	= 1
 ;-----------------------------------------------------SWAMP_HUD-----------------------------------------------------------------------------
-[wpn_ak105_swamp_hud]:wpn_ak105_bas_hud
+[wpn_ak105_swamp_hud]:wpn_ak105_dummy_hud
 
 item_visual                              = dynamics\weapons\wpn_ak105\wpn_ak105_swamp_hud.ogf
 
@@ -432,7 +432,7 @@ item_visual                              = dynamics\weapons\wpn_ak105\wpn_ak105_
         aim_hud_offset_rot_16x9          = 0.005096, -0.000649, -0.006
 		
 ;============================================================================================================
-[wpn_ak105_shakal]:wpn_ak105_bas
+[wpn_ak105_shakal]:wpn_ak105_dummy
 
 inv_grid_width     = 5
 inv_grid_height    = 2
@@ -490,7 +490,7 @@ laser_status = true
 use_alt_aim_hud                   = true
 
 ;-----------------------------------------------------shakal_HUD-----------------------------------------------------------------------------
-[wpn_ak105_shakal_hud]:wpn_ak105_bas_hud
+[wpn_ak105_shakal_hud]:wpn_ak105_dummy_hud
 
 item_visual                              = dynamics\weapons\wpn_ak105\wpn_ak105_shakal_hud.ogf
 
