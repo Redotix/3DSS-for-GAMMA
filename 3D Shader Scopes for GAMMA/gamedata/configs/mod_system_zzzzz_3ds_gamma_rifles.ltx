@@ -830,6 +830,10 @@ lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = zatvor2
 lewd_lens_hide_delays        = 0.1,0
 lewd_lens_hide_aim_mode      = true, false, false
+![wpn_ash12_hud]
+anm_idle_aim                             = barry_idle_aim_ash_hands, idle, 0.000000000000001
+anm_idle_aim_moving                      = barry_walk_ash_hands, idle, 0.000000000000001
+anm_idle_aim_moving_crouch               = barry_walk_ash_hands, idle, 0.000000000000001
 
 ![wpn_ash12_sup]
 scopes 			= gauss_sight 
@@ -2686,7 +2690,6 @@ hud                          = wpn_m249_specter_hud
 1icon_layer_x                = 55
 1icon_layer_y                = -2
 
-zoom_step_count				 = 1
 inv_weight                   = 8.08
 zoom_rotate_time		     = 0.25
 use_alt_aim_hud              = true
@@ -2886,8 +2889,8 @@ scope_texture                    =
 
 s3ds_exit_pupil		= 0.4
 ![wpn_pkm_zenit_siber_specter_hud]
-        aim_hud_offset_pos               = 0.007058, -0.022065, -0.043522
-        aim_hud_offset_pos_16x9          = 0.007058, -0.022065, -0.043522
+        aim_hud_offset_pos               = 0.007058, -0022065, -0.043522
+        aim_hud_offset_pos_16x9          = 0.007058, -0022065, -0.043522
         aim_hud_offset_rot               = 0.007856, 0.002285, 0.009321
         aim_hud_offset_rot_16x9          = 0.007856, 0.002285, 0.009321
 		
@@ -7315,6 +7318,7 @@ item_visual                              = dynamics\weapons\wpn_m4_tac\wpn_m4_ta
 ;==============================================================================
 ![wpn_m4a1_siber]
 <scopes						 = marchf
+
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = lens
 lewd_lens_hide_delays        = 0.1,0
@@ -7344,7 +7348,7 @@ lewd_lens_hide_aim_mode      = true, false, false
         aim_hud_offset_alt_rot_16x9      = -0.014873, -0.00823, 0.78
 		
 ![wpn_m4a1_siber_specter]
-zoom_step_count=1
+		zoom_step_count					 = 1
         scope_zoom_factor                = 30
         scope_texture                    =
 ![wpn_m4a1_siber_specter_hud]
@@ -7359,7 +7363,7 @@ zoom_step_count=1
         aim_hud_offset_rot_16x9          = 0.004268, -0.010676, 0
 		
 ![wpn_m4a1_siber_spec_alt]
-zoom_step_count=1
+		zoom_step_count					 = 1
         scope_zoom_factor                = 30
         scope_texture                    =
 ![wpn_m4a1_siber_spec_alt_hud]
