@@ -1,0 +1,138 @@
+;==============================================================================
+![wpn_amb17]
+>scopes						 = gee36, gauss_sight, t12
+
+lewd_lens_hide_enabled       = true
+lewd_lens_hide_bone          = lens
+lewd_lens_hide_delays        = 0.1,0
+lewd_lens_hide_aim_mode      = true, false, false
+
+![wpn_amb17_hud]
+        aim_hud_offset_pos               = -0.056465, 0.012426, 0
+        aim_hud_offset_pos_16x9          = -0.056465, 0.012426, 0
+        aim_hud_offset_rot               = 0.005911, 0.008754, 0
+        aim_hud_offset_rot_16x9          = 0.005911, 0.008754, 0
+![wpn_amb17_acog]
+        scope_zoom_factor                = 42.86
+		scope_texture                    =
+![wpn_amb17_acog_hud]
+        aim_hud_offset_pos               = -0.055793, 0.010469, -0.089817
+        aim_hud_offset_pos_16x9          = -0.055793, 0.010469, -0.089817
+        aim_hud_offset_rot               = 0.01489, 0.004947, 0
+        aim_hud_offset_rot_16x9          = 0.01489, 0.004947, 0
+		
+![wpn_amb17_specter]
+zoom_step_count=1
+        scope_zoom_factor                = 30
+        scope_texture                    =
+![wpn_amb17_specter_hud]
+        aim_hud_offset_pos               = -0.055485, 0.0083, -0.088094
+        aim_hud_offset_pos_16x9          = -0.055485, 0.0083, -0.088094
+        aim_hud_offset_rot               = 0.009102, 0.004871, 0
+        aim_hud_offset_rot_16x9          = 0.009102, 0.004871, 0
+		
+![wpn_amb17_leupold]
+        scope_zoom_factor                = 15
+		scope_texture                    =
+![wpn_amb17_leupold_hud]
+        aim_hud_offset_pos               = -0.055575, 0.007026, -0.05604
+        aim_hud_offset_pos_16x9          = -0.055575, 0.007026, -0.05604
+        aim_hud_offset_rot               = 0.00897, 0.004815, 0
+        aim_hud_offset_rot_16x9          = 0.00897, 0.004815, 0
+		
+![wpn_amb17_triji]
+        scope_zoom_factor                = 42.86
+		scope_texture                    =
+![wpn_amb17_triji_hud]
+        aim_hud_offset_alt_pos           = -0.078, -0.051202, -0.03
+        aim_hud_offset_alt_pos_16x9      = -0.078, -0.051202, -0.03
+        aim_hud_offset_pos               = -0.055793, 0.010469, -0.089817
+        aim_hud_offset_pos_16x9          = -0.055793, 0.010469, -0.089817
+        aim_hud_offset_rot               = 0.01489, 0.004947, 0
+        aim_hud_offset_rot_16x9          = 0.01489, 0.004947, 0
+		
+![wpn_amb17_spec_alt]
+zoom_step_count=1
+        scope_zoom_factor                = 30
+        scope_texture                    =
+![wpn_amb17_spec_alt_hud]
+        aim_hud_offset_pos               = -0.055485, 0.0083, -0.088094
+        aim_hud_offset_pos_16x9          = -0.055485, 0.0083, -0.088094
+        aim_hud_offset_rot               = 0.009102, 0.004871, 0
+        aim_hud_offset_rot_16x9          = 0.009102, 0.004871, 0
+        aim_hud_offset_alt_pos           = -0.078, -0.051202, -0.03
+        aim_hud_offset_alt_pos_16x9      = -0.078, -0.051202, -0.03	
+		
+![wpn_amb17_mark8_rmr]
+        scope_zoom_factor                = 15
+		scope_texture                    =
+![wpn_amb17_mark8_rmr_hud]
+        aim_hud_offset_alt_pos           = -0.078, -0.051202, -0.03
+        aim_hud_offset_alt_pos_16x9      = -0.078, -0.051202, -0.03
+        aim_hud_offset_pos               = -0.055575, 0.007026, -0.05604
+        aim_hud_offset_pos_16x9          = -0.055575, 0.007026, -0.05604
+        aim_hud_offset_rot               = 0.00897, 0.004815, 0
+        aim_hud_offset_rot_16x9          = 0.00897, 0.004815, 0
+		
+;---------------------------------------------------------------------------------------
+[wpn_amb17_gee36]:wpn_amb17
+hud                         = wpn_amb17_gee36_hud
+
+1icon_layer                  = gee36
+1icon_layer_x                = 65
+1icon_layer_y                = -21
+
+inv_weight				= 3.300
+
+        scope_status         = 1
+        scope_dynamic_zoom   = off
+        scope_zoom_factor    = 40
+        scope_texture        =	
+		
+[wpn_amb17_gee36_hud]:wpn_amb17_hud
+item_visual                              = dynamics\weapons\wpn_amb17\wpn_amb17_gee36_hud.ogf
+        aim_hud_offset_alt_pos           = -0.078, -0.051202, -0.03
+        aim_hud_offset_alt_pos_16x9      = -0.078, -0.051202, -0.03
+		
+        aim_hud_offset_pos               = -0.055856, 0.005815, -0.11243
+        aim_hud_offset_pos_16x9          = -0.055856, 0.005815, -0.11243
+        aim_hud_offset_rot               = 0.009266, 0.005158, 0.0188
+        aim_hud_offset_rot_16x9          = 0.009266, 0.005158, 0.0188	
+
+;---------------------------------------------------------------------------------------
+[wpn_amb17_gauss_sight]:wpn_amb17
+hud                         = wpn_amb17_gauss_sight_hud
+
+1icon_layer                  = gauss_sight
+1icon_layer_x                = 65
+1icon_layer_y                = -21
+
+inv_weight				= 3.90
+
+scope_status                     = 1
+scope_dynamic_zoom               = on
+scope_zoom_factor                = 12
+		
+[wpn_amb17_gauss_sight_hud]:wpn_amb17_hud
+item_visual                              = dynamics\weapons\wpn_amb17\wpn_amb17_gauss_hud.ogf
+        aim_hud_offset_pos               = -0.055606, 0.010763, -0.12069
+        aim_hud_offset_pos_16x9          = -0.055606, 0.010763, -0.12069
+        aim_hud_offset_rot               = 0.008978, 0.004854, 0
+        aim_hud_offset_rot_16x9          = 0.008978, 0.004854, 0
+
+;--------------------------------------------------------------------------------
+[wpn_amb17_t12]:wpn_amb17
+hud                                      = wpn_amb17_t12_hud
+
+1icon_layer                              = t12
+1icon_layer_x                            = 95
+1icon_layer_y                            = -12
+
+
+[wpn_amb17_t12_hud]:wpn_amb17_hud
+item_visual                              = dynamics\weapons\wpn_amb17\wpn_amb17_t12_hud.ogf
+        aim_hud_offset_pos               = -0.055608, 0.012645, -0.037629
+        aim_hud_offset_pos_16x9          = -0.055608, 0.012645, -0.037629
+        aim_hud_offset_rot               = 0.011358, 0.005215, 0
+        aim_hud_offset_rot_16x9          = 0.011358, 0.005215, 0
+		

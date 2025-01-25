@@ -1,0 +1,189 @@
+;==============================================================================
+![wpn_mossberg590_rail]
+>scopes	=	tac30, monstrum, trihawk, hamr, vulcan
+
+![wpn_mossberg590_rail_hud]
+anm_idle_aim = h_m590_aim_swayless, m590_idle
+		
+![wpn_mossberg590_rail_acog]
+scope_zoom_factor                = 42.86
+scope_texture                    =
+
+	s3ds_reticle_size 	= 3.9
+	s3ds_eye_relief 	= 1.5
+	s3ds_exit_pupil		= 0.55	
+	s3ds_chroma_power	= 0.031	
+	s3ds_reticle_type 	= 0
+	magnification 		= 2.8		
+![wpn_mossberg590_rail_acog_hud]
+        aim_hud_offset_pos               = 0.000318, -0.029201, -0.051869
+        aim_hud_offset_pos_16x9          = 0.000318, -0.029201, -0.051869
+        aim_hud_offset_rot               = 0.007814, -0.003203, -0.015
+        aim_hud_offset_rot_16x9          = 0.007814, -0.003203, -0.015
+		
+![wpn_mossberg590_rail_specter]
+scope_zoom_factor       = 30
+scope_texture           =
+zoom_step_count 		= 1
+scope_dynamic_zoom		= on
+use_alt_aim_hud			= true
+
+	s3ds_reticle_size 	= 4.5
+	s3ds_eye_relief 	= 2
+	s3ds_chroma_power	= 0.04	
+	s3ds_reticle_type 	= 4
+	ms_count 			= 3
+	ms_colors			= scope_black, scope_red_dim, scope_red
+	magnification 		= 4			
+![wpn_mossberg590_rail_specter_hud]
+        aim_hud_offset_alt_pos           = 0.000109, -0.058665, 0
+        aim_hud_offset_alt_pos_16x9      = 0.000109, -0.058665, 0
+        aim_hud_offset_alt_rot           = 0.001349, 0.000641, -0.015
+        aim_hud_offset_alt_rot_16x9      = 0.001349, 0.000641, -0.015
+		
+        aim_hud_offset_pos               = 0.00048, -0.031182, -0.034281
+        aim_hud_offset_pos_16x9          = 0.00048, -0.031182, -0.034281
+        aim_hud_offset_rot               = 0.001775, -0.003404, -0.015
+        aim_hud_offset_rot_16x9          = 0.001775, -0.003404, -0.015
+;--------------------------------------------------------------------------------
+[wpn_mossberg590_rail_tac30]:wpn_mossberg590_rail
+hud                         = wpn_mossberg590_rail_tac30_hud
+
+        1icon_layer					= tac30
+        1icon_layer_x				= 86
+        1icon_layer_y				= -7
+        
+        inv_weight					= 3.60
+        
+        scope_status				= 1
+        scope_zoom_factor			= 30
+        zoom_rotate_time			= 0.35
+        scope_dynamic_zoom			= on
+
+	s3ds_reticle_size 	= 4
+	s3ds_eye_relief 	= 2
+	s3ds_exit_pupil		= 0.4
+	s3ds_chroma_power	= 0.04	
+	magnification 		= 4		
+[wpn_mossberg590_rail_tac30_hud]:wpn_mossberg590_rail_hud
+item_visual                              = anomaly_weapons\wpn_mossberg590a1\wpn_mossberg590a1_tac30_hud.ogf
+        aim_hud_offset_pos               = 0.000321, -0.034325, -0.005278
+        aim_hud_offset_pos_16x9          = 0.000321, -0.034325, -0.005278
+        aim_hud_offset_rot               = 0.002178, -0.002293, -0.015
+        aim_hud_offset_rot_16x9          = 0.002178, -0.002293, -0.015
+;--------------------------------------------------------------------------------		
+[wpn_mossberg590_rail_monstrum]:wpn_mossberg590_rail
+        hud                         = wpn_mossberg590_rail_monstrum_hud
+
+        1icon_layer					= monstrum
+        1icon_layer_x				= 105
+        1icon_layer_y				= -8
+        
+        inv_weight					= 3.55
+        
+        scope_status				= 1
+        scope_zoom_factor			= 60
+        zoom_rotate_time			= 0.35
+        scope_dynamic_zoom			= off
+
+	s3ds_reticle_size 	= 3
+	s3ds_eye_relief 	= 2
+	s3ds_exit_pupil		= 0.8
+	s3ds_reticle_type 	= 1
+	ms_count 			= 2
+	ms_colors 			= scope_black, scope_red	
+	magnification 		= 2		
+[wpn_mossberg590_rail_monstrum_hud]:wpn_mossberg590_rail_hud
+item_visual                              = anomaly_weapons\wpn_mossberg590a1\wpn_mossberg590a1_monstrum_hud.ogf
+        aim_hud_offset_pos               = 0.000375, -0.022384, -0.024485
+        aim_hud_offset_pos_16x9          = 0.000375, -0.022384, -0.024485
+        aim_hud_offset_rot               = 0.001033, -0.003733, -0.015
+        aim_hud_offset_rot_16x9          = 0.001033, -0.003733, -0.015
+;--------------------------------------------------------------------------------
+[wpn_mossberg590_rail_trihawk]:wpn_mossberg590_rail
+        hud                         = wpn_mossberg590_rail_trihawk_hud
+
+        1icon_layer					= trihawk
+        1icon_layer_x				= 106
+        1icon_layer_y				= -11
+        
+        inv_weight					= 3.55
+        
+        scope_status				= 1
+        scope_zoom_factor			= 40
+        zoom_rotate_time			= 0.35
+        scope_dynamic_zoom			= off
+
+	s3ds_reticle_size 	= 3.2
+	s3ds_eye_relief 	= 2
+	s3ds_exit_pupil		= 0.66
+	s3ds_chroma_power	= 0.028
+	magnification 		= 3		
+[wpn_mossberg590_rail_trihawk_hud]:wpn_mossberg590_rail_hud
+item_visual                              = anomaly_weapons\wpn_mossberg590a1\wpn_mossberg590a1_trihawk_hud.ogf
+        aim_hud_offset_pos               = 0.000484, -0.035251, -0.0089
+        aim_hud_offset_pos_16x9          = 0.000484, -0.035251, -0.0089
+        aim_hud_offset_rot               = 0.002107, -0.003464, -0.015
+        aim_hud_offset_rot_16x9          = 0.002107, -0.003464, -0.015
+;--------------------------------------------------------------------------------
+[wpn_mossberg590_rail_hamr]:wpn_mossberg590_rail
+        hud                         = wpn_mossberg590_rail_hamr_hud
+
+        1icon_layer					= hamr
+        1icon_layer_x				= 75
+        1icon_layer_y				= -8
+        
+        inv_weight					= 3.60
+        
+        scope_status				= 1
+        scope_zoom_factor			= 40
+        zoom_rotate_time			= 0.35
+        scope_dynamic_zoom			= off
+		use_alt_aim_hud				= true
+		
+	s3ds_reticle_size 	= 4.3
+	s3ds_eye_relief 	= 1.9
+	s3ds_exit_pupil		= 0.35
+	s3ds_chroma_power	= 0.035
+	magnification 		= 4		
+[wpn_mossberg590_rail_hamr_hud]:wpn_mossberg590_rail_hud
+item_visual                              = anomaly_weapons\wpn_mossberg590a1\wpn_mossberg590a1_hamr_hud.ogf
+        aim_hud_offset_alt_pos           = 0, -0.062992, -0.047435
+        aim_hud_offset_alt_pos_16x9      = 0, -0.062992, -0.047435
+        aim_hud_offset_alt_rot           = 0.003692, -0.001439, -0.015
+        aim_hud_offset_alt_rot_16x9      = 0.003692, -0.001439, -0.015
+		
+        aim_hud_offset_pos               = 0.000373, -0.032056, -0.047435
+        aim_hud_offset_pos_16x9          = 0.000373, -0.032056, -0.047435
+        aim_hud_offset_rot               = 0.001386, -0.003833, -0.015
+        aim_hud_offset_rot_16x9          = 0.001386, -0.003833, -0.015
+;--------------------------------------------------------------------------------
+[wpn_mossberg590_rail_vulcan]:wpn_mossberg590_rail
+        hud                         = wpn_mossberg590_rail_vulcan_hud
+
+        1icon_layer					= vulcan
+        1icon_layer_x				= 75
+        1icon_layer_y				= -5
+        
+        inv_weight					= 3.62
+        
+        scope_status				= 1
+        scope_zoom_factor			= 35
+        zoom_rotate_time			= 0.35
+        scope_dynamic_zoom			= off
+
+	s3ds_reticle_size 	= 3	
+	s3ds_eye_relief 	= 2
+	s3ds_exit_pupil		= 0.6	
+	s3ds_chroma_power	= 0.05	
+	s3ds_image_type 	= 1
+	s3ds_reticle_type	= 7
+	ms_count 			= 2
+	magnification 		= 3.5		
+[wpn_mossberg590_rail_vulcan_hud]:wpn_mossberg590_rail_hud
+item_visual                              = anomaly_weapons\wpn_mossberg590a1\wpn_mossberg590a1_vulcan_hud.ogf
+        aim_hud_offset_pos               = 1e-06, -0.034542, -0.00307
+        aim_hud_offset_pos_16x9          = 1e-06, -0.034542, -0.00307
+        aim_hud_offset_rot               = 0.001532, -0.003202, -0.015
+        aim_hud_offset_rot_16x9          = 0.001532, -0.003202, -0.015
+

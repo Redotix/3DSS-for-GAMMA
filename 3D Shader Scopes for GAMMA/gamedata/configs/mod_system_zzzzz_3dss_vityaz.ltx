@@ -1,0 +1,100 @@
+;==============================================================================	
+![wpn_vityaz]
+>scopes						 = monstrum, trihawk, vulcan, specter
+lewd_lens_hide_enabled       = true
+lewd_lens_hide_bone          = lens
+lewd_lens_hide_delays        = 0.1,0
+lewd_lens_hide_aim_mode      = true, false, false
+
+![wpn_vityaz_acog]
+        scope_zoom_factor                = 42.86
+		scope_texture                    =
+![wpn_vityaz_acog_hud]
+        aim_hud_offset_pos               = -0.047417, 0.009013, -0.113659
+        aim_hud_offset_pos_16x9          = -0.047417, 0.009013, -0.113659
+        aim_hud_offset_rot               = 0.016005, -0.001512, -0.010083
+        aim_hud_offset_rot_16x9          = 0.016005, -0.001512, -0.010083
+;--------------------------------------------------------------------------------		
+[wpn_vityaz_monstrum]:wpn_vityaz
+        hud                         = wpn_vityaz_monstrum_hud
+
+        1icon_layer					= monstrum
+        1icon_layer_x				= 75
+        1icon_layer_y				= -9
+
+        scope_status				= 1
+        scope_zoom_factor			= 60
+        zoom_rotate_time			= 0.25
+        scope_dynamic_zoom			= off
+	
+[wpn_vityaz_monstrum_hud]:wpn_vityaz_hud
+item_visual                              = anomaly_weapons\wpn_vityaz\wpn_vityaz_monstrum_hud.ogf
+        aim_hud_offset_pos               = -0.047305, 0.012489, -0.10577
+        aim_hud_offset_pos_16x9          = -0.047305, 0.012489, -0.10577
+        aim_hud_offset_rot               = 0.008223, -0.001785, -0.01
+        aim_hud_offset_rot_16x9          = 0.008223, -0.001785, -0.01
+;--------------------------------------------------------------------------------
+[wpn_vityaz_trihawk]:wpn_vityaz
+        hud                         = wpn_vityaz_trihawk_hud
+
+        1icon_layer					= trihawk
+        1icon_layer_x				= 75
+        1icon_layer_y				= -8
+        
+        scope_status				= 1
+        scope_zoom_factor			= 40
+        zoom_rotate_time			= 0.25
+        scope_dynamic_zoom			= off
+
+[wpn_vityaz_trihawk_hud]:wpn_vityaz_hud
+item_visual                              = anomaly_weapons\wpn_vityaz\wpn_vityaz_trihawk_hud.ogf
+        aim_hud_offset_pos               = -0.047251, 0.003471, -0.090568
+        aim_hud_offset_pos_16x9          = -0.047251, 0.003471, -0.090568
+        aim_hud_offset_rot               = 0.008577, -0.001508, -0.01
+        aim_hud_offset_rot_16x9          = 0.008577, -0.001508, -0.01
+;--------------------------------------------------------------------------------
+[wpn_vityaz_vulcan]:wpn_vityaz
+        hud                         = wpn_vityaz_vulcan_hud
+
+        1icon_layer					= vulcan
+        1icon_layer_x				= 50
+        1icon_layer_y				= -8
+                
+        scope_status				= 1
+        scope_zoom_factor			= 35
+        zoom_rotate_time			= 0.25
+        scope_dynamic_zoom			= off
+	
+[wpn_vityaz_vulcan_hud]:wpn_vityaz_hud
+item_visual                              = anomaly_weapons\wpn_vityaz\wpn_vityaz_vulcan_hud.ogf		
+        aim_hud_offset_pos               = -0.047519, 0.007502, -0.098519
+        aim_hud_offset_pos_16x9          = -0.047519, 0.007502, -0.098519
+        aim_hud_offset_rot               = 0.009293, -0.001126, -0.01
+        aim_hud_offset_rot_16x9          = 0.009293, -0.001126, -0.01
+;--------------------------------------------------------------------------------
+[wpn_vityaz_specter]:wpn_vityaz
+        hud                         = wpn_vityaz_specter_hud
+
+        1icon_layer					= specter
+        1icon_layer_x				= 50
+        1icon_layer_y				= -11
+        
+		zoom_step_count				= 1        
+        scope_status				= 1
+        scope_zoom_factor			= 30
+        zoom_rotate_time			= 0.25
+        scope_dynamic_zoom			= on
+		use_alt_aim_hud				= true
+		
+[wpn_vityaz_specter_hud]:wpn_vityaz_hud
+item_visual                              = anomaly_weapons\wpn_vityaz\wpn_vityaz_specter_hud.ogf	
+        aim_hud_offset_pos               = -0.047174, 0.007825, -0.113657
+        aim_hud_offset_pos_16x9          = -0.047174, 0.007825, -0.113657
+        aim_hud_offset_rot               = 0.009175, -0.001427, -0.01
+        aim_hud_offset_rot_16x9          = 0.009175, -0.001427, -0.01
+		
+        aim_hud_offset_alt_pos           = -0.047566, -0.012164, -0.105529
+        aim_hud_offset_alt_pos_16x9      = -0.047566, -0.012164, -0.105529
+        aim_hud_offset_alt_rot           = 0.012367, 0.002396, 0
+        aim_hud_offset_alt_rot_16x9      = 0.012367, 0.002396, 0
+		
