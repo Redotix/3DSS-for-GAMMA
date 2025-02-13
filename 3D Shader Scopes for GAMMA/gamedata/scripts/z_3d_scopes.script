@@ -4,13 +4,18 @@
 	Link       : https://www.moddb.com/mods/stalker-anomaly/addons/shader-3d-scopes
 	Author     : party_50
 	Date       : 01.03.2024
-	Last Edit  : 07.01.2025
+	Last Edit  : 07.02.2025
 	=====================================================================
 --]]
 
 
 local ZOOM_FACTOR
 local NVG_BLUR
+local PARALLAX_SHADOW
+local SEE_THROUGH
+local THERMAL_PIXELATION
+local CHROMATISM
+
 local ALL_PARAMETERS = {
 	s3ds_reticle_size = "float",
 	s3ds_eye_relief = "float",
@@ -48,6 +53,11 @@ end
 function on_option_change()
 	ZOOM_FACTOR = z_3d_scopes_mcm.get_config("zoom_factor")
 	NVG_BLUR = z_3d_scopes_mcm.get_config("nvg_blur")
+	PARALLAX_SHADOW = z_3d_scopes_mcm.get_config("parallax_shadow")
+	SEE_THROUGH = z_3d_scopes_mcm.get_config("see_through")
+	THERMAL_PIXELATION = z_3d_scopes_mcm.get_config("thermal_pixelation")
+	CHROMATISM = z_3d_scopes_mcm.get_config("chromatism")
+
 	last_weapon_id = nil
 end
 
@@ -109,6 +119,14 @@ function get(info, key, default)
 	return default
 end
 
+function pack_binary_settings()
+	return (NVG_BLUR and 1 or 0)
+		+ (PARALLAX_SHADOW and 1 or 0) * 2
+		+ (SEE_THROUGH and 1 or 0) * 4
+		+ (THERMAL_PIXELATION and 1 or 0) * 8
+		+ (CHROMATISM and 1 or 0) * 16
+end
+
 function update_shader(wpn)
 	info = parse_parameters(wpn)
 	
@@ -136,7 +154,7 @@ function update_shader(wpn)
 	get_console():execute(
 		"s3ds_param_4 " .. 
 		get(info, "s3ds_lens_color", "0, 0, 0") .. ", " ..
-		(NVG_BLUR and 1 or 0))
+		pack_binary_settings())
 end
 
 function actor_on_update()
