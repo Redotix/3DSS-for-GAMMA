@@ -17,4 +17,20 @@
 		<text>Blur scope in Beefs NVG</text>
 	</string>
 
+	<string id="ui_mcm_3d_scopes_parallax_shadow">
+		<text>Render parallax shadow</text>
+	</string>
+
+	<string id="ui_mcm_3d_scopes_see_through">
+		<text>Reticle and exit pupil are always visible</text>
+	</string>
+
+	<string id="ui_mcm_3d_scopes_thermal_pixelation">
+		<text>Pixelate thermal scopes when using zoom</text>
+	</string>
+
+	<string id="ui_mcm_3d_scopes_chromatism">
+		<text>Scopes have chromatism</text>
+	</string>
+
 </string_table>
