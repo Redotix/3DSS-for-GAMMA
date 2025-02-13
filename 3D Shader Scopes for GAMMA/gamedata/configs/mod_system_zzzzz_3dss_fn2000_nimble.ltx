@@ -3,11 +3,9 @@
 <scopes						 = marchf 
 >scopes						 = gauss_sight, t12
 
-	!s3ds_reticle_size 	= 3.4
-	!s3ds_eye_relief 	= 2
-	!s3ds_exit_pupil	= 0.55
-	!s3ds_chroma_power	= 0.04
-
+	s3ds_reticle_size = 4
+	s3ds_eye_relief = 4
+	s3ds_exit_pupil = 0.3
 	
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = lens
@@ -21,29 +19,22 @@ scope_status                     = 1.
 		
 	s3ds_reticle_size 	= 3.9
 	s3ds_eye_relief 	= 1.5
-	s3ds_exit_pupil		= 0.55	
-	s3ds_chroma_power	= 0.031	
-	s3ds_reticle_type 	= 0
-	magnification 		= 2.8
+	s3ds_exit_pupil		= 0.55
 	
 ![wpn_fn2000_nimble_acog_hud]
-        aim_hud_offset_pos               = -0.074405, 0.004813, -0.11699
-        aim_hud_offset_pos_16x9          = -0.074405, 0.004813, -0.11699
+        aim_hud_offset_pos               = -0.074405, 0.004813, -0.132654
+        aim_hud_offset_pos_16x9          = -0.074405, 0.004813, -0.132654
         aim_hud_offset_rot               = 0.039467, 0.016926, 0
         aim_hud_offset_rot_16x9          = 0.039467, 0.016926, 0
 		
 ![wpn_fn2000_nimble_specter]
-zoom_step_count=1
+zoom_step_count					 = 1
 scope_zoom_factor                = 30
 scope_texture                    =
 		
-	s3ds_reticle_size 	= 4.5
+	s3ds_reticle_size 	= 6.1
 	s3ds_eye_relief 	= 2
 	s3ds_chroma_power	= 0.04	
-	s3ds_reticle_type 	= 4
-	ms_count 			= 3
-	ms_colors			= scope_black, scope_red_dim, scope_red
-	magnification 		= 4	
 
 ![wpn_fn2000_nimble_specter_hud]
         aim_hud_offset_alt_pos           = -0.073941, -0.023466, -0.149632
@@ -60,10 +51,9 @@ scope_zoom_factor                = 15
 scope_texture                    =
 		
 	s3ds_reticle_size 	= 4.35
-	s3ds_eye_relief 	= 4
-	s3ds_exit_pupil		= 0.6	
+	s3ds_exit_pupil		= 0.4	
 	s3ds_ffp			= 1	
-	magnification 		= 8
+
 
 ![wpn_fn2000_nimble_leupold_hud]
         aim_hud_offset_pos               = -0.073211, 0.002741, -0.082004
@@ -78,13 +68,8 @@ scope_dynamic_zoom               = on
 nv_scope_status 				 = 0
 			
 	s3ds_reticle_size 	= 4.38
-	
 	s3ds_eye_relief 	= 1.98
 	s3ds_chroma_power	= 0.05	
-	s3ds_image_type 	= 1
-	s3ds_reticle_type	= 7
-	ms_count 			= 2
-	magnification 		= 6	
 	
 ![wpn_fn2000_nimble_pn23_hud]
         aim_hud_offset_pos               = -0.073217, -0.005385, -0.143306
@@ -100,10 +85,6 @@ scope_texture                    =
 	s3ds_reticle_size 	= 4.9
 	s3ds_eye_relief 	= 3.1
 	s3ds_ffp			= 1	
-	s3ds_reticle_type 	= 2
-	ms_count 			= 2
-	ms_colors 			= scope_black, scope_red	
-	magnification 		= 24
 
 ![wpn_fn2000_nimble_marchf_hud]
         aim_hud_offset_pos               = -0.073297, 0.005285, -0.097145
@@ -127,10 +108,6 @@ scope_zoom_factor    = 12
 scope_dynamic_zoom   = on	
 
 	s3ds_reticle_size 	= 5
-	s3ds_image_type 	= 2
-	s3ds_reticle_type 	= 6
-	ms_count 			= 2
-	magnification 		= 10
 	
 [wpn_fn2000_nimble_gauss_sight_hud]:wpn_fn2000_nimble_hud
 item_visual				= anomaly_weapons\wpn_fn2000\wpn_fn2000_nimble_gauss_hud.ogf
@@ -148,11 +125,7 @@ hud                                      = wpn_fn2000_nimble_t12_hud
 1icon_layer_y                            = -14
 
 	s3ds_reticle_size 	= 1.95
-	s3ds_image_type 	= 2
-	s3ds_reticle_type 	= 6
-	s3ds_min_zoom_1x	= 1	
-	magnification 		= 1
-
+	
 [wpn_fn2000_nimble_t12_hud]:wpn_fn2000_nimble_hud
 item_visual				= anomaly_weapons\wpn_fn2000\wpn_fn2000_nimble_t12_hud.ogf
 	
