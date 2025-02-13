@@ -1,4 +1,5 @@
 #include "common.h"
+#include "mark_adjust.h"
 
 uniform float4 m_hud_params;
 
@@ -7,7 +8,6 @@ struct p_lfo_dot_out
     float4 main         : SV_Target0;
     float4 additional   : SV_Target1;
 };
-
 
 float resize(float input, float factor, float offset)
 {
@@ -24,13 +24,19 @@ p_lfo_dot_out main	(p_flat I, float4 pos2d: SV_Position, float2 tc0: TEXCOORD0):
 	pos2d.y = pos2d.y - (screen_res.y - size) / 2.0;
 	pos2d.x = resize(pos2d.x, factor, 0);
 	pos2d.y = resize(pos2d.y, factor, 0);
-	    
-    p_lfo_dot_out O;
-    O.main = s_base.Load(pos2d.xyz) * m_hud_params.x;
+	
+	#ifdef MARK_ADJUST
+	pos2d.xy = mark_adjust(pos2d.xy / 512.0) * 512.0 * mark_sides();
+	#endif
+	
+	float4 color = s_base.Load(pos2d.xyz, 0) * m_hud_params.x;
+	
+	p_lfo_dot_out O;
+    O.main = color;
     if (O.main.a > 0.2)
         O.additional = float4(0.0, 0.0, 1.0, 1.0);
     else
         O.additional = float4(0.0, 0.0, 0.0, 0.0);
-
-    return O;
+	
+	return O;
 }
