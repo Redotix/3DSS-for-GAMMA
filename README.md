@@ -1,1 +1,0 @@
-# 3DSS-for-GAMMA
