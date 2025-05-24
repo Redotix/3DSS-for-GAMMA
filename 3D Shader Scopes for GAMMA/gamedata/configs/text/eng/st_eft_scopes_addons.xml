@@ -117,10 +117,10 @@
 		</text>
 	</string>
 
-	<string id="st_addon_scope_acro">
+	<string id="st_addon_scope_aim_acro">
 		<text>Aimpoint ACRO P-1 reflex sight</text>
 	</string>
-	<string id="st_addon_scope_acro_descr">
+	<string id="st_addon_scope_aim_acro_descr">
 		<text>%c[0,255,255,255]PROPERTIES:\n
 		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]Sweden\n
 		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]Aimpoint\n
@@ -182,5 +182,16 @@
 		%c[d_cyan] • %c[0,255,255,255] Magnification: %c[ui_gray_2]3.5x\n \n			
 		</text>
 	</string>
+
+	<string id="st_addon_scope_echo1">
+		<text>SIG Sauer ECHO1 1-2x30mm 30Hz thermal reflex scope</text>
+	</string>
+	<string id="st_addon_scope_echo1_descr">
+		<text>%c[0,255,255,255]PROPERTIES:\n
+		%c[d_green] • %c[0,255,255,255] Origin: %c[ui_gray_2]United States\n
+		%c[d_green] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]SIG SAUER\n
+		%c[d_green] • %c[0,255,255,255] Magnification: %c[ui_gray_2]1-2x\n \n			
+		</text>
+	</string>	
 	
 </string_table>

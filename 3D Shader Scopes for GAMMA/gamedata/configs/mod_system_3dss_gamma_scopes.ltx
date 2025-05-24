@@ -4,12 +4,14 @@
 ; s3ds_exit_pupil - exit pupil diameter relative to ocular lens diameter, or parallax shadow diameter (default 0.3)
 ; s3ds_ffp - enable first focal plane feature, reticle sizes up while zooming. Can be 0 or 1 (default 0)
 
+; s3ds_reflection_hue - hue parameter of lens reflections, range [0 .. 1] (default 0.65)
 ; s3ds_min_zoom_1x - at minimal FOV magnification, disable image scale up inside scope. Needed for 1x optic sights and 1-Nx LPVO scopes
 
 ; s3ds_image_type - background image processor (default 0)
 ;   0 - none
 ;   1 - NV scope (with ms_count = 2 becomes switchable)
 ;   2 - thermal scope (with ms_count = 2 becomes switchable white-hot/black-hot, with ms_count = 3 becomes also switchable on/off)
+;   3 - Colored thermal scope (same as previous)
 ; s3ds_reticle_type - reticle processor (default 0)
 ;   0 - none
 ;   1 - LED illuminated reticle
@@ -32,14 +34,14 @@
 ;
 ; Ingame testing (console commands, put actual parameters)
 ; s3ds_param_1 s3ds_reticle_size, s3ds_eye_relief, s3ds_exit_pupil, s3ds_ffp
-; s3ds_param_2 s3ds_min_zoom_fov, s3ds_max_zoom_fov, s3ds_min_zoom_1x, 0
+; s3ds_param_2 s3ds_reflection_hue, 0, s3ds_min_zoom_1x, 0
 ; s3ds_param_3 s3ds_image_type, s3ds_reticle_type, s3ds_dirt_intensity, s3ds_chroma_power
 ; s3ds_param_4 s3ds_lens_color, 0
 ;
 ;Guns with integrated scopes need to have the scope paramateres defined under their weapon sections. Look in the rifles ltx for an example of this under [wpn_ak5c_bas_5c_tik];
 ;
 ;ATHI Note - Shotguns and SMGs should be limited to 4x zoom max scopes for balance purposes. Some of these have the pn23 attached for night time. It's zoom can be limited in the 
-;weapon's scope section by setting magnification = 4. You can do this for any scope you want if you prefer the look of a certain scope but wish to maintain this balance
+;weapon's scope section by setting scope factor to 30. You can do this for any scope you want if you prefer the look of a certain scope but wish to maintain this balance
 ;
 ;zoom_step_count must be added to individual weapon sections to constrain the amount of steps between min and max zoom. To get a nice feeling zoom, it is recommended that
 ; zoom_step_count = (max zoom)-1 or (max zoom/2)-1. for example. for a 4x zoom, zoom_step_count=3 [4-1=3]. or for a 10x zoom, zoom_step_count = 4 [(10/2)-1=4]
@@ -104,16 +106,6 @@
 	ms_count 			= 2
 	ms_colors 			= scope_black, scope_red
 
-	
-![pso1m21] --PS02, 4x
-	s3ds_reticle_size 	= 4
-	s3ds_eye_relief 	= 2
-	s3ds_exit_pupil		= 0.5	
-	s3ds_reticle_type 	= 1
-	ms_count 			= 2
-	ms_colors 			= scope_black, scope_red
-
-	
 ![pritseldob] --PS02, 4x
 	s3ds_reticle_size 	= 4
 	s3ds_eye_relief 	= 2
@@ -125,8 +117,8 @@
 	
 ![1pn93] --Dynamic, NVG, 4x
  	s3ds_reticle_size 	= 3.3	
-	s3ds_eye_relief 	= 3
-	s3ds_exit_pupil		= 0.28
+	s3ds_eye_relief 	= 2.5
+	s3ds_exit_pupil		= 0.4
 	s3ds_image_type 	= 1
 	s3ds_reticle_type	= 7	
 	ms_count 			= 2
@@ -136,6 +128,13 @@
 	s3ds_reticle_size 	= 10
 	s3ds_eye_relief 	= 2.5
 
+![pso1m21] --PS0P, 6x
+	s3ds_reticle_size 	= 4
+	s3ds_eye_relief 	= 2
+	s3ds_exit_pupil		= 0.5	
+	s3ds_reticle_type 	= 1
+	ms_count 			= 2
+	ms_colors 			= scope_black, scope_red	
 	
 ![1p59] --Dynamic, 3x-10x
 	s3ds_reticle_size 	= 4.2
@@ -180,12 +179,19 @@
 
 	
 ;----------------------------------PICATINNY/WEST SCOPES---------------------------------
-![t12]	--Thermal, 1x, 	s3ds_reticle_size should be set per gun to match red dot sight view
-	s3ds_reticle_size 	= 1.8
-	s3ds_image_type 	= 2
-	s3ds_reticle_type 	= 6
-	s3ds_min_zoom_1x	= 1	
+![t12]	--Thermal, 1x
+	s3ds_reticle_size 	= 1.05
+	s3ds_image_type 	= 3
+	s3ds_reticle_type 	= 8
+	s3ds_min_zoom_1x	= 1
 
+![echo1] --Thermal, 1x-2x
+	s3ds_chroma_power                = 0.02
+	s3ds_dirt_intensity              = 0.1
+	s3ds_eye_relief                  = 3
+	s3ds_image_type                  = 3
+	s3ds_reticle_size                = 2.9
+	s3ds_reticle_type                = 8
 	
 ![monstrum]	--2x
 	s3ds_reticle_size 	= 3
@@ -391,7 +397,7 @@
 	
 ![gauss_sight] --Dynamic, Thermal, 1x-10x, zoom_step_count = 4
 	s3ds_reticle_size 	= 5
-	s3ds_image_type 	= 2
+	s3ds_image_type 	= 2;
 	s3ds_reticle_type 	= 6
 	ms_count 			= 2
 

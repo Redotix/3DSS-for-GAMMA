@@ -30,7 +30,7 @@
 	</string>
 	
 	<string id="st_addon_scope_acog">
-		<text>ACOG 2.8x</text>
+		<text>ACOG</text>
 	</string>
 	<string id="st_addon_scope_acog_descr">
 		<text>%c[0,255,255,255]PROPERTIES:\n
@@ -41,13 +41,13 @@
 	</string>
 	
 	<string id="st_addon_scope_pso-1m2-01">
-		<text>PSO-1M2-1</text>
+		<text>POSP 6x24</text>
 	</string>
 	<string id="st_addon_scope_pso-1m2-01_descr">
 		<text>%c[0,255,255,255]PROPERTIES:\n
-		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]Russia\n
-		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]NPZ Optics State Plant\n
-		%c[d_cyan] • %c[0,255,255,255] magnification: %c[ui_gray_2]4.0x\n \n
+		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]Belarus\n
+		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]Zenit-BelOMO\n
+		%c[d_cyan] • %c[0,255,255,255] magnification: %c[ui_gray_2]6.0x\n \n
 		%c[d_cyan] • %c[0,255,255,255] %c[ui_gray_2]LED Toggle\n \n			
 		</text>
 	</string>
@@ -65,14 +65,14 @@
 	</string>
 	
 	<string id="st_addon_scope_pso2">
-		<text>PSO-1Ì</text>
+		<text>PSO-1M</text>
 	</string>
 	<string id="st_addon_scope_pso2_descr">
 		<text>%c[0,255,255,255]PROPERTIES:\n
 		%c[d_cyan] • %c[0,255,255,255] Origin: %c[ui_gray_2]Russia\n
 		%c[d_cyan] • %c[0,255,255,255] Manufacturer: %c[ui_gray_2]NPZ Optics State Plant\n
 		%c[d_cyan] • %c[0,255,255,255] magnification: %c[ui_gray_2]4.0x\n \n
-		%c[d_cyan] • %c[0,255,255,255] %c[ui_gray_2]LED Toggle\n \n			
+		%c[d_cyan] • %c[0,255,255,255] %c[ui_gray_2]LED Toggle\n \n				
 		</text>
 	</string>
 		
