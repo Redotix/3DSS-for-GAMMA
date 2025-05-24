@@ -1,6 +1,6 @@
 -- If you don't use MCM, change your defaults from here
 local defaults = {
-	["zoom_factor"] = 1.2,
+	["zoom_factor"] = 1.5,
 	["nvg_blur"] = false,
 	["parallax_shadow"] = true,
 	["see_through"] = true,
@@ -25,8 +25,8 @@ function on_mcm_load()
 			{id = "zoom_factor", type = "track", val = 2, min = 1.0, max = 2.0, step = 0.1, def = 1.5},
 			{id = "nvg_blur", type = "check", val = 1, def = false},
 			{id = "parallax_shadow", type = "check", val = 1, def = true},
-			{id = "see_through", type = "check", val = 1, def = false},
-			{id = "thermal_pixelation", type = "check", val = 1, def = false},
+			{id = "see_through", type = "check", val = 1, def = true},
+			{id = "thermal_pixelation", type = "check", val = 1, def = true},
 			{id = "chromatism", type = "check", val = 1, def = true}
 		}
 	}

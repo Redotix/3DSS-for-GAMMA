@@ -4,14 +4,15 @@
 struct vf
 {
     float4 hpos : SV_Position;
-    float2 tc0 : TEXCOORD0;
-	float3 w_pos : POSITION1;
-	float3 w_nrm : NORMAL1;
-    float3 v_pos : POSITION0;
-    float3 v_nrm : NORMAL0;
-	float3 T : TANGENT0;
-	float3 B : BINORMAL0;
-	float3 N : NORMAL2;
+    float2 tc0 : TEXCOORD0;	
+	float3 w_P : POSITION0;
+	float3 w_T : TANGENT0;
+	float3 w_B : BINORMAL0;
+	float3 w_N : NORMAL0;
+	float3 v_P : POSITION1;
+	float3 v_T : TANGENT1;
+	float3 v_B : BINORMAL1;
+	float3 v_N : NORMAL1;
 };
 
 vf     _main (v_model v)
@@ -21,15 +22,15 @@ vf     _main (v_model v)
     o.hpos = mul(m_WVP, v.P);
     o.tc0 = v.tc.xy;
 
-	o.w_pos = mul(m_W, v.P).xyz;
-	o.w_nrm = mul(m_W, v.N).xyz;
+	o.w_P = mul(m_W, v.P).xyz;
+	o.w_T = mul(m_W, v.T).xyz;
+	o.w_B = mul(m_W, v.B).xyz;
+	o.w_N = mul(m_W, v.N).xyz;
 
-    o.v_pos = mul(m_WV, v.P).xyz;
-    o.v_nrm = mul(m_WV, v.N).xyz;
-
-	o.T = mul(m_W, v.T).xyz;
-	o.B = mul(m_W, v.B).xyz;
-	o.N = mul(m_W, v.N).xyz;
+	o.v_P = mul(m_WV, v.P).xyz;
+	o.v_T = mul(m_WV, v.T).xyz;
+	o.v_B = mul(m_WV, v.B).xyz;
+	o.v_N = mul(m_WV, v.N).xyz;
 	
     return o;
 }
