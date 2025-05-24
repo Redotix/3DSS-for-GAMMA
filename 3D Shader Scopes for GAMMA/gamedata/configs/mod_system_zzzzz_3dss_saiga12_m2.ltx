@@ -2,25 +2,34 @@
 >scopes						 = acog, specter, tac30, vulcan, trihawk, monstrum
 
 lewd_lens_hide_enabled       = true
-lewd_lens_hide_bone          = launcher_sight
+lewd_lens_hide_bone          = lens
 lewd_lens_hide_delays        = 0.1,0
 lewd_lens_hide_aim_mode      = true, false, false
 
+visual                                   = dynamics\weapons\wpn_saiga12s_m2\wpn_saiga12s_m2_world.ogf
+
+![wpn_saiga12s_m2_hud]
+		use_alt_aim_hud				= false
+		
 ![wpn_saiga12s_m2_acog]
 		scope_texture               =
         scope_status				= 1
         scope_zoom_factor           = 42.86
         zoom_rotate_time			= 0.25
         scope_dynamic_zoom			= off
+		
 ![wpn_saiga12s_m2_acog_hud]
 item_visual                              = dynamics\weapons\wpn_saiga12s_m2\wpn_saiga12s_m2_acog_hud.ogf	
-        hands_position                   = 0.045997, -0.042624, 0.263856
-        hands_position_16x9              = 0.045997, -0.042624, 0.263856
+        hands_position                   = -0.008475, 0.001666, 0.005886
+        hands_position_16x9              = -0.008475, 0.001666, 0.005886
+		hands_orientation                = 0, 0, 0
+        hands_orientation_16x9           = 0, 0, 0	
 
-        aim_hud_offset_pos               = -0.0567, -0.005236, -0.030976
-        aim_hud_offset_pos_16x9          = -0.0567, -0.005236, -0.030976
-        aim_hud_offset_rot               = 0.063178, 0.038987, 0
-        aim_hud_offset_rot_16x9          = 0.063178, 0.038987, 0
+        aim_hud_offset_pos               = -0.066985, -0.002955, -0.116835
+        aim_hud_offset_pos_16x9          = -0.066985, -0.002955, -0.116835
+        aim_hud_offset_rot               = 0.011413, -0.003109, 0
+        aim_hud_offset_rot_16x9          = 0.011413, -0.003109, 0
+		
 ![wpn_saiga12s_m2_specter]
 		scope_texture               =
 		zoom_step_count				= 1
@@ -28,20 +37,24 @@ item_visual                              = dynamics\weapons\wpn_saiga12s_m2\wpn_
         scope_zoom_factor			= 30
         zoom_rotate_time			= 0.25
         scope_dynamic_zoom			= on
+		
 ![wpn_saiga12s_m2_specter_hud]
 item_visual                              = dynamics\weapons\wpn_saiga12s_m2\wpn_saiga12s_m2_specter_hud.ogf
-        hands_position                   = 0.045997, -0.042624, 0.263856
-        hands_position_16x9              = 0.045997, -0.042624, 0.263856
+        hands_position                   = -0.008475, 0.001666, 0.005886
+        hands_position_16x9              = -0.008475, 0.001666, 0.005886
+		hands_orientation                = 0, 0, 0
+        hands_orientation_16x9           = 0, 0, 0	
 
-        aim_hud_offset_alt_pos           = -0.057227, -0.034334, -0.028338
-        aim_hud_offset_alt_pos_16x9      = -0.057227, -0.034334, -0.028338
-        aim_hud_offset_alt_rot           = 0.057029, 0.043632, 0
-        aim_hud_offset_alt_rot_16x9      = 0.057029, 0.043632, 0
+        aim_hud_offset_alt_pos           = -0.067837, -0.033426, -0.110448
+        aim_hud_offset_alt_pos_16x9      = -0.067837, -0.033426, -0.110448
+        aim_hud_offset_alt_rot           = 0.00305, 0.000986, 0
+        aim_hud_offset_alt_rot_16x9      = 0.00305, 0.000986, 0
 		
-        aim_hud_offset_pos               = -0.056598, -0.006949, -0.028338
-        aim_hud_offset_pos_16x9          = -0.056598, -0.006949, -0.028338
-        aim_hud_offset_rot               = 0.056857, 0.039057, 0
-        aim_hud_offset_rot_16x9          = 0.056857, 0.039057, 0
+        aim_hud_offset_pos               = -0.066931, -0.005537, -0.110448
+        aim_hud_offset_pos_16x9          = -0.066931, -0.005537, -0.110448
+        aim_hud_offset_rot               = 0.004468, -0.003481, 0
+        aim_hud_offset_rot_16x9          = 0.004468, -0.003481, 0
+		
 ;--------------------------------------------------------------------------------------------
 [wpn_saiga12s_m2_tac30]:wpn_saiga12s_m2
 hud                     = wpn_saiga12s_m2_tac30_hud
@@ -57,10 +70,11 @@ hud                     = wpn_saiga12s_m2_tac30_hud
 
 [wpn_saiga12s_m2_tac30_hud]:wpn_saiga12s_m2_hud
 item_visual                              = dynamics\weapons\wpn_saiga12s_m2\wpn_saiga12s_m2_tac30_hud.ogf	
-        aim_hud_offset_pos               = -0.052131, -0.014786, 0.033438
-        aim_hud_offset_pos_16x9          = -0.052131, -0.014786, 0.033438
-        aim_hud_offset_rot               = 0.041143, 0.021115, 0
-        aim_hud_offset_rot_16x9          = 0.041143, 0.021115, 0
+        aim_hud_offset_pos               = -0.067136, -0.009307, -0.046958
+        aim_hud_offset_pos_16x9          = -0.067136, -0.009307, -0.046958
+        aim_hud_offset_rot               = 0.004473, -0.003614, 0
+        aim_hud_offset_rot_16x9          = 0.004473, -0.003614, 0
+		
 ;--------------------------------------------------------------------------------------------
 [wpn_saiga12s_m2_vulcan]:wpn_saiga12s_m2
 hud                     = wpn_saiga12s_m2_vulcan_hud
@@ -76,10 +90,11 @@ hud                     = wpn_saiga12s_m2_vulcan_hud
 
 [wpn_saiga12s_m2_vulcan_hud]:wpn_saiga12s_m2_hud
 item_visual                              = dynamics\weapons\wpn_saiga12s_m2\wpn_saiga12s_m2_vulcan_hud.ogf	
-        aim_hud_offset_pos               = -0.052343, -0.009962, -0.001553
-        aim_hud_offset_pos_16x9          = -0.052343, -0.009962, -0.001553
-        aim_hud_offset_rot               = 0.040846, 0.02109, 0
-        aim_hud_offset_rot_16x9          = 0.040846, 0.02109, 0		
+        aim_hud_offset_pos               = -0.067256, -0.004206, -0.086962
+        aim_hud_offset_pos_16x9          = -0.067256, -0.004206, -0.086962
+        aim_hud_offset_rot               = 0.005118, -0.00341, 0
+        aim_hud_offset_rot_16x9          = 0.005118, -0.00341, 0
+		
 ;--------------------------------------------------------------------------------------------
 [wpn_saiga12s_m2_trihawk]:wpn_saiga12s_m2
 hud                     = wpn_saiga12s_m2_trihawk_hud
@@ -95,10 +110,11 @@ hud                     = wpn_saiga12s_m2_trihawk_hud
 
 [wpn_saiga12s_m2_trihawk_hud]:wpn_saiga12s_m2_hud
 item_visual                              = dynamics\weapons\wpn_saiga12s_m2\wpn_saiga12s_m2_trihawk_hud.ogf	
-        aim_hud_offset_pos               = -0.051949, -0.015395, 0.005014
-        aim_hud_offset_pos_16x9          = -0.051949, -0.015395, 0.005014
-        aim_hud_offset_rot               = 0.040714, 0.020694, 0
-        aim_hud_offset_rot_16x9          = 0.040714, 0.020694, 0
+        aim_hud_offset_pos               = -0.066864, -0.009875, -0.068073
+        aim_hud_offset_pos_16x9          = -0.066864, -0.009875, -0.068073
+        aim_hud_offset_rot               = 0.004619, -0.003504, 0
+        aim_hud_offset_rot_16x9          = 0.004619, -0.003504, 0
+		
 ;--------------------------------------------------------------------------------------------
 [wpn_saiga12s_m2_monstrum]:wpn_saiga12s_m2
 hud                     = wpn_saiga12s_m2_monstrum_hud
@@ -114,8 +130,8 @@ hud                     = wpn_saiga12s_m2_monstrum_hud
 
 [wpn_saiga12s_m2_monstrum_hud]:wpn_saiga12s_m2_hud
 item_visual                              = dynamics\weapons\wpn_saiga12s_m2\wpn_saiga12s_m2_monstrum_hud.ogf	
-        aim_hud_offset_pos               = -0.051999, -0.002266, -0.004115
-        aim_hud_offset_pos_16x9          = -0.051999, -0.002266, -0.004115
-        aim_hud_offset_rot               = 0.040984, 0.020245, 0
-        aim_hud_offset_rot_16x9          = 0.040984, 0.020245, 0
+        aim_hud_offset_pos               = -0.06705, 0.003053, -0.101021
+        aim_hud_offset_pos_16x9          = -0.06705, 0.003053, -0.101021
+        aim_hud_offset_rot               = 0.00369, -0.003625, 0
+        aim_hud_offset_rot_16x9          = 0.00369, -0.003625, 0
 		
