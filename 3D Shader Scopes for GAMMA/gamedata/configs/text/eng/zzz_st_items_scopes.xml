@@ -907,4 +907,8 @@
 		</text>
 	</string>
 	
+	<string id="st_up_binoc_d1_descr">
+		<text>Experimental upgrade that allows the binoculars to detect and mark living beings within their field of view.</text>
+	</string>
+	
 </string_table>
